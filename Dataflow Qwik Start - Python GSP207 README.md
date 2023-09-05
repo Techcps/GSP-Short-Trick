@@ -9,7 +9,7 @@ export PROJECT_ID=
 export BUCKET_NAME=$PROJECT_ID
 gcloud auth list
 gcloud config list project
-gcloud config set compute/region us-central1
+gcloud config set compute/region us-east4
 gcloud services disable dataflow.googleapis.com
 gcloud services enable dataflow.googleapis.com
 gcloud storage buckets create gs://$BUCKET_NAME --project=$PROJECT_ID --location=us
@@ -29,7 +29,7 @@ python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
   --staging_location $BUCKET/staging \
   --temp_location $BUCKET/temp \
   --output $BUCKET/results/output \
-  --region us-central1
+  --region us-east4
 ```
 
 ## Congratulations, you're all done with the lab 😄
