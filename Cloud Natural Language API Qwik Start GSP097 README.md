@@ -12,7 +12,7 @@ gcloud iam service-accounts create my-natlang-sa \
 gcloud iam service-accounts keys create ~/key.json \
   --iam-account my-natlang-sa@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
 export GOOGLE_APPLICATION_CREDENTIALS="/home/USER/key.json"
-gcloud compute ssh --zone "us-central1-a" "linux-instance" --project "$GOOGLE_CLOUD_PROJECT"
+gcloud compute ssh --zone "us-west1-b" "linux-instance" --project "$GOOGLE_CLOUD_PROJECT"
 
 ```
 
