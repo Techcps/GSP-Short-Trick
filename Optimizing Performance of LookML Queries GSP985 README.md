@@ -1,5 +1,5 @@
 
-# Optimizing Performance of LookML Queries [GSP192]
+# Optimizing Performance of LookML Queries [GSP985]
 
 * Click incremental_pdt and remove all default code and add this following code
  
