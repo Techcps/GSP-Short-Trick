@@ -1,7 +1,6 @@
 
 # Perform Foundational Data, ML, and AI Tasks in Google Cloud: Challenge Lab [GSP323]
 
-# Task 1:
 
 * Enter your DATASET_NAME
 ```
@@ -22,10 +21,10 @@ cat lab.schema
 export API_KEY=
 ```
 ```
-export BUCKET_NAME_TASK_3=
+export BUCKET_3=
 ```
 ```
-export BUCKET_NAME_TASK_4=
+export BUCKET_4=
 ```
 ```
 gcloud iam service-accounts create techcps \
@@ -38,7 +37,7 @@ gcloud ml language analyze-entities --content="Old Norse texts portray Odin as o
 gcloud auth login --no-launch-browser
 ```
 ```
-gsutil cp result.json $BUCKET_NAME_TASK_4
+gsutil cp result.json $BUCKET_4
 
 cat > request.json <<EOF 
 {
@@ -54,7 +53,7 @@ EOF
 
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
 "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > result.json
-gsutil cp result.json $BUCKET_NAME_TASK_3
+gsutil cp result.json $BUCKET_3
 gcloud iam service-accounts create quickstart
 gcloud iam service-accounts keys create key.json --iam-account quickstart@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
 gcloud auth activate-service-account --key-file key.json
