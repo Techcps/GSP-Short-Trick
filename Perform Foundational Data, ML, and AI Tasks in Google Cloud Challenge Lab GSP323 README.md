@@ -18,16 +18,14 @@ gsutil cp gs://cloud-training/gsp323/lab.schema .
 cat lab.schema
 ```
 
-# Task 3 & 4:
-
 ```
 export API_KEY=
 ```
 ```
-export TASK_3_BUCKET_NAME=
+export BUCKET_NAME_TASK_3=
 ```
 ```
-export TASK_4_BUCKET_NAME=
+export BUCKET_NAME_TASK_4=
 ```
 ```
 gcloud iam service-accounts create techcps \
@@ -40,7 +38,7 @@ gcloud ml language analyze-entities --content="Old Norse texts portray Odin as o
 gcloud auth login --no-launch-browser
 ```
 ```
-gsutil cp result.json $TASK_4_BUCKET_NAME
+gsutil cp result.json $BUCKET_NAME_TASK_4
 
 cat > request.json <<EOF 
 {
@@ -56,7 +54,7 @@ EOF
 
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
 "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > result.json
-gsutil cp result.json $TASK_3_BUCKET_NAME
+gsutil cp result.json $BUCKET_NAME_TASK_3
 gcloud iam service-accounts create quickstart
 gcloud iam service-accounts keys create key.json --iam-account quickstart@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
 gcloud auth activate-service-account --key-file key.json
