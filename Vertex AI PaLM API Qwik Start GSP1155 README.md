@@ -2,7 +2,6 @@
 # Vertex AI PaLM API: Qwik Start [GSP1155]
 
 
-
 ```
 MODEL_ID="text-bison"
 PROJECT_ID=$DEVSHELL_PROJECT_ID
