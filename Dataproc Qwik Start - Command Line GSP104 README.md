@@ -1,6 +1,7 @@
 
 # Dataproc: Qwik Start - Command Line [GSP104]
 
+
 * Click Activate Cloud Shell Activate Cloud Shell icon at the top of the Google Cloud console.
 
 ```
