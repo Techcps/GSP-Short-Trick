@@ -1,5 +1,5 @@
 
-# Web Security Scanner: Qwik Start [GSP071]
+# BigQuery: Qwik Start - Command Line [GSP071]
 
 * In the GCP Console open the Cloud Shell and enter the following commands:
 
