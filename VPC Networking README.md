@@ -47,7 +47,6 @@ gcloud compute instances create privatenet-us-vm --zone=$ZONE --machine-type=e2-
 
 ```
 
-
 # Congratulations, you're all done with the lab 😄
 # If you consider that the video helped you to complete your lab, so please do like and subscribe
 # Thanks for watching :)
