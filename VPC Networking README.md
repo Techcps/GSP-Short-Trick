@@ -28,11 +28,12 @@ gcloud compute instances create mynet-eu-vm --project=$DEVSHELL_PROJECT_ID \
 --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=mynetwork \
 --create-disk=auto-delete=yes,boot=yes,device-name=mynet-eu-vm,image=projects/debian-cloud/global/images/debian-11-bullseye-v20231010,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/us-east1-c/diskTypes/pd-balanced
 gcloud compute networks update mynetwork --switch-to-custom-subnet-mode --quiet
+
+```
+
+```
+
 gcloud compute networks create managementnet --subnet-mode custom
-
-```
-
-```
 gcloud compute networks subnets create managementsubnet-us \
 --network=managementnet \
 --region=$REGION \
