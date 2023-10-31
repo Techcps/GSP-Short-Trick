@@ -79,7 +79,7 @@ while true; do
         echo "Server is serving requests."
         break  
     else
-        echo "if you consider that the video helped you to complete your lab then do like and subscribe techcps.."
+        echo "if you consider that the video helped you to complete your lab, so please do like and subscribe techcps.."
         sleep 7
     fi
 done
