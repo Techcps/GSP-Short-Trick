@@ -1,5 +1,5 @@
 
-# Using Prometheus for Monitoring on Google Cloud: Qwik Start [GSP1124]
+# Using Prometheus for Monitoring on Google Cloud: Qwik Start [GSP1024]
 
 # If you consider that the video helped you to complete your lab, so please do like and subscribe. https://www.youtube.com/@techcps
 
