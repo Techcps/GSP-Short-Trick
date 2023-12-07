@@ -62,7 +62,7 @@ gcloud compute networks subnets update default \
 ## Note: Go to "Compute Engine" > "VM Instances"
 * Click the SSH button on attacker-instance
 
-### Note: Step 6 to 10 in the SSH of the VM
+### Note: Step 6 to 10 run in the SSH of the VM
 
 
 ### Note: Go back to Cloud Shell run step 11 to 13 commands
