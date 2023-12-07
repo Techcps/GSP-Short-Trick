@@ -25,10 +25,6 @@ gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:demouser1@gmail.com --role=roles/bigquery.admin
 
 export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format="value(projectNumber)")
-
-gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
-  --member=user:$USER_EMAIL \
-  --role=roles/cloudresourcemanager.projectIamAdmin
 ```
 
 ```
@@ -37,7 +33,9 @@ gcloud compute instances create instance-1 --project=$DEVSHELL_PROJECT_ID --zone
 
 ```
 gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please like and subscirbe to techcps" --networks="default" --alternative-name-servers="" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
+```
 
+```
 gcloud compute ssh --zone "$ZONE" "instance-1" --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
 ```
 ## Note: Check the progress on task 1 & 2
