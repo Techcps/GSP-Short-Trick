@@ -48,14 +48,15 @@ gcloud compute instances delete instance-1 --zone=$ZONE --quiet
 ```
 gcloud compute instances create attacker-instance \
 --scopes=cloud-platform  \
---zone=ZONE \
+--zone=$ZONE \
 --machine-type=e2-medium  \
 --image-family=ubuntu-2004-lts \
 --image-project=ubuntu-os-cloud \
 --no-address
 
+
 gcloud compute networks subnets update default \
---region=REGION \
+--region="${ZONE%-*}" \
 --enable-private-ip-google-access
 ```
 
