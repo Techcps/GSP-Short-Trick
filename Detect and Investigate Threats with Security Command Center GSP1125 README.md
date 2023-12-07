@@ -30,7 +30,7 @@ gcloud compute instances create instance-1 --project=$DEVSHELL_PROJECT_ID --zone
 ```
 
 ```
-gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description=subscribe to techcps and if you're cricketlover then follow cricketcps on social media pletform" --networks="default" --alternative-name-servers="" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
+gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please like and subscirbe to techcps" --networks="default" --alternative-name-servers="" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
 
 gcloud compute ssh --zone "$ZONE" "instance-1" --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
 ```
