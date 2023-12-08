@@ -70,8 +70,7 @@ Task_5_IP_address=
 
 ```
 export ZONE=us-central1-c
-```
-```
+
 sudo snap remove google-cloud-cli
 
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-438.0.0-linux-x86_64.tar.gz
