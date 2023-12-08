@@ -65,7 +65,7 @@ gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet
 ## Note: Go to Task 5 & Copy the IP address
 
 ```
-Enter IP_on_Task5=
+Task_5_IP_address=
 ```
 
 ```
@@ -94,7 +94,7 @@ gcloud container clusters create test-cluster \
 --num-nodes=1 \
 --master-ipv4-cidr "172.16.0.0/28" \
 --enable-master-authorized-networks \
---master-authorized-networks "$Enter IP_on_Task5="
+--master-authorized-networks "$Task_5_IP_address="
 sleep 45
 
 while true; do
