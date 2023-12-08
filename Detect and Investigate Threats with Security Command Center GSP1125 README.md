@@ -3,18 +3,17 @@
 
 # If you consider that the video helped you to complete your lab, so please do like and subscribe [Techcps](https://www.youtube.com/@techcps)
 
-* In the GCP Console open the Cloud Shell and enter the following commands:
-
-```
-export ZONE=us-central1-c
-REGION=${ZONE::-2}
-```
 ## Note: Go to "IAM & Admin" > "Audit Logs".
 * Click the findbar and type: "Cloud Resource Manager API"
 
 * Click the checkbox on "Cloud Resource Manager API" and select "Admin Read" then click save button.
 
+## In the GCP Console open the Cloud Shell and enter the following commands:
+
 ```
+export ZONE=us-central1-c
+REGION=${ZONE::-2}
+
 gcloud services enable securitycenter.googleapis.com --project=$DEVSHELL_PROJECT_ID
 sleep 30
 
@@ -27,15 +26,14 @@ gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
   --member=user:$USER_EMAIL \
   --role=roles/cloudresourcemanager.projectIamAdmin
-```
 
-```
 gcloud compute instances create instance-1 --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --metadata=enable-oslogin=true --maintenance-policy=MIGRATE --provisioning-model=STANDARD --scopes=https://www.googleapis.com/auth/cloud-platform --create-disk=auto-delete=yes,boot=yes,device-name=instance-1,image=projects/debian-cloud/global/images/debian-11-bullseye-v20230912,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
 
 gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please subscirbe to techcps" --networks="default" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
 
 sleep 45
 ```
+
 
 ```
 gcloud compute ssh --zone "$ZONE" "instance-1" --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
