@@ -95,7 +95,6 @@ gcloud container clusters create test-cluster \
 --enable-master-authorized-networks \
 --master-authorized-networks "$Task_5_IP_address="
 sleep 45
-
 while true; do
     output=$(kubectl describe daemonsets container-watcher -n kube-system)
     if [[ $output == *container-watcher-unique-id* ]]; then
