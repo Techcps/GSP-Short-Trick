@@ -32,20 +32,19 @@ gcloud compute instances create instance-1 \
 --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default \
 --metadata=enable-oslogin=true --maintenance-policy=MIGRATE --provisioning-model=STANDARD \
 --scopes=https://www.googleapis.com/auth/cloud-platform --create-disk=auto-delete=yes,boot=yes,device-name=instance-1,image=projects/debian-cloud/global/images/debian-11-bullseye-v20230912,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced
+
 gcloud dns --project=$DEVSHELL_PROJECT_ID policies create dns-test-policy --description="Please like share &subscribe to techcps" --networks="default" --private-alternative-name-servers="" --no-enable-inbound-forwarding --enable-logging
 sleep 45
-
 gcloud compute ssh instance-1 --zone=$ZONE --tunnel-through-iap --project "$DEVSHELL_PROJECT_ID" --quiet --command "gcloud projects get-iam-policy \$(gcloud config get project) && curl etd-malware-trigger.goog"
 ```
 
 ## Note: Check the progress on task 1 & 2
 * Do not move until you get score on tast 1 & 2
 
-```
-gcloud compute instances delete instance-1 --zone=$ZONE --quiet
-```
 
 ```
+gcloud compute instances delete instance-1 --zone=$ZONE --quiet
+
 gcloud compute instances create attacker-instance \
 --scopes=cloud-platform  \
 --zone=$ZONE \
