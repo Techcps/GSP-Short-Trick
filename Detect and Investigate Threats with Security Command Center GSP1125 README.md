@@ -64,6 +64,10 @@ gcloud compute networks subnets update default \
 * Click the SSH button on attacker-instance
 
 ```
+export Task_5_IP=
+```
+
+```
 export ZONE=
 ```
 
