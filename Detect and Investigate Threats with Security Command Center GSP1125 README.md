@@ -102,7 +102,7 @@ while true; do
         echo "$output"
         break
     else
-        echo "Please like share & subscirbe to techcps / If you're cricketlover then follow cricetcps"
+        echo "Please like share & subscirbe to techcps / Also follow cricetcps"
         sleep 15
     fi
 done
