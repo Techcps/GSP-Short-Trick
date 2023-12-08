@@ -93,7 +93,7 @@ gcloud container clusters create test-cluster \
 --num-nodes=1 \
 --master-ipv4-cidr "172.16.0.0/28" \
 --enable-master-authorized-networks \
---master-authorized-networks "$TASK_5_IP"
+--master-authorized-networks "$TASK_5_IP_ADDRESS"
 sleep 45
 while true; do
     output=$(kubectl describe daemonsets container-watcher -n kube-system)
