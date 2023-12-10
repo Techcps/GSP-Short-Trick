@@ -13,6 +13,10 @@ export ZONE_2=
 ```
 
 ```
+export REGION_1="${ZONE_1%-*}"
+
+export REGION_2="${ZONE_2%-*}"
+
 gcloud compute networks create vpn-network-1 --subnet-mode custom
 gcloud compute networks subnets create subnet-a \
 --network vpn-network-1 --range 10.1.1.0/24 --region "$REGION_1"
