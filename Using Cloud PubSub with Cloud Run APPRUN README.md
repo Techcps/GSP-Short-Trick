@@ -9,8 +9,8 @@
 export REGION=
 ```
 ```
-gcloud services disable pubsub.googleapis.com --force
 gcloud services enable pubsub.googleapis.com
+gcloud services disable pubsub.googleapis.com --force
 gcloud services enable run.googleapis.com
 sleep 17
 gcloud config set compute/region $REGION
