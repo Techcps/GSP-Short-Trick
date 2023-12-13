@@ -95,7 +95,9 @@ git add . && git commit -m "updated" && git push gcp new-feature-1
 ```
 
 # Note: Go to "Cloud build" > "History". 
-* Do not run the next command until all builts are completed.
+## Do not run the next command until all builts are completed
+* Once all builts are completed and show green tick.
+* Then run the following commands
 
 ```
 gcloud beta builds triggers create cloud-source-repositories --trigger-config master-trigger.json
@@ -104,9 +106,9 @@ git merge new-feature-1
 git push gcp master
 ```
 
-
-# Note: Go to "Cloud build". 
-* Do not run the next command until all builts are completed.
+## Do not run the next command until all builts are completed
+* Once all builts are completed and show green tick.
+* Then run the following commands
 
 ```
 gcloud beta builds triggers create cloud-source-repositories --trigger-config tag-trigger.json
