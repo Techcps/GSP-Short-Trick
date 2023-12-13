@@ -4,7 +4,7 @@
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
 * In the GCP Console open the Cloud Shell and upload the download file: techcpsgsp1078.sh
-
+* Copy and run the following commands
 ```
 sudo chmod +x techcpsgsp1078.sh
 ./techcpsgsp1078.sh
