@@ -89,9 +89,7 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
-
 EOF
-
 
 git add . && git commit -m "updated" && git push gcp new-feature-1
 
@@ -100,18 +98,3 @@ BRANCH_URL=$(gcloud run services describe hello-cloudrun --platform managed --re
 echo $BRANCH_URL
 
 curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" $BRANCH_URL
-
-sleep 17
-
-gcloud beta builds triggers create cloud-source-repositories --trigger-config master-trigger.json
-
-git checkout master
-git merge new-feature-1
-git push gcp master
-
-sleep 17
-
-gcloud beta builds triggers create cloud-source-repositories --trigger-config tag-trigger.json
-
-git tag 1.1
-git push gcp 1.1
