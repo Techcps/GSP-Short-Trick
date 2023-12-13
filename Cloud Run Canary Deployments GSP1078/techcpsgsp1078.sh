@@ -11,15 +11,12 @@ cloudbuild.googleapis.com \
 containerregistry.googleapis.com \
 run.googleapis.com
 
-sleep 17
-
 git config --global user.email "$USER@@techcps.net"
 git config --global user.name "techcps"
 
 gcloud projects add-iam-policy-binding $PROJECT_ID \
 --member=serviceAccount:$PROJECT_NUMBER@cloudbuild.gserviceaccount.com \
 --role=roles/run.admin
-
 gcloud iam service-accounts add-iam-policy-binding \
 $PROJECT_NUMBER-compute@developer.gserviceaccount.com \
 --member=serviceAccount:$PROJECT_NUMBER@cloudbuild.gserviceaccount.com \
@@ -41,8 +38,6 @@ git branch -m master
 git add . && git commit -m "initial commit"
 git push gcp master
 
-sleep 17
-
 gcloud builds submit --tag gcr.io/$PROJECT_ID/hello-cloudrun
 gcloud run deploy hello-cloudrun \
 --image gcr.io/$PROJECT_ID/hello-cloudrun \
@@ -54,14 +49,12 @@ PROD_URL=$(gcloud run services describe hello-cloudrun --platform managed --regi
 echo $PROD_URL
 curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" $PROD_URL
 
-sleep 17
-
 gcloud beta builds triggers create cloud-source-repositories --trigger-config branch-trigger.json
 
 git checkout -b new-feature-1
-
-
+rm -f app.py
 cat > app.py <<EOF
+
 #!/usr/bin/python
 #
 # Copyright 2021 Google LLC
@@ -89,12 +82,5 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
+
 EOF
-
-git add . && git commit -m "updated" && git push gcp new-feature-1
-
-
-BRANCH_URL=$(gcloud run services describe hello-cloudrun --platform managed --region $REGION --format=json | jq --raw-output ".status.traffic[] | select (.tag==\"new-feature-1\")|.url")
-echo $BRANCH_URL
-
-curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" $BRANCH_URL
