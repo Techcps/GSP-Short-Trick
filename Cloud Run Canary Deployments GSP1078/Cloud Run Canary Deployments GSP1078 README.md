@@ -15,7 +15,6 @@ sudo chmod +x techcpsgsp1078.sh
 
 ```
 gcloud beta builds triggers create cloud-source-repositories --trigger-config master-trigger.json
-
 git checkout master
 git merge new-feature-1
 git push gcp master
@@ -27,7 +26,6 @@ git push gcp master
 
 ```
 gcloud beta builds triggers create cloud-source-repositories --trigger-config tag-trigger.json
-
 git tag 1.1
 git push gcp 1.1
 ```
