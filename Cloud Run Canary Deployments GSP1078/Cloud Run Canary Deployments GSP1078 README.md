@@ -3,7 +3,15 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-* In the GCP Console open the Cloud Shell and enter the following commands:
+* In the GCP Console open the Cloud Shell and upload the download file: techcpsgsp1078.sh
+
+```
+sudo chmod +x techcpsgsp1078.sh
+./techcpsgsp1078.sh
+```
+
+# Note: Go to "Cloud build". 
+* Do not run the next command until all builts are completed.
 
 ```
 gcloud beta builds triggers create cloud-source-repositories --trigger-config master-trigger.json
