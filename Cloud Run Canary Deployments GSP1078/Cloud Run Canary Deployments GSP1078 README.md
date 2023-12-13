@@ -10,7 +10,7 @@ sudo chmod +x techcpsgsp1078.sh
 ./techcpsgsp1078.sh
 ```
 
-# Note: Go to "Cloud build". 
+# Note: Go to "Cloud build" > "History". 
 * Do not run the next command until all builts are completed.
 
 ```
