@@ -3,7 +3,7 @@
 
 # If you consider that the video helped you to complete your lab, so please do like and subscribe. https://www.youtube.com/@techcps
 
-* In the GCP Console open the Cloud Shell and enter the following commands:
+* In the GCP Console open the Cloud Shell and run the following commands:
 
 ```
 gcloud auth list
