@@ -22,7 +22,8 @@ LIMIT
 "
 bq mk babynames
 bq mk --table \
---schema "name:string,count:integer,gender:string" --$DEVSHELL_PROJECT_ID:babynames.names_2014
+--schema "name:string,count:integer,gender:string" \
+$DEVSHELL_PROJECT_ID:babynames.names_2014
 
 bq query --use_legacy_sql=false \
 "
