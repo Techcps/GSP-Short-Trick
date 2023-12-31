@@ -5,7 +5,7 @@
 
 
 ```
-export ZONE=us-central1-f
+export ZONE=
 ```
 ```
 gcloud services enable iap.googleapis.com
