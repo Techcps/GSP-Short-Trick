@@ -1,5 +1,5 @@
 
-# Cloud Endpoints: Qwik Start [GSP037]
+# Detect Labels, Faces, and Landmarks in Images with the Cloud Vision API GSP037
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
