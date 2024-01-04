@@ -7,6 +7,7 @@
 ```
 export REGION=
 export ZONE=
+
 export REGION2=
 export ZONE2=
 ```
@@ -1022,7 +1023,7 @@ cat > terraform.tfstate <<EOF
             ]
           }
         ]
-      }, #please like share & subscribe to techcps
+      },
       {
         "mode": "managed",
         "type": "google_compute_network",
@@ -1705,7 +1706,7 @@ resource "google_compute_network" "privatenet" {
 # Create privatesubnet-us subnetwork
 resource "google_compute_subnetwork" "privatesubnet-us" {
   name          = "privatesubnet-us"
-  region        = "$REGION"  #please like share & subscribe to techcps
+  region        = "$REGION"  # please like share & subscribe to techcps
   network       = google_compute_network.privatenet.self_link
   ip_cidr_range = "172.16.0.0/24"
 }
@@ -1772,7 +1773,7 @@ resource "google_compute_firewall" "mynetwork-allow-http-ssh-rdp-icmp" {
 module "mynet-us-vm" {
   source              = "./instance"
   instance_name       = "mynet-us-vm"
-  instance_zone       = "$ZONE" 
+  instance_zone       = "$ZONE"
   instance_subnetwork = google_compute_network.mynetwork.self_link
 }
 # Create the mynet-second-vm instance
@@ -1858,7 +1859,6 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 ```
-
 
 ## Congratulations, you're all done with the lab 😄
 
