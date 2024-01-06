@@ -7,8 +7,10 @@
 ## Note: Go to Cloud Built > Settings
 * Enble to all this three GCP Service role name
 
-> Cloud Functions	
-> Cloud Run	
+> Cloud Functions
+
+> Cloud Run
+	
 > App Engine
 
 ```
