@@ -14,7 +14,7 @@ gcloud compute firewall-rules create allow-http-web-server --network=default --a
 gcloud compute instances create test-vm --machine-type=e2-micro --subnet=default --zone=$ZONE
 ```
 
-## Go to IAM & admin > Service Accounts > Create service account
+## NOTE: Go to IAM & admin > Service Accounts > Create service account
 > * Service account name to "Network-admin" and click CREATE AND CONTINUE
 > * Select a role > Compute Engine > Compute Network Admin and click CONTINUE then click DONE
 
