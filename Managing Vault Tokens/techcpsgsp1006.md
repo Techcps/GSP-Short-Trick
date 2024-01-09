@@ -29,6 +29,8 @@ vault token lookup <REPLACE YOUR TOKEN>
 ```
 ```
 vault token lookup -format=json <REPLACE YOUR TOKEN> | jq -r .data.policies > token_policies.txt
+```
+```
 export PROJECT_ID=$(gcloud config get-value project)
 gsutil cp token_policies.txt gs://$PROJECT_ID
 ```
