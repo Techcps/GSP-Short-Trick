@@ -3,7 +3,6 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-
 ```
 gcloud auth list
 gcloud config list project
@@ -11,15 +10,8 @@ git clone https://github.com/GoogleCloudPlatform/policy-library.git
 cd policy-library/
 cp samples/iam_service_accounts_only.yaml policies/constraints
 cat policies/constraints/iam_service_accounts_only.yaml
-```
-```
-touch main.tf
-```
-## Open the policy-library/main.tf file and copy the following code into it:
 
-* Replace <YOUR PROJECT ID> with Project ID and <USER> with Lab username
-
-```
+cat > main.tf <<EOF_END
 terraform {
   required_providers {
     google = {
@@ -30,22 +22,42 @@ terraform {
 }
 
 resource "google_project_iam_binding" "sample_iam_binding" {
-  project = "<YOUR PROJECT ID>"
+  project = "$DEVSHELL_PROJECT_ID"
   role    = "roles/viewer"
 
   members = [
-    "user:<USER>"
+    "user:$USER_EMAIL"
   ]
 }
-```
-```
+EOF_END
+
 terraform init
-```
-```
 terraform plan -out=test.tfplan
 terraform show -json ./test.tfplan > ./tfplan.json
 sudo apt-get install google-cloud-sdk-terraform-tools
 gcloud beta terraform vet tfplan.json --policy-library=.
+cd policies/constraints
+
+cat > iam_service_accounts_only.yaml <<EOF_END
+apiVersion: constraints.gatekeeper.sh/v1alpha1
+kind: GCPIAMAllowedPolicyMemberDomainsConstraintV1
+metadata:
+  name: service_accounts_only
+spec:
+  severity: high
+  match:
+    target: ["organizations/**"]
+  parameters:
+    domains:
+      - gserviceaccount.com
+      - qwiklabs.net
+EOF_END
+
+cd ~
+cd policy-library
+terraform plan -out=test.tfplan
+gcloud beta terraform vet tfplan.json --policy-library=.
+terraform apply test.tfplan
 terraform plan -out=test.tfplan
 gcloud beta terraform vet tfplan.json --policy-library=.
 terraform apply test.tfplan
