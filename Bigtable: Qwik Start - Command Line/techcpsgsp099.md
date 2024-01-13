@@ -15,9 +15,11 @@ gcloud bigtable instances create quickstart-instance --display-name="Quickstart 
 echo project = gcloud config get-value project > ~/.cbtrc
 
 echo instance = quickstart-instance >> ~/.cbtrc
-
+```
+```
 cbt createtable my-table
-
+```
+```
 cbt ls
 
 cbt createfamily my-table cf1
