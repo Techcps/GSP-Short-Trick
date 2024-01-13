@@ -11,6 +11,7 @@ export ZONE=
 gcloud services enable bigtable.googleapis.com bigtableadmin.googleapis.com
 
 gcloud bigtable instances create quickstart-instance --display-name="Quickstart instance" --cluster-storage-type=SSD --cluster-config=id=quickstart-instance-c1,zone=$ZONE,nodes=1
+
 echo project = gcloud config get-value project > ~/.cbtrc
 
 echo instance = quickstart-instance >> ~/.cbtrc
