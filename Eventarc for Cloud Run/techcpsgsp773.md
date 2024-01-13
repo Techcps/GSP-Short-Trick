@@ -59,7 +59,7 @@ gsutil mb -p $(gcloud config get-value project) \
 
 > Data Write
 
-* then click Save.
+### click Save.
 
 ```
 echo "Hello World" > random.txt
