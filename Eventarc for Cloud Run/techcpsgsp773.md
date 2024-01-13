@@ -25,8 +25,7 @@ export SERVICE_NAME=event-display
 export IMAGE_NAME="gcr.io/cloudrun/hello"
 
 gcloud run deploy ${SERVICE_NAME} --image ${IMAGE_NAME} --allow-unauthenticated --max-instances=3
-```
-```
+
 gcloud beta eventarc attributes types describe \
   google.cloud.pubsub.topic.v1.messagePublished
 
@@ -37,7 +36,10 @@ export TOPIC_ID=$(gcloud eventarc triggers describe trigger-pubsub --format='val
 gcloud eventarc triggers list
 
 gcloud pubsub topics publish ${TOPIC_ID} --message="Hello there"
+```
+## Go to Task 5 check the progress
 
+```
 gcloud eventarc triggers delete trigger-pubsub
 
 export BUCKET_NAME=$(gcloud config get-value project)-cr-bucket
