@@ -25,7 +25,8 @@ export SERVICE_NAME=event-display
 export IMAGE_NAME="gcr.io/cloudrun/hello"
 
 gcloud run deploy ${SERVICE_NAME} --image ${IMAGE_NAME} --allow-unauthenticated --max-instances=3
-
+```
+```
 gcloud beta eventarc attributes types describe \
   google.cloud.pubsub.topic.v1.messagePublished
 
