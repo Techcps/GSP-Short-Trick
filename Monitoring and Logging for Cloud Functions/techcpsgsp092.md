@@ -14,7 +14,7 @@ gcloud functions deploy helloWorld --runtime nodejs16 --trigger-http --allow-una
 
 cat > function.js <<EOF
 exports.helloWorld = (req, res) => {
-    res.status(200).send('Hello, World!');
+    res.status(200).send('Hello World!');
 };
 EOF
 
