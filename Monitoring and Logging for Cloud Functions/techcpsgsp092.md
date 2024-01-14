@@ -10,13 +10,14 @@ export REGION=
 ```
 gcloud auth list
 gcloud config list project
-gcloud functions deploy helloWorld --runtime nodejs16 --trigger-http --allow-unauthenticated --region $REGION --max-instances 5
 
 cat > function.js <<EOF
 exports.helloWorld = (req, res) => {
     res.status(200).send('Hello World!');
 };
 EOF
+
+gcloud functions deploy helloWorld --runtime nodejs16 --trigger-http --allow-unauthenticated --region $REGION --max-instances 5
 
 curl -LO 'https://github.com/tsenart/vegeta/releases/download/v6.3.0/vegeta-v6.3.0-linux-386.tar.gz'
 tar xvzf vegeta-v6.3.0-linux-386.tar.gz
