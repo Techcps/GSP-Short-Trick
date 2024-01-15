@@ -1,7 +1,6 @@
 
 
 bq mk bqml_lab
-
 bq query --use_legacy_sql=false \
 #standardSQL
 'CREATE OR REPLACE MODEL `bqml_lab.sample_model`
@@ -17,7 +16,6 @@ FROM
 WHERE
   _TABLE_SUFFIX BETWEEN "20160801" AND "20170631"
 LIMIT 100000;'
-
 bq query --use_legacy_sql=false \
 #standardSQL
 'SELECT
@@ -34,7 +32,6 @@ FROM
   `bigquery-public-data.google_analytics_sample.ga_sessions_*`
 WHERE
   _TABLE_SUFFIX BETWEEN "20170701" AND "20170801"));'
-
 bq query --use_legacy_sql=false \
 #standardSQL
 'SELECT
@@ -54,7 +51,6 @@ WHERE
 GROUP BY country
 ORDER BY total_predicted_purchases DESC
 LIMIT 10;'
-
 bq query --use_legacy_sql=false \
 #standardSQL
 'SELECT
