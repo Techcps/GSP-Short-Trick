@@ -1,6 +1,6 @@
 
 bq mk ecommerce
-bq query --nouse_legacy_sql \
+bq query --nouse_legacy_sql '
 CREATE OR REPLACE MODEL `ecommerce.classification_model`
 OPTIONS
 (
@@ -30,7 +30,7 @@ FROM
       `data-to-insights.ecommerce.web_analytics`
   GROUP BY fullvisitorid)
   USING (fullVisitorId);'
-bq query --nouse_legacy_sql \
+bq query --nouse_legacy_sql '
 SELECT
   roc_auc,
   CASE
@@ -63,7 +63,7 @@ FROM
   GROUP BY fullvisitorid)
   USING (fullVisitorId)
 ));'
-bq query --nouse_legacy_sql \
+bq query --nouse_legacy_sql '
 CREATE OR REPLACE MODEL `ecommerce.classification_model_2`
 OPTIONS
   (model_type="logistic_reg", labels = ["will_buy_on_return_visit"]) AS
@@ -112,7 +112,7 @@ SELECT * EXCEPT(unique_session_id) FROM (
   device.deviceCategory,
   country
 );'
-bq query --nouse_legacy_sql \
+bq query --nouse_legacy_sql '
 #standardSQL
 SELECT
   roc_auc,
@@ -170,7 +170,7 @@ SELECT * EXCEPT(unique_session_id) FROM (
   country
 )
 ));'
-bq query --nouse_legacy_sql \
+bq query --nouse_legacy_sql '
 SELECT
 *
 FROM
@@ -280,7 +280,7 @@ SELECT * EXCEPT(unique_session_id) FROM (
   country
 )
 ));
-bq query --nouse_legacy_sql \
+bq query --nouse_legacy_sql '
 SELECT
   roc_auc,
   CASE
