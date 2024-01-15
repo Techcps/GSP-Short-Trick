@@ -1,4 +1,9 @@
 
+# Extract, Analyze, and Translate Text from Images with the Cloud ML APIs [GSP075]
+
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
+
+```
 gcloud alpha services api-keys create --display-name="techcps"
 
 KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=techcps")
@@ -9,12 +14,11 @@ export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 
 gsutil mb -p $PROJECT_ID -c regional -l us-east1 gs://$PROJECT_ID
 
-curl -O 
-
+curl -O https://github.com/Techcps/GSP-Short-Trick/blob/main/Extract%2C%20Analyze%2C%20and%20Translate%20Text%20from%20Images%20with%20the%20Cloud%20ML%20APIs/sign.jpg
 gsutil cp sign.jpg gs://$PROJECT_ID/sign.jpg
 gsutil acl ch -u AllUsers:R gs://$PROJECT_ID/sign.jpg
-touch ocr-request.json
 
+touch ocr-request.json
 tee ocr-request.json <<EOF_END
 {
   "requests": [
@@ -65,3 +69,8 @@ EOF_END
 STR=$(jq .data.translations[0].translatedText  translation-response.json) && STR="${STR//\"}" && sed -i "s|your_text_here|$STR|g" nl-request.json
 curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
   -s -X POST -H "Content-Type: application/json" --data-binary @nl-request.json
+```
+
+## Congratulations, you're all done with the lab 😄
+
+# Thanks for watching :)
