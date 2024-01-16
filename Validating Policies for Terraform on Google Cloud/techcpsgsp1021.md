@@ -66,3 +66,4 @@ terraform apply test.tfplan
 ## Congratulations, you're all done with the lab 😄
 
 # Thanks for watching :)
+
