@@ -1,4 +1,6 @@
 
+gcloud auth list
+gcloud config list project
 export PROJECT_ID=$(gcloud info --format="value(config.project)")
 go version
 git clone https://github.com/GoogleCloudPlatform/DIY-Tools.git
