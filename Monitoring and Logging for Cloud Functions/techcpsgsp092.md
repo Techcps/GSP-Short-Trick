@@ -22,7 +22,6 @@ gcloud functions deploy helloWorld --runtime nodejs16 --trigger-http --allow-una
 gcloud logging metrics create CloudFunctionLatency-Logs --project=$DEVSHELL_PROJECT_ID --description="like share & subscribe to techcps" --log-filter='resource.type="cloud_function"
 resource.labels.function_name="helloWorld"'
 ```
-
 ## Congratulations, you're all done with the lab 😄
 
 # Thanks for watching :)
