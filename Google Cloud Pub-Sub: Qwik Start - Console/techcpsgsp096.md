@@ -11,7 +11,6 @@ gcloud pubsub topics create MyTopic
 gcloud pubsub subscriptions create MySub --topic=MyTopic
 ```
 
-
 ## Congratulations, you're all done with the lab 😄
 
 # Thanks for watching :)
