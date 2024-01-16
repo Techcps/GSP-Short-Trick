@@ -17,5 +17,4 @@ gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member="user:$USER
 ```
 
 ## Congratulations, you're all done with the lab 😄
-
 # Thanks for watching :)
