@@ -6,6 +6,7 @@
 ```
 export REGION=
 ```
+
 ```
 gcloud config set project $DEVSHELL_PROJECT_ID
 gcloud config set run/region $REGION
