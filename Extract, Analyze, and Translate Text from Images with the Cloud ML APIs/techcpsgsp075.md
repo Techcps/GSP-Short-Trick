@@ -71,6 +71,7 @@ curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY
   -s -X POST -H "Content-Type: application/json" --data-binary @nl-request.json
 ```
 
+
 ## Congratulations, you're all done with the lab 😄
 
 # Thanks for watching :)
