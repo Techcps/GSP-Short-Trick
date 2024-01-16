@@ -3,7 +3,6 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-
 ```
 export REGION=
 export ZONE=
