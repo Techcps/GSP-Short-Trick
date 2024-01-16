@@ -37,7 +37,6 @@ gsutil mb -p $DEVSHELL_PROJECT_ID gs://$DEVSHELL_PROJECT_ID
 gcloud functions deploy helloWorld --stage-bucket $DEVSHELL_PROJECT_ID --trigger-topic hello_world --runtime nodejs20
 gcloud functions describe helloWorld
 ```
-
 ## Congratulations, you're all done with the lab 😄
 
 # Thanks for watching :)
