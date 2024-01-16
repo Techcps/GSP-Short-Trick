@@ -15,6 +15,7 @@ gcloud compute instances create test-vm --machine-type=e2-micro --subnet=default
 ```
 
 ## NOTE: Go to IAM & admin > Service Accounts > Create service account
+
 > * Service account name to "Network-admin" and click CREATE AND CONTINUE
 > * Select a role > Compute Engine > Compute Network Admin and click CONTINUE then click DONE
 
