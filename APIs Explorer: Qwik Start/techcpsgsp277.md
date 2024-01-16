@@ -3,7 +3,6 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-
 ```
 export PROJECT_ID=$(gcloud config get-value project)
 gsutil mb -p $PROJECT_ID -c regional -l us-east1 gs://$PROJECT_ID-bucket
