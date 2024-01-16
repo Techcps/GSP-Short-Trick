@@ -95,5 +95,3 @@ gcloud run deploy $FRONTEND_PRODUCTION_SERVICE --image gcr.io/$DEVSHELL_PROJECT_
 ## Congratulations, you're all done with the lab 😄
 
 # Thanks for watching :)
-
-
