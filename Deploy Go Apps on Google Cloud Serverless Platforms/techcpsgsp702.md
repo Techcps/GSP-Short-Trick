@@ -3,7 +3,6 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-
 ## Note: Go to Cloud Built > Settings
 * Enble to all this three GCP Service role name
 
