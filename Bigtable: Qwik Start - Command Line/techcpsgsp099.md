@@ -4,7 +4,6 @@
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
 ## Task 1. Create a Cloud Bigtable instance
-
 ```
 export ZONE=
 ```
