@@ -1,5 +1,4 @@
 
-
 bq mk bqml_lab
 bq query --use_legacy_sql=false \
 'CREATE OR REPLACE MODEL `bqml_lab.sample_model`
