@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install vault
 vault server -dev
 ```
-## Open a new Cloud Shell tab.
+## Open a new Cloud Shell tab
 
 ```
 export VAULT_ADDR='http://127.0.0.1:8200'
