@@ -95,6 +95,7 @@ git add . && git commit -m "updated" && git push gcp new-feature-1
 ```
 
 # Note: Go to "Cloud build" > "History". 
+
 ## Do not run the next command until all builts are completed
 * Once all builts are completed and show green tick.
 * Then run the following commands
