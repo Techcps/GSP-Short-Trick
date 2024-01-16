@@ -1,6 +1,5 @@
 
 # Create and Manage Cloud Resources: Challenge Lab [GSP313]
-
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
 ```
