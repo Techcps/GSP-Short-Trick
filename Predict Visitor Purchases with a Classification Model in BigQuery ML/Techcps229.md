@@ -3,7 +3,6 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-
 * In the GCP Console active your Cloud Shell and run the following commands:
 
 ```
