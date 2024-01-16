@@ -16,5 +16,4 @@ export GOOGLE_APPLICATION_CREDENTIALS=tts-qwiklab.json
 ```
 
 ## Congratulations, you're all done with the lab 😄
-
 # Thanks for watching :)
