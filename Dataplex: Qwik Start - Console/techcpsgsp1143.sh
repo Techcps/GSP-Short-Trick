@@ -6,7 +6,7 @@ gcloud config list project
 gcloud services enable dataplex.googleapis.com
 
 # Create a lake
-gcloud alpha dataplex lakes create sensors --location=$REGION --labels=k1=z1,k2=z2,k3=z3 
+gcloud alpha dataplex lakes create sensors --location=$REGION
 
 # Task 1 is completed
 # Add a zone to your lake
