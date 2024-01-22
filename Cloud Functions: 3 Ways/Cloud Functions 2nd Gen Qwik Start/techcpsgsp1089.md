@@ -282,6 +282,11 @@ gcloud run deploy slow-concurrent-function \
 --project=$DEVSHELL_PROJECT_ID \
  && gcloud run services update-traffic slow-concurrent-function --to-latest --region=$REGION
 ```
+## NOTE: go to Cloud Run
+## Click the slow-concurrent-function service.
+- Click Edit & Deploy New Revision
+- Click Done then Deploy
+## Just wait for Completed Deploy
 
 ## Congratulations, you're all done with the lab 😄
 
