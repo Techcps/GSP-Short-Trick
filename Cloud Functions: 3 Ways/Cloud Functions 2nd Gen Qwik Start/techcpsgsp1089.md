@@ -146,7 +146,7 @@ gcloud functions deploy nodejs-storage-function \
 
 ## NOTE: Go to IAM & Admin > Audit Logs
 ## Find the "Compute Engine API" and click the check box
-- On the info pane on the right,
+> On the info pane on the right
 - check Admin Read
 - check Data Read
 - check Data Write log types
