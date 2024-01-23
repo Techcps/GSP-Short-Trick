@@ -1,14 +1,14 @@
 
 
 export REGION=${ZONE::-2}
-
+export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 gcloud composer environments create composer-advanced-lab --location=$REGION --zone=$ZONE --image-version=composer-1.20.12-airflow-2.4.3 --python-version=3
 
 DAGS_BUCKET=$(gcloud storage buckets list --filter="name:$REGION" --format="value(name)")
 
 
-gsutil mb -l us gs://$DEVSHELL_PROJECT_ID-us
-gsutil mb -l eu gs://$DEVSHELL_PROJECT_ID--eu
+gsutil mb -l us gs://$PROJECT_ID-us
+gsutil mb -l eu gs://$PROJECT_ID--eu
 bq mk --dataset_id=nyc_tlc_EU --location=EU
 
 
