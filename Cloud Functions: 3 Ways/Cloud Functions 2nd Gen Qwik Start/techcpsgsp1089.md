@@ -1,6 +1,7 @@
 
 # Cloud Functions 2nd Gen: Qwik Start [GSP1089]
 
+# [ NEW! 2024, Updated solution ](https://youtu.be/Ya20I7QlikQ)
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
