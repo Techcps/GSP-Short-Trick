@@ -23,6 +23,8 @@ sudo chmod +x Techcpsgsp342.sh
 ./Techcpsgsp342.sh
 ```
 
+# It will take around 7 to 8 minutes to completed, Just wait 
+
 ## NOTE: Go to Compute Engine > Click SSH on orca-jumphost instance
 
 ```
@@ -32,10 +34,13 @@ export ZONE=
 export CLUSTER_NAME=
 ```
 ```
+export PROJECT_ID=
+```
+```
 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 echo "export USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> ~/.bashrc
 source ~/.bashrc
-gcloud container clusters get-credentials $CLUSTER_NAME --internal-ip --project "$DEVSHELL_PROJECT_ID" --zone $ZONE
+gcloud container clusters get-credentials $CLUSTER_NAME --internal-ip --project $PROJECT_ID --zone $ZONE
 kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
 kubectl expose deployment hello-server --name orca-hello-service --type LoadBalancer --port 80 --target-port 8080
 ```
