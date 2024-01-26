@@ -12,5 +12,3 @@ kubectl create deployment echo-web --image=gcr.io/qwiklabs-resources/echo-app:v2
 kubectl expose deployment echo-web --type=LoadBalancer --port 80 --target-port 8000
 
 kubectl scale deploy echo-web --replicas=2
-
-kubectl port-forward service/echo-web 8080:80
