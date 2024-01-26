@@ -23,9 +23,9 @@ sudo chmod +x Techcpsgsp342.sh
 ./Techcpsgsp342.sh
 ```
 
-# It will take around 7 to 8 minutes to completed, Just wait 
+## It will take around 7 to 8 minutes to completed, Just wait 
 
-## NOTE: Go to Compute Engine > Click SSH on orca-jumphost instance
+# NOTE: Go to Compute Engine > Click SSH on orca-jumphost instance
 
 ```
 export ZONE=
