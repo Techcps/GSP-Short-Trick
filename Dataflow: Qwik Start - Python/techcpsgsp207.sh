@@ -11,7 +11,7 @@ gcloud services enable dataflow.googleapis.com
 
 gcloud storage buckets create gs://$BUCKET_NAME --project=$PROJECT_ID --location=us
 
-docker run -it -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID python:3.9 /bin/bash
+docker run -it -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID python:3.9 /bin/bash -c
 
 pip install 'apache-beam[gcp]'==2.42.0
 
