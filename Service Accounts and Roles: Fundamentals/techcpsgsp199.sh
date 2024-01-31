@@ -38,11 +38,16 @@ pip3 install pandas
 pip3 install db-dtypes
 
 # create the example Python file
-echo "
+
+# query.py
+splitter
+echo "query.py"
+splitter
+cat << EOF_END
 from google.auth import compute_engine
 from google.cloud import bigquery
 credentials = compute_engine.Credentials(
-    service_account_email='bigquery-qwiklab@$(gcloud config get-value project).iam.gserviceaccount.com')
+    service_account_email='bigquery-qwiklab@$PROJECT_ID.iam.gserviceaccount.com')
 query = '''
 SELECT
   year,
@@ -55,10 +60,10 @@ GROUP BY
   year
 '''
 client = bigquery.Client(
-    project='$(gcloud config get-value project)',
+    project='$PROJECT_ID',
     credentials=credentials)
 print(client.query(query).to_dataframe())
-" > query.py
+EOF_END
 
 # The application now uses the permissions that are associated with this service account. Run the query with the following Python command
 python3 query.py
