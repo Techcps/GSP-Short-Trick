@@ -1,7 +1,7 @@
 
 
 gcloud auth list
-gcloud config list project
+export PROJECT_ID=$(gcloud config get-value project)
 
 export REGION=${ZONE%-*}
 gcloud config set compute/region $REGION
@@ -26,7 +26,7 @@ gcloud compute instances create bigquery-instance --project=$DEVSHELL_PROJECT_ID
 --service-account=bigquery-qwiklab@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com --scopes=https://www.googleapis.com/auth/cloud-platform \
 --create-disk=auto-delete=yes,boot=yes,device-name=bigquery-instance,image=projects/debian-cloud/global/images/debian-11-bullseye-v20231010,mode=rw,size=10,type=projects/$DEVSHELL_PROJECT_ID/zones/$ZONE/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
 
-gcloud compute ssh bigquery-instance --zone=$ZONE --quiet
+gcloud compute ssh "bigquery-instance" --zone "$ZONE" --quiet
 
 #  Install the necessary dependencies by running the following commands
 sudo apt-get update
