@@ -24,6 +24,8 @@ gcloud compute instances create bigquery-instance --project=$DEVSHELL_PROJECT_ID
 
 gcloud compute ssh "bigquery-instance" --zone "$ZONE" --quiet
 
+export PROJECT_ID=$(gcloud config get-value project)
+
 #  Install the necessary dependencies by running the following commands
 sudo apt-get update
 sudo apt-get install -y git python3-pip
