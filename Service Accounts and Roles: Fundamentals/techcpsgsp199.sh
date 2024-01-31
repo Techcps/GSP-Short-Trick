@@ -35,11 +35,7 @@ pip3 install db-dtypes
 
 # create the example Python file
 
-# query.py
-splitter
 echo "query.py"
-splitter
-cat << EOF_END
 from google.auth import compute_engine
 from google.cloud import bigquery
 credentials = compute_engine.Credentials(
