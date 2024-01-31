@@ -37,7 +37,7 @@ pip3 install db-dtypes
 
 # create the example Python file
 
-echo "query.py"
+echo '
 from google.auth import compute_engine
 from google.cloud import bigquery
 credentials = compute_engine.Credentials(
@@ -57,7 +57,7 @@ client = bigquery.Client(
     project='$PROJECT_ID',
     credentials=credentials)
 print(client.query(query).to_dataframe())
-EOF_END
+' > query.py
 
 # The application now uses the permissions that are associated with this service account. Run the query with the following Python command
 python3 query.py
