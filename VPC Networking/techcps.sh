@@ -1,7 +1,7 @@
 
-export REGION_1="${ZONE_1%-*}"
+export REGION_1=${ZONE_1%-*}
 
-export REGION_2="${ZONE_2%-*}"
+export REGION_2=${ZONE_2%-*}
 
 # Delete the all default network firewall rules
 gcloud compute firewall-rules delete default-allow-rdp --quiet
