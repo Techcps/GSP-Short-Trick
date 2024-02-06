@@ -16,17 +16,6 @@ sudo chmod +x techcps.sh
 ./techcps.sh
 ```
 
-## NOTE: Just wait for completed the above commands
-
-```
-gcloud compute ssh mc-server --zone=$ZONE --quiet
-echo "Project ID: $PROJECT_ID"
-export YOUR_BUCKET_NAME=$PROJECT_ID
-echo $YOUR_BUCKET_NAME
-gcloud storage buckets create gs://$YOUR_BUCKET_NAME-minecraft-backup
-echo YOUR_BUCKET_NAME=$YOUR_BUCKET_NAME >> ~/.profile
-cd /home/minecraft
-```
 ## Create a backup script
 
 ```
@@ -35,7 +24,7 @@ sudo nano /home/minecraft/backup.sh
 ```
 #!/bin/bash
 screen -r mcs -X stuff '/save-all\n/save-off\n'
-/usr/bin/gcloud storage cp -R ${BASH_SOURCE%/*}/world gs://${YOUR_BUCKET_NAME}-minecraft-backup/$(date "+%Y%m%d-%H%M%S")-world
+/usr/bin/gcloud storage cp -R ${BASH_SOURCE%/*}/world gs://${PROJECT_ID}-minecraft-backup/$(date "+%Y%m%d-%H%M%S")-world
 screen -r mcs -X stuff '/save-on\n'
 ```
 
