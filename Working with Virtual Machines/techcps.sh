@@ -20,3 +20,6 @@ GNU nano 5.4 eula.txt *
 #Tue Feb 06 06:45:46 UTC 2024
 eula=true
 EOF_END && sudo apt-get install -y screen && sudo screen -S mcs java -Xmx1024M -Xms1024M -jar server.jar nogui && sudo screen -r mcs && exit"
+
+gcloud compute ssh mc-server --zone=$ZONE --quiet --command "export PROJECT_ID=$(gcloud info --format='value(config.project)') && export BUCKET_NAME=$PROJECT_ID && echo $PROJECT_ID && gcloud storage buckets create gs://$PROJECT_ID-minecraft-backup && cd /home/minecraft"
+
