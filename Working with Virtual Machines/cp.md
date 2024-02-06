@@ -51,6 +51,7 @@ sudo crontab -e
 ```
 0 */4 * * * /home/minecraft/backup.sh
 ```
+## Press Ctrl+X and Y ENTER to save the file and exit the nono editer
 
 ```
 sudo screen -r -X stuff '/stop\n'
