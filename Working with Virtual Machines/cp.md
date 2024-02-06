@@ -47,7 +47,7 @@ sudo chmod 755 /home/minecraft/backup.sh
 ```
 sudo crontab -e
 ```
-
+## At the bottom of the cron table, paste the following line:
 ```
 0 */4 * * * /home/minecraft/backup.sh
 ```
