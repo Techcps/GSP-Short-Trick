@@ -59,7 +59,7 @@ sudo screen -r -X stuff '/stop\n'
 exit
 ```
 ```
-gcloud compute instances add-metadata mc-server  --zone=$ZONE --metadata project-id=$PROJECT_ID,startup-script-url=https://storage.googleapis.com/cloud-training/archinfra/mcserver/startup.sh,shutdown-script-url=https://storage.googleapis.com/cloud-training/archinfra/mcserver/shutdown.sh
+gcloud compute instances add-metadata mc-server --zone=$ZONE --metadata project-id=$PROJECT_ID,startup-script-url=https://storage.googleapis.com/cloud-training/archinfra/mcserver/startup.sh,shutdown-script-url=https://storage.googleapis.com/cloud-training/archinfra/mcserver/shutdown.sh
 ```
 
 ## Congratulations, you're all done with the lab 😄
