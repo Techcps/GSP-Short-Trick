@@ -19,6 +19,8 @@ sudo chmod +x techcps.sh
 
 ```
 gcloud compute ssh mc-server --zone=$ZONE --quiet
+```
+```
 sudo mkdir -p /home/minecraft
 sudo mkfs.ext4 -F -E lazy_itable_init=0,\
 lazy_journal_init=0,discard \
@@ -47,9 +49,13 @@ sudo nano eula.txt
 ## Create a backup script
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Working%20with%20Virtual%20Machines/buckets.sh
-sudo chmod +x buckets.sh
-./buckets.sh
+sudo apt-get install -y screen
+sudo screen -S mcs java -Xmx1024M -Xms1024M -jar server.jar nogui
+export PROJECT_ID=$(gcloud config get-value project)
+export BUCKET_NAME=$PROJECT_ID
+echo $PROJECT_ID && gcloud storage buckets create gs://$PROJECT_ID-minecraft-backup
+# echo BUCKET_NAME=$PROJECT_ID >> ~/.profile"
+cd /home/minecraft
 ```
 
 ```
@@ -58,7 +64,7 @@ sudo nano /home/minecraft/backup.sh
 ```
 #!/bin/bash
 screen -r mcs -X stuff '/save-all\n/save-off\n'
-/usr/bin/gcloud storage cp -R ${BASH_SOURCE%/*}/world gs://${DEVSHELL_PROJECT_ID}-minecraft-backup/$(date "+%Y%m%d-%H%M%S")-world
+/usr/bin/gcloud storage cp -R ${BASH_SOURCE%/*}/world gs://${PROJECT_ID}-minecraft-backup/$(date "+%Y%m%d-%H%M%S")-world
 screen -r mcs -X stuff '/save-on\n'
 ```
 
