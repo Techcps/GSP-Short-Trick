@@ -66,9 +66,10 @@ screen -r mcs -X stuff '/save-on\n'
 
 ```
 sudo chmod 755 /home/minecraft/backup.sh
+```
+```
 . /home/minecraft/backup.sh
 ```
-
 ```
 sudo crontab -e
 ```
