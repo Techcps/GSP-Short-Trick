@@ -50,7 +50,10 @@ sudo nano eula.txt
 
 ```
 sudo apt-get install -y screen
-sudo timeout 120s java -Xmx1024M -Xms1024M -jar server.jar nogui
+sudo screen -S mcs java -Xmx1024M -Xms1024M -jar server.jar nogui
+```
+## To detach the screen terminal, press Ctrl+A, Ctrl+D
+```
 export PROJECT_ID=$(gcloud config get-value project)
 export BUCKET_NAME=$PROJECT_ID
 echo $PROJECT_ID && gcloud storage buckets create gs://$PROJECT_ID-minecraft-backup
