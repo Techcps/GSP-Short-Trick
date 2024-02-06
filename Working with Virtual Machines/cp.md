@@ -31,7 +31,6 @@ sudo nano eula.txt
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Working%20with%20Virtual%20Machines/buckets.sh
 sudo chmod +x buckets.sh
 ./buckets.sh
-
 ```
 
 ```
