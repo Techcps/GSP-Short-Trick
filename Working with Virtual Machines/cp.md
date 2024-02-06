@@ -19,6 +19,8 @@ sudo chmod +x techcps.sh
 ## Create a backup script
 
 ```
+cd /home/minecraft
+
 sudo nano /home/minecraft/backup.sh
 ```
 ```
