@@ -13,9 +13,9 @@ gcloud projects remove-iam-policy-binding $PROJECT_ID --member=user:$USERNAME_2 
 
 gcloud projects add-iam-policy-binding $PROJECT_ID --member=user:$USERNAME_2 --role=roles/storage.objectViewer
 
-gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:read-bucket-objects@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/storage.objectViewer"
-
 gcloud iam service-accounts create read-bucket-objects --description="please like share & subscribe to techcps" --display-name="read-bucket-objects"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:read-bucket-objects@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/storage.objectViewer"
 
 gcloud iam service-accounts add-iam-policy-binding read-bucket-objects@$PROJECT_ID.iam.gserviceaccount.com --member=domain:altostrat.com --role=roles/iam.serviceAccountUser
 
