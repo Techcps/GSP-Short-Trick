@@ -3,13 +3,7 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-> In the GCP Console active your Cloud Shell and run the following commands:
-
-```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Weather%20Data%20in%20BigQuery/techcps.sh
-sudo chmod +x techcps.sh
-./techcps.sh
-```
+> Go to BigQuery editor and paste the given below query:
 
 ```
 SELECT
@@ -40,6 +34,14 @@ GROUP BY timestamp
 > Results size: check Allow large results (no size limit)
 
 > Click SAVE and RUN the query
+
+# In the GCP Console active your Cloud Shell and run the following commands:
+
+```
+curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Weather%20Data%20in%20BigQuery/techcps.sh
+sudo chmod +x techcps.sh
+./techcps.sh
+```
 
 ## Congratulations, you're all done with the lab 😄
 
