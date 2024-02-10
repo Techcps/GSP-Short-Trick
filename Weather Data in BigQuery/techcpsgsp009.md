@@ -1,4 +1,15 @@
 
+# Weather Data in BigQuery [GSP009]
+
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
+
+> In the GCP Console active your Cloud Shell and run the following commands:
+
+```
+curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Weather%20Data%20in%20BigQuery/techcps.sh
+sudo chmod +x techcps.sh
+./techcps.sh
+```
 
 ```
 SELECT
@@ -22,11 +33,14 @@ GROUP BY timestamp
 
 # NOTE: In the query EDITOR section, click More > Query settings.
 
--- Dataset: Type demos and select your dataset.
+> Dataset: Type demos and select your dataset.
 
--- Table Id: Type nyc_weather
+> Table Id: Type nyc_weather
 
-Results size: check Allow large results (no size limit)
+> Results size: check Allow large results (no size limit)
 
-Click SAVE
-Click RUN.
+> Click SAVE and RUN the query
+
+## Congratulations, you're all done with the lab 😄
+
+# Thanks for watching :)
