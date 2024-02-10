@@ -27,6 +27,8 @@ GROUP BY timestamp
 
 # NOTE: In the query EDITOR section, click More > Query settings.
 
+> Destination: select Set a destination table for query results
+
 > Dataset: Type demos and select your dataset.
 
 > Table Id: Type nyc_weather
