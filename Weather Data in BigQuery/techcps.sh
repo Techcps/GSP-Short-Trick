@@ -43,8 +43,6 @@ GROUP BY
 ORDER BY
   num_complaints DESC'
 
-bq mk demos
-
 bq query --use_legacy_sql=false 'SELECT
   -- Create a timestamp from the date components.
   timestamp(concat(year,"-",mo,"-",da)) as timestamp,
