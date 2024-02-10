@@ -3,7 +3,7 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
-> Go to BigQuery editor and paste the given below query:
+> Go to BigQuery > Click Create dataset named: demos
 
 ```
 SELECT
