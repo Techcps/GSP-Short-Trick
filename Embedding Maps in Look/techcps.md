@@ -1,7 +1,7 @@
 
 # Embedding Maps in Looker BI
 
-# Please like share & subscribe to [Techcps] (https://www.youtube.com/@techcps)
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
 
 
 > Main menu, Click on the Development mode
