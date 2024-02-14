@@ -100,7 +100,7 @@ done
 
 for vm in "${VMs[@]}"
 do
-    while ! gcloud compute ssh root@$vm --zone=us-east4-c --command "echo SSH to $vm succeeded"
+    while ! gcloud compute ssh root@$vm --zone=${ZONE} --command "echo SSH to $vm succeeded"
     do
         echo "Trying to SSH into $vm failed. Sleeping for 5 seconds. zzzZZzzZZ"
         sleep  5
