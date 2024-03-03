@@ -57,7 +57,9 @@ spec:
 EOF
 
 kubectl apply -f gb_frontend_ingress.yaml
+sleep 417
 BACKEND_SERVICE=$(gcloud compute backend-services list | grep NAME | cut -d ' ' -f2)
 gcloud compute backend-services get-health $BACKEND_SERVICE --global
-sleep 417
-kubectl get ingress gb-frontend-ingress
+BACKEND_SERVICE=$(gcloud compute backend-services list | grep NAME | cut -d ' ' -f2)
+gcloud compute backend-services get-health $BACKEND_SERVICE --global
+
