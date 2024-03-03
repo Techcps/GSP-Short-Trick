@@ -62,4 +62,4 @@ BACKEND_SERVICE=$(gcloud compute backend-services list | grep NAME | cut -d ' ' 
 gcloud compute backend-services get-health $BACKEND_SERVICE --global
 BACKEND_SERVICE=$(gcloud compute backend-services list | grep NAME | cut -d ' ' -f2)
 gcloud compute backend-services get-health $BACKEND_SERVICE --global
-
+kubectl get ingress gb-frontend-ingress
