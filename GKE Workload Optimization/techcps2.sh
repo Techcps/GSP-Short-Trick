@@ -1,3 +1,4 @@
+
 gsutil -m cp -r gs://spls/gsp769/locust-image .
 
 gcloud builds submit \
@@ -91,7 +92,7 @@ kubectl describe pod readiness-demo-pod | grep ^Conditions -A 5
 
 kubectl delete pod gb-frontend
 
-cat > gb_frontend_deployment.yaml <<EOF_END
+cat << EOF > gb_frontend_deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -110,7 +111,7 @@ spec:
     spec:
       containers:
         - name: gb-frontend
-          image: gcr.io/google-samples/gb-frontend:v5
+          image: gcr.io/google-samples/gb-frontend-amd64:v5
           resources:
             requests:
               cpu: 100m
@@ -118,6 +119,6 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
-EOF_END
+EOF
 
 kubectl apply -f gb_frontend_deployment.yaml
