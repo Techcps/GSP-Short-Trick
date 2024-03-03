@@ -1,14 +1,14 @@
-
 gsutil -m cp -r gs://spls/gsp769/locust-image .
+
 gcloud builds submit \
     --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/locust-tasks:latest locust-image
 
-gcloud container images list
 gsutil cp gs://spls/gsp769/locust_deploy_v2.yaml .
 sed 's/${GOOGLE_CLOUD_PROJECT}/'$GOOGLE_CLOUD_PROJECT'/g' locust_deploy_v2.yaml | kubectl apply -f -
+
 kubectl get service locust-main
 
-cat << EOF > liveness-demo.yaml
+cat > liveness-demo.yaml <<EOF_END
 apiVersion: v1
 kind: Pod
 metadata:
@@ -30,14 +30,17 @@ spec:
         - /tmp/alive
       initialDelaySeconds: 5
       periodSeconds: 10
-EOF
+EOF_END
 
 kubectl apply -f liveness-demo.yaml
-kubectl describe pod liveness-demo-pod
-kubectl exec liveness-demo-pod -- rm /tmp/alive
+
 kubectl describe pod liveness-demo-pod
 
-cat << EOF > readiness-demo.yaml
+kubectl exec liveness-demo-pod -- rm /tmp/alive
+
+kubectl describe pod liveness-demo-pod
+
+cat > gb_frontend_deployment.yaml <<EOF_END
 apiVersion: v1
 kind: Pod
 metadata:
@@ -72,18 +75,23 @@ spec:
       protocol: TCP
   selector:
     demo: readiness-probe
-EOF
+EOF_END
 
 kubectl apply -f readiness-demo.yaml
-sleep 17
+
 kubectl get service readiness-demo-svc
+
 kubectl describe pod readiness-demo-pod
-sleep 30
+
+sleep 45
+
 kubectl exec readiness-demo-pod -- touch /tmp/healthz
+
 kubectl describe pod readiness-demo-pod | grep ^Conditions -A 5
+
 kubectl delete pod gb-frontend
 
-cat << EOF > gb_frontend_deployment.yaml
+cat > gb_frontend_deployment.yaml <<EOF_END
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -102,7 +110,7 @@ spec:
     spec:
       containers:
         - name: gb-frontend
-          image: gcr.io/google-samples/gb-frontend-amd64:v5
+          image: gcr.io/google-samples/gb-frontend:v5
           resources:
             requests:
               cpu: 100m
@@ -110,6 +118,6 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
-EOF
+EOF_END
 
 kubectl apply -f gb_frontend_deployment.yaml
