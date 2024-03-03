@@ -75,9 +75,10 @@ spec:
 EOF
 
 kubectl apply -f readiness-demo.yaml
-sleep 30
+sleep 17
 kubectl get service readiness-demo-svc
 kubectl describe pod readiness-demo-pod
+sleep 30
 kubectl exec readiness-demo-pod -- touch /tmp/healthz
 kubectl describe pod readiness-demo-pod | grep ^Conditions -A 5
 kubectl delete pod gb-frontend
@@ -110,3 +111,5 @@ spec:
             - containerPort: 80
               protocol: TCP
 EOF
+
+kubectl apply -f gb_frontend_deployment.yaml
