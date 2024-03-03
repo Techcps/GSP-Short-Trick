@@ -1,5 +1,5 @@
 
-cat > request.json <<EOF_CP
+cat > request.json <<EOF
 {
   "config": {
       "encoding":"FLAC",
@@ -9,7 +9,7 @@ cat > request.json <<EOF_CP
       "uri":"gs://cloud-samples-tests/speech/brooklyn.flac"
   }
 }
-EOF_CP
+EOF
 
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
 "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}"
