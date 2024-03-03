@@ -41,7 +41,7 @@ kubectl exec liveness-demo-pod -- rm /tmp/alive
 
 kubectl describe pod liveness-demo-pod
 
-cat > gb_frontend_deployment.yaml <<EOF_END
+cat << EOF > readiness-demo.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -76,7 +76,7 @@ spec:
       protocol: TCP
   selector:
     demo: readiness-probe
-EOF_END
+EOF
 
 kubectl apply -f readiness-demo.yaml
 
