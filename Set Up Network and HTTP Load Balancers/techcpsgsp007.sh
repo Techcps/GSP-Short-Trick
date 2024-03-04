@@ -6,43 +6,43 @@ export REGION=${ZONE%-*}
 gcloud config set compute/region $REGION
 gcloud config set compute/zone $ZONE
 
-  gcloud compute instances create www1 \
-    --zone=$ZONE \
-    --tags=network-lb-tag \
-    --machine-type=e2-small \
-    --image-family=debian-11 \
-    --image-project=debian-cloud \
-    --metadata=startup-script='#!/bin/bash
-      apt-get update
-      apt-get install apache2 -y
-      service apache2 restart
-      echo "
+gcloud compute instances create www1 \
+  --zone=$ZONE \
+  --tags=network-lb-tag \
+  --machine-type=e2-small \
+  --image-family=debian-11 \
+  --image-project=debian-cloud \
+  --metadata=startup-script='#!/bin/bash
+    apt-get update
+    apt-get install apache2 -y
+    service apache2 restart
+    echo "
 <h3>Web Server: www1</h3>" | tee /var/www/html/index.html'
 
-  gcloud compute instances create www2 \
-    --zone=$ZONE \
-    --tags=network-lb-tag \
-    --machine-type=e2-small \
-    --image-family=debian-11 \
-    --image-project=debian-cloud \
-    --metadata=startup-script='#!/bin/bash
-      apt-get update
-      apt-get install apache2 -y
-      service apache2 restart
-      echo "
+gcloud compute instances create www2 \
+  --zone=$ZONE \
+  --tags=network-lb-tag \
+  --machine-type=e2-small \
+  --image-family=debian-11 \
+  --image-project=debian-cloud \
+  --metadata=startup-script='#!/bin/bash
+    apt-get update
+    apt-get install apache2 -y
+    service apache2 restart
+    echo "
 <h3>Web Server: www2</h3>" | tee /var/www/html/index.html'
 
-  gcloud compute instances create www3 \
-    --zone=$ZONE  \
-    --tags=network-lb-tag \
-    --machine-type=e2-small \
-    --image-family=debian-11 \
-    --image-project=debian-cloud \
-    --metadata=startup-script='#!/bin/bash
-      apt-get update
-      apt-get install apache2 -y
-      service apache2 restart
-      echo "
+gcloud compute instances create www3 \
+  --zone=$ZONE  \
+  --tags=network-lb-tag \
+  --machine-type=e2-small \
+  --image-family=debian-11 \
+  --image-project=debian-cloud \
+  --metadata=startup-script='#!/bin/bash
+    apt-get update
+    apt-get install apache2 -y
+    service apache2 restart
+    echo "
 <h3>Web Server: www3</h3>" | tee /var/www/html/index.html'
 
 gcloud compute firewall-rules create www-firewall-network-lb \
