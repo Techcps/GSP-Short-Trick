@@ -7,7 +7,7 @@ gcloud config list --format 'value(core.project)'
 
 cd examples/simple_project
 
-cat > variables.tf <<EOF_END
+cat > variables.tf <<EOF
 variable "project_id" {
   description = "The project ID to host the network in"
   default     = "$DEVSHELL_PROJECT_ID"
@@ -17,7 +17,7 @@ variable "network_name" {
   description = "The name of the VPC network being created"
   default     = "example-vpc"
 }
-EOF_END
+EOF
 
 terraform init
 terraform apply --auto-approve
@@ -56,14 +56,14 @@ wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Interact%2
 cd ~
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Interact%20with%20Terraform%20Modules/main.tf
 
-cat > outputs.tf <<EOF_END
+cat > outputs.tf <<EOF
 output "bucket-name" {
   description = "Bucket names."
   value       = "module.gcs-static-website-bucket.bucket"
 }
-EOF_END
+EOF
 
-cat > variables.tf <<EOF_END
+cat > variables.tf <<EOF
 variable "project_id" {
   description = "The ID of the project in which to provision resources."
   type        = string
@@ -74,7 +74,7 @@ variable "name" {
   type        = string
   default     = "$DEVSHELL_PROJECT_ID"
 }
-EOF_END
+EOF
 
 terraform init
 terraform apply --auto-approve
