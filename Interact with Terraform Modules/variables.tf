@@ -1,4 +1,3 @@
-cat > variables.tf <<EOF_END
 variable "name" {
   description = "The name of the bucket."
   type        = string
@@ -76,4 +75,3 @@ variable "lifecycle_rules" {
   }))
   default = []
 }
-EOF_END
