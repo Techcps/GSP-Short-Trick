@@ -17,7 +17,6 @@ gcloud iam roles create devops --project $PROJECTID2 --permissions "compute.inst
 gcloud projects add-iam-policy-binding $PROJECT_ID2 --member user:$USER2 --role=roles/iam.serviceAccountUser
 gcloud projects add-iam-policy-binding $PROJECT_ID2 --member user:$USER2 --role=projects/$PROJECT_ID2/roles/devops
 gcloud config configurations activate user2
-gcloud compute instances create lab-2 --machine-type=e2-standard-2
 gcloud compute instances list
 gcloud config configurations activate default
 gcloud config set project $PROJECT_ID2
