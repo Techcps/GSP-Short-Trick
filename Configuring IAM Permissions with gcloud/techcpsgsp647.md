@@ -10,7 +10,7 @@ export ZONE=
 gcloud compute ssh centos-clean --zone=$ZONE --quiet
 ```
 ```
-gcloud compute instances create lab-1 --zone=$ZONE --machine-type=e2-standard-2
+gcloud compute instances create lab-1 --zone $ZONE --machine-type=e2-standard-2
 ```
 ## Change your current zone for another zone in the same region
 >  For example, if your current zone is us-central1-a, you could select us-central1-b or "c" or "d"
