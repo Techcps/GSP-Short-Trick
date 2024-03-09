@@ -1,7 +1,4 @@
 
-gcloud compute ssh lab-vm --zone $ZONE --quiet
-
-
 export DOCKER_TAG=gcr.io/ql-shared-resources-test/defect_solution@sha256:776fd8c65304ac017f5b9a986a1b8189695b7abbff6aa0e4ef693c46c7122f4c
 
 export VISERVING_CPU_DOCKER_WITH_MODEL=${DOCKER_TAG}
