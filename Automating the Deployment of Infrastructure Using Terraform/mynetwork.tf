@@ -34,6 +34,6 @@ module "mynet-us-vm" {
 module "mynet-eu-vm" {
   source              = "./instance"
   instance_name       = "mynet-eu-vm"
-  instance_zone       = "europe-west1-d"
+  instance_zone       = "europe-west4-c"
   instance_subnetwork = google_compute_network.mynetwork.self_link
 }
