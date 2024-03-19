@@ -87,9 +87,12 @@ cat > manifest.json << EOF_CP
 EOF_CP
 
 gsutil mb gs://$DEVSHELL_PROJECT_ID
-touch emptyfile
-gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/emptyfile
+
+touch subscribe_to_techcps
+gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/subscribe_to_techcps
+
 gsutil cp Customer_List_500.csv gs://$DEVSHELL_PROJECT_ID
+
 gsutil cp manifest.json gs://$DEVSHELL_PROJECT_ID
 
 sleep 100
