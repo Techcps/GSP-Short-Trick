@@ -76,6 +76,8 @@ gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/emptyfile
 gsutil cp Customer_List_500.csv gs://$DEVSHELL_PROJECT_ID
 gsutil cp manifest.json gs://$DEVSHELL_PROJECT_ID
 
+sleep 100
+
 gcloud dataflow jobs run techcps --gcs-location gs://dataflow-templates-us-central1/latest/GCS_Text_to_Cloud_Spanner --region us-central1 --staging-location gs://$DEVSHELL_PROJECT_ID/tmp/ --parameters instanceId=banking-ops-instance,databaseId=banking-ops-db,importManifest=gs://$DEVSHELL_PROJECT_ID/manifest.json
 
 gcloud spanner databases ddl update banking-ops-db --instance=banking-ops-instance --ddl='ALTER TABLE Category ADD COLUMN MarketingBudget INT64;'
