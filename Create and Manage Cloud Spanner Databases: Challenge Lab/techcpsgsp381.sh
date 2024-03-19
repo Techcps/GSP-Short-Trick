@@ -68,7 +68,23 @@ curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Create%20and%2
 gcloud services disable dataflow.googleapis.com --force
 gcloud services enable dataflow.googleapis.com
 
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Create%20and%20Manage%20Cloud%20Spanner%20Databases%3A%20Challenge%20Lab/manifest.json
+cat > manifest.json << EOF_CP
+{
+  "tables": [
+    {
+      "table_name": "Customer",
+      "file_patterns": [
+        "gs://$DEVSHELL_PROJECT_ID/Customer_List_500.csv"
+      ],
+      "columns": [
+        {"column_name" : "CustomerId", "type_name" : "STRING" },
+        {"column_name" : "Name", "type_name" : "STRING" },
+        {"column_name" : "Location", "type_name" : "STRING" }
+      ]
+    }
+  ]
+}
+EOF_CP
 
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 touch emptyfile
