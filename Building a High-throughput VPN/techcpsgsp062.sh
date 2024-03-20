@@ -50,6 +50,6 @@ gcloud compute instances create "cloud-loadtest" --project=$DEVSHELL_PROJECT_ID 
 
 gcloud compute instances create "on-prem-loadtest" --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --machine-type "e2-standard-4" --subnet "on-prem-central" --image-family "debian-11" --image-project "debian-cloud" --boot-disk-size "10" --boot-disk-type "pd-standard" --boot-disk-device-name "on-prem-loadtest"
 
-gcloud compute ssh cloud-loadtest --zone=$ZONE2 --project=$DEVSHELL_PROJECT_ID --quiet --command "sudo apt-get install iperf && iperf -c 192.168.1.2 -P 20 -x C"
+timeout 60s gcloud compute ssh cloud-loadtest --zone=$ZONE2 --project=$DEVSHELL_PROJECT_ID --quiet --command "sudo apt-get install iperf && iperf -c 192.168.1.2 -P 20 -x C"
 
-gcloud compute ssh on-prem-loadtest --zone=$ZONE --project=$DEVSHELL_PROJECT_ID --quiet --command "sudo apt-get install iperf && iperf -s -i 5"
+timeout 60s gcloud compute ssh on-prem-loadtest --zone=$ZONE --project=$DEVSHELL_PROJECT_ID --quiet --command "sudo apt-get install iperf && iperf -s -i 5"
