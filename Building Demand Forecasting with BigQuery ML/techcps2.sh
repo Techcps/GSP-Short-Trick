@@ -15,8 +15,6 @@ bq query --use_legacy_sql=false \
   FROM
     bqmlforecast.training_data"
 
-
-
 bq query --use_legacy_sql=false \
 "SELECT
   *
