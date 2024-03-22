@@ -52,6 +52,8 @@ gcloud compute instance-templates create fancy-fe --source-instance-zone=$ZONE -
 
 gcloud compute instance-templates create fancy-be --source-instance-zone=$ZONE --source-instance=backend
 
+sleep 30
+
 gcloud compute instance-templates list
 
 sleep 60
