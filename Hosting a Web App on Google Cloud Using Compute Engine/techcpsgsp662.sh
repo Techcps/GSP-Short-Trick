@@ -9,9 +9,6 @@ git clone https://github.com/googlecodelabs/monolith-to-microservices.git
 cd ~/monolith-to-microservices
 ./setup.sh
 nvm install --lts
-cd microservices
-npm start
-touch ~/monolith-to-microservices/startup-script.sh
 
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Hosting%20a%20Web%20App%20on%20Google%20Cloud%20Using%20Compute%20Engine/startup-script.sh
 
@@ -45,6 +42,8 @@ gcloud compute firewall-rules create fw-be --allow tcp:8081-8082 --target-tags=b
 
 gcloud compute instances list
 
+# Task 4 is completed & like share and subscribe to techcps
+
 gcloud compute instances stop frontend --zone=$ZONE
 
 gcloud compute instances stop backend --zone=$ZONE
@@ -75,19 +74,21 @@ gcloud compute instance-groups managed update fancy-fe-mig --zone=$ZONE --health
 
 gcloud compute instance-groups managed update fancy-be-mig --zone=$ZONE --health-check fancy-be-hc --initial-delay 300
 
+# Task 5 is completed & subscribe to techcps
+
 gcloud compute http-health-checks create fancy-fe-frontend-hc \
-  --request-path / \
-  --port 8080
+--request-path / \
+--port 8080
 
 gcloud compute http-health-checks create fancy-be-orders-hc \
-  --request-path /api/orders \
-  --port 8081
+--request-path /api/orders \
+--port 8081
 
 gcloud compute http-health-checks create fancy-be-products-hc \
-  --request-path /api/products \
-  --port 8082
+--request-path /api/products \
+--port 8082
 
-gcloud compute backend-services create fancy-fe-frontend --http-health-checks fancy-fe-frontend-hc --port-name frontend --global      
+gcloud compute backend-services create fancy-fe-frontend --http-health-checks fancy-fe-frontend-hc --port-name frontend --global
 
 gcloud compute backend-services create fancy-be-orders --http-health-checks fancy-be-orders-hc --port-name orders --global
 
@@ -106,8 +107,6 @@ gcloud compute url-maps add-path-matcher fancy-map --default-service fancy-fe-fr
 gcloud compute target-http-proxies create fancy-proxy --url-map fancy-map
 
 gcloud compute forwarding-rules create fancy-http-rule --global --target-http-proxy fancy-proxy --ports 80
-
-sleep 17
 
 cd ~/monolith-to-microservices/react-app/
 
@@ -132,15 +131,14 @@ gsutil -m cp -r monolith-to-microservices gs://fancy-store-$DEVSHELL_PROJECT_ID/
 
 gcloud compute instance-groups managed rolling-action replace fancy-fe-mig --zone=$ZONE --max-unavailable 100%
 
-watch -n 2 gcloud compute backend-services get-health fancy-fe-frontend --global
 
 gcloud compute instance-groups managed set-autoscaling \
-  fancy-fe-mig \
-  --zone=$ZONE --max-num-replicas 2 --target-load-balancing-utilization 0.60
+fancy-fe-mig \
+--zone=$ZONE --max-num-replicas 2 --target-load-balancing-utilization 0.60
 
 gcloud compute instance-groups managed set-autoscaling \
-  fancy-be-mig \
-  --zone=$ZONE --max-num-replicas 2 --target-load-balancing-utilization 0.60
+fancy-be-mig \
+--zone=$ZONE --max-num-replicas 2 --target-load-balancing-utilization 0.60
 
 gcloud compute backend-services update fancy-fe-frontend --enable-cdn --global
 
