@@ -74,6 +74,8 @@ gcloud compute instance-groups managed update fancy-fe-mig --zone=$ZONE --health
 
 gcloud compute instance-groups managed update fancy-be-mig --zone=$ZONE --health-check fancy-be-hc --initial-delay 300
 
+sleep 100
+
 # Task 5 is completed & subscribe to techcps
 
 gcloud compute http-health-checks create fancy-fe-frontend-hc \
