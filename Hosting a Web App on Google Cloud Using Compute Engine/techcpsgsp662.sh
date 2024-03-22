@@ -54,6 +54,8 @@ gcloud compute instance-templates create fancy-be --source-instance-zone=$ZONE -
 
 gcloud compute instance-templates list
 
+sleep 60
+
 gcloud compute instances delete backend --zone=$ZONE --quiet
 
 gcloud compute instance-groups managed create fancy-fe-mig --zone=$ZONE --base-instance-name fancy-fe --size 2 --template fancy-fe
