@@ -21,7 +21,7 @@ bq query --location=us --use_legacy_sql=false --use_cache=false \
  order by 2 desc
  LIMIT 10'
 
-sleep 180
+sleep 300
 
 bq query --use_legacy_sql=false "
 CREATE OR REPLACE VIEW
