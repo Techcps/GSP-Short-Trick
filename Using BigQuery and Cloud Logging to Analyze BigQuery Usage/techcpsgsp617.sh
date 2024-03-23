@@ -1,4 +1,11 @@
 
+bq mk bq_logs
+bq query --use_legacy_sql=false "SELECT current_date()"
+
+# Create the sink with a correct log filter
+gcloud logging sinks create jobcomplete bigquery.googleapis.com/projects/$DEVSHELL_PROJECT_ID/datasets/bq_logs --log-filter='resource.type="bigquery_resource" AND protoPayload.methodName="jobservice.jobcompleted"'
+
+
 bq query --location=us --use_legacy_sql=false --use_cache=false \
 'SELECT fullName, AVG(CL.numberOfYears) avgyears
  FROM `qwiklabs-resources.qlbqsamples.persons_living`, UNNEST(citiesLived) as CL
@@ -20,6 +27,8 @@ bq query --location=us --use_legacy_sql=false --use_cache=false \
  group by 1
  order by 2 desc
  LIMIT 10'
+
+sleep 300
 
 bq query --use_legacy_sql=false "
 CREATE OR REPLACE VIEW
