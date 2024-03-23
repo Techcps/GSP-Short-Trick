@@ -3,7 +3,8 @@ bq mk bq_logs
 bq query --use_legacy_sql=false "SELECT current_date()"
 
 # Create the sink with a correct log filter
-gcloud logging sinks create jobcomplete bigquery.googleapis.com/projects/$DEVSHELL_PROJECT_ID/datasets/bq_logs --log-filter='resource.type="bigquery_resource" AND protoPayload.methodName="jobservice.jobcompleted"'
+gcloud logging sinks create jobcomplete bigquery.googleapis.com/projects/$DEVSHELL_PROJECT_ID/datasets/bq_logs --log-filter='resource.type="bigquery_resource"
+protoPayload.methodName="jobservice.jobcompleted"'
 
 
 bq query --location=us --use_legacy_sql=false --use_cache=false \
