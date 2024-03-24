@@ -3,7 +3,7 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-# Task 1
+# Task 1 > BigQuery > BigQuery Studio
 ```
 SELECT * FROM (
 SELECT *, ROW_NUMBER() OVER (PARTITION BY state_code ORDER BY area_land_meters DESC) AS cities_by_area
@@ -12,7 +12,7 @@ WHERE cities_by_area <= 10 ORDER BY cities.state_code
 LIMIT 1000;
 ```
 
-# Task 2
+# Task 2 > BigQuery > BigQuery Studio
 ```
 SELECT *
 FROM `qwiklabs-gcp-03-8a8dca00a19b.demo_dataset.authorized_table`
@@ -29,7 +29,7 @@ Table Name:
 type authorized_view
 ```
 
-# Task 3
+# Task 3 > BigQuery > BigQuery Studio
 ```
 SELECT cities.zip_code, cities.city, cities.state_code, customers.last_name, customers.first_name
 FROM `qwiklabs-gcp-02-0a6a346bea1f.customer_dataset.customer_info` as customers
