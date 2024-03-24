@@ -24,7 +24,7 @@ LIMIT 1000
 ```
 data_publisher_dataset
 ```
-Table Name:
+## Table Name:
 ```
 type authorized_view
 ```
