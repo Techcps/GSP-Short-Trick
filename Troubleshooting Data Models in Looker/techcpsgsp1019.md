@@ -1,10 +1,13 @@
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Troubleshooting Data Models in Looker [GSP1019]
 
-CREATE NEW FILE NAME :- user_order_lifetime
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-
-
+# CREATE NEW FILE NAME: 
+```
+user_order_lifetime
+```
+```
 view: user_order_lifetime {
   derived_table: {
     sql: SELECT
@@ -42,17 +45,10 @@ view: user_order_lifetime {
     fields: [user_id, lifetime_orders, lifetime_sales]
   }
 }
+```
 
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-FILE NAME :-  users
-
-
-
+# FILE NAME:  users
+```
 view: users {
   sql_table_name: `cloud-training-demos.looker_ecomm.users`
     ;;
@@ -152,20 +148,16 @@ view: users {
     value_format_name: usd
   }
 
-
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, events.count, order_items.count]
   }
 }
+```
 
+# FILE NAME: training_ecommerce.model
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-FILE NAME :- training_ecommerce.model
-
-
+```
 connection: "bigquery_public_data_looker"
 
 # include all the views
@@ -192,9 +184,6 @@ explore: order_items {
     sql_on: ${order_items.user_id} = ${user_order_lifetime.user_id} ;;
     relationship: many_to_one
   }
-  
-  
-  
   
   join: users {
     type: left_outer
@@ -250,13 +239,7 @@ explore: events {
   }
   
 }
+```
+## Congratulations, you're all done with the lab 😄
 
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-                           Congratulations, you're all done with the lab 😄 Don't forget to subscribe our YouTube Channel😄
-                                        
-                                                                 Thanks for watching.!
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Thanks for watching :)
