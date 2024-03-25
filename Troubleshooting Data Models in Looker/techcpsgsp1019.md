@@ -47,7 +47,7 @@ view: user_order_lifetime {
 }
 ```
 
-# FILE NAME:  users
+# FILE NAME:  users.view
 ```
 view: users {
   sql_table_name: `cloud-training-demos.looker_ecomm.users`
