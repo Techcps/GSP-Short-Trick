@@ -1,7 +1,7 @@
 
 # Detect and Investigate Threats with Security Command Center [GSP1125]
 
-## Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
 ## Note: Go to "IAM & Admin" > "Audit Logs".
 * Click the findbar and type: "Cloud Resource Manager API"
