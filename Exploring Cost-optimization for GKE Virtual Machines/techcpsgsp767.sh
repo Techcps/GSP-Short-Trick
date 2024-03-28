@@ -64,5 +64,7 @@ EOF
 
 kubectl apply -f pod-2.yaml
 
+sleep 17
+
 kubectl get pod pod-1 pod-2 --output wide
 
