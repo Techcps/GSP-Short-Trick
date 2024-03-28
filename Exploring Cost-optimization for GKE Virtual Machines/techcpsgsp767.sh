@@ -4,7 +4,7 @@ gcloud container clusters get-credentials hello-demo-cluster --zone "$ZONE"
 
 kubectl scale deployment hello-server --replicas=2
 
-gcloud container clusters resize hello-demo-cluster --node-pool my-node-pool --num-nodes 3 --zone "$ZONE"
+gcloud container clusters resize hello-demo-cluster --node-pool my-node-pool --num-nodes 3 --zone "$ZONE" --quiet
 
 gcloud container node-pools create larger-pool --cluster=hello-demo-cluster --machine-type=e2-standard-2 --num-nodes=1 --zone="$ZONE"
 
