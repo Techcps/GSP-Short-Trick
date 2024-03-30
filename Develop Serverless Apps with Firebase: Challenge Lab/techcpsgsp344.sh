@@ -42,12 +42,13 @@ curl -X GET $SERVICE_URL/2019
 
 npm install && npm run build
 
+cd ~/pet-theory/lab06/firebase-frontend
+
 gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/frontend-staging:0.1 .
 
 gcloud run deploy $FRONTEND_STAGING_SERVICE --image gcr.io/$DEVSHELL_PROJECT_ID/frontend-staging:0.1 --platform managed --region=$REGION --max-instances 1 --allow-unauthenticated --quiet
 
-gcloud run services describe $FRONTEND_STAGING_SERVICE --format="value(status.url)"
+gcloud run services describe $FRONTEND_STAGING_SERVICE --region=$REGION --format="value(status.url)"
 
 gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/frontend-production:0.1
 gcloud run deploy $FRONTEND_PRODUCTION_SERVICE --image gcr.io/$DEVSHELL_PROJECT_ID/frontend-production:0.1 --platform managed --region=$REGION --max-instances=1 --quiet
-
