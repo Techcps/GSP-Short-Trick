@@ -1,5 +1,6 @@
 
 export REGION=${ZONE%-*}
+export PROJECT_ID=$(gcloud config get-value project)
 
 cat > main.tf << EOF_CP
 terraform {
@@ -9,13 +10,12 @@ terraform {
     }
   }
 }
-
 provider "google" {
-  project = "$DEVSHELL_PROJECT_ID"
+  version = "3.5.0"
+  project = "$PROJECT_ID"
   region  = "$REGION"
   zone    = "$ZONE"
 }
-
 resource "google_compute_instance" "terraform" {
   name         = "terraform"
   machine_type = "e2-micro"
@@ -36,8 +36,6 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 
-sleep 17
-
 cat > main.tf << EOF_CP
 terraform {
   required_providers {
@@ -46,13 +44,12 @@ terraform {
     }
   }
 }
-
 provider "google" {
-  project = "$DEVSHELL_PROJECT_ID"
+  version = "3.5.0"
+  project = "$PROJECT_ID"
   region  = "$REGION"
   zone    = "$ZONE"
 }
-
 resource "google_compute_instance" "terraform" {
   name         = "terraform"
   machine_type = "e2-micro"
@@ -73,8 +70,6 @@ EOF_CP
 terraform plan
 terraform apply -auto-approve
 
-sleep 17
-
 cat > main.tf << EOF_CP
 terraform {
   required_providers {
@@ -83,13 +78,12 @@ terraform {
     }
   }
 }
-
 provider "google" {
-  project = "$DEVSHELL_PROJECT_ID"
+  version = "3.5.0"
+  project = "$PROJECT_ID"
   region  = "$REGION"
   zone    = "$ZONE"
 }
-
 resource "google_compute_instance" "terraform" {
   name         = "terraform"
   machine_type = "e2-medium"
@@ -101,7 +95,6 @@ resource "google_compute_instance" "terraform" {
       image = "debian-cloud/debian-11"
     }
   }
-
   network_interface {
     network = "default"
     access_config {
@@ -113,7 +106,4 @@ EOF_CP
 
 terraform plan
 terraform apply -auto-approve
-
-sleep 5
-
 terraform destroy -auto-approve
