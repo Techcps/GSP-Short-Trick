@@ -36,6 +36,7 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 
+sleep 17
 
 cat > main.tf << EOF_CP
 terraform {
@@ -71,6 +72,8 @@ EOF_CP
 
 terraform plan
 terraform apply -auto-approve
+
+sleep 17
 
 cat > main.tf << EOF_CP
 terraform {
@@ -110,5 +113,7 @@ EOF_CP
 
 terraform plan
 terraform apply -auto-approve
+
+sleep 5
 
 terraform destroy -auto-approve
