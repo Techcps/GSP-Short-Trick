@@ -2,6 +2,8 @@
 export REGION=${ZONE%-*}
 export PROJECT_ID=$(gcloud config get-value project)
 
+terraform --version
+
 cat > main.tf << EOF_CP
 terraform {
   required_providers {
@@ -11,7 +13,6 @@ terraform {
   }
 }
 provider "google" {
-  version = "3.5.0"
   project = "$PROJECT_ID"
   region  = "$REGION"
   zone    = "$ZONE"
@@ -45,7 +46,6 @@ terraform {
   }
 }
 provider "google" {
-  version = "3.5.0"
   project = "$PROJECT_ID"
   region  = "$REGION"
   zone    = "$ZONE"
