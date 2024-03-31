@@ -1,4 +1,7 @@
 
+export REGION=${ZONE%-*}
+export PROJECT_ID=$(gcloud config get-value project)
+
 cat > main.tf << EOF_CP
 terraform {
   required_providers {
