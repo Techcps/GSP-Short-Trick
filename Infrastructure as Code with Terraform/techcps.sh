@@ -103,3 +103,6 @@ resource "google_compute_instance" "terraform" {
   allow_stopping_for_update = true
 }
 EOF_CP
+
+terraform plan
+terraform apply -auto-approve
