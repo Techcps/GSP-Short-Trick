@@ -6,15 +6,17 @@ docker container ls
 
 gsutil cp gs://cloud-training/gsp895/prediction_script.py .
 
-gsutil mb gs://${DEVSHELL_PROJECT_ID}
-
+export PROJECT_ID=$(gcloud config get-value core/project)
+gsutil mb gs://${PROJECT_ID}
 gsutil -m cp gs://cloud-training/gsp897/cosmetic-test-data/*.png \
-gs://${DEVSHELL_PROJECT_ID}/cosmetic-test-data/
-gsutil cp gs://${DEVSHELL_PROJECT_ID}/cosmetic-test-data/IMG_07703.png .
+gs://${PROJECT_ID}/cosmetic-test-data/
+gsutil cp gs://${PROJECT_ID}/cosmetic-test-data/IMG_07703.png .
+
 
 python3 ./prediction_script.py --input_image_file=./IMG_07703.png  --port=8602 --output_result_file=$DEFECTIVE_NAME
 
-gsutil cp gs://${DEVSHELL_PROJECT_ID}/cosmetic-test-data/IMG_0769.png .
+export PROJECT_ID=$(gcloud config get-value core/project)
+gsutil cp gs://${PROJECT_ID}/cosmetic-test-data/IMG_0769.png .
 
 python3 ./prediction_script.py --input_image_file=./IMG_0769.png  --port=8602 --output_result_file=$NON_DEFECTIVE_NAME
 
