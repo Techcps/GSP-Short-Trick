@@ -1,9 +1,7 @@
 
-
 gcloud iam service-accounts create sqlserver2dc-credentials \
 --display-name  "Service Account for SQL Server to Data Catalog connector" \
 --project $DEVSHELL_PROJECT_ID
-
 
 gcloud iam service-accounts keys create "sqlserver2dc-credentials.json" \
 --iam-account "sqlserver2dc-credentials@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com"
@@ -22,7 +20,6 @@ password=$(terraform output -raw password)
 database=$(terraform output -raw db_name)
 
 cd ~/cloudsql-sqlserver-tooling
-
 
 docker run --rm --tty -v \
 "$PWD":/data mesmacosta/sqlserver2datacatalog:stable \
@@ -68,4 +65,3 @@ while true; do
         echo "Error: Failed to load 'tfplan' Re-running the init-db script."
     fi
 done
-
