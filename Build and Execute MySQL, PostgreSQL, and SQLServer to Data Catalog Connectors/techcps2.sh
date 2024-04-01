@@ -1,5 +1,4 @@
 
-
 gcloud iam service-accounts create postgresql2dc-credentials --display-name  "Service Account for PostgreSQL to Data Catalog connector" --project $DEVSHELL_PROJECT_ID
 
 gcloud iam service-accounts keys create "postgresql2dc-credentials.json" \
@@ -91,4 +90,3 @@ docker run --rm --tty -v \
 --mysql-user=$username \
 --mysql-pass=$password \
 --mysql-database=$database
-
