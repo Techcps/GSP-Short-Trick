@@ -62,7 +62,6 @@ gcloud compute health-checks create tcp hc-tcp-80 --port 80
 
 gcloud compute backend-services create be-dm-stamford-suricata-$REGION --load-balancing-scheme=INTERNAL --health-checks=hc-tcp-80 --network=dm-stamford --protocol=TCP --region=$REGION
 
-gcloud compute backend-services add-backend be-dm-stamford-suricata-$REGION --instance-group=mig-dm-stamford-ids-$REGION --instance-group-zone="ZONE" --region=$REGION
+gcloud compute backend-services add-backend be-dm-stamford-suricata-$REGION --instance-group=mig-dm-stamford-ids-$REGION --instance-group-zone="$ZONE" --region=$REGION
 
  gcloud compute forwarding-rules create ilb-dm-stamford-suricata-ilb-$REGION --load-balancing-scheme=INTERNAL --backend-service be-dm-stamford-suricata-$REGION --is-mirroring-collector --network=dm-stamford --region=$REGION --subnet=dm-stamford-$REGION-ids --ip-protocol=TCP --ports=all
-
