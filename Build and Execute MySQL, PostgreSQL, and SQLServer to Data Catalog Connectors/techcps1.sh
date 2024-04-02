@@ -1,10 +1,12 @@
 
-gcloud iam service-accounts create postgresql2dc-credentials --display-name  "Service Account for PostgreSQL to Data Catalog connector" --project $DEVSHELL_PROJECT_ID
+export PROJECT_ID=$(gcloud config get-value project)
+
+gcloud iam service-accounts create postgresql2dc-credentials --display-name  "Service Account for PostgreSQL to Data Catalog connector" --project $PROJECT_ID
 
 gcloud iam service-accounts keys create "postgresql2dc-credentials.json" \
---iam-account "postgresql2dc-credentials@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com"
+--iam-account "postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com"
 
-gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member "serviceAccount:postgresql2dc-credentials@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com" --quiet --project $DEVSHELL_PROJECT_ID --role "roles/datacatalog.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member "serviceAccount:postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" --quiet --project $PROJECT_ID --role "roles/datacatalog.admin"
 
 cd infrastructure/terraform/
 
@@ -17,7 +19,7 @@ cd ~/cloudsql-postgresql-tooling
 
 docker run --rm --tty -v \
 "$PWD":/data mesmacosta/postgresql2datacatalog:stable \
---datacatalog-project-id=$DEVSHELL_PROJECT_ID \
+--datacatalog-project-id=$PROJECT_ID \
 --datacatalog-location-id=$REGION \
 --postgresql-host=$public_ip_address \
 --postgresql-user=$username \
@@ -30,7 +32,7 @@ sleep 15
 
 docker run --rm --tty -v \
 "$PWD":/data mesmacosta/postgresql-datacatalog-cleaner:stable \
---datacatalog-project-ids=$DEVSHELL_PROJECT_ID \
+--datacatalog-project-ids=$PROJECT_ID \
 --rdbms-type=postgresql \
 --table-container-type=schema
 
@@ -62,15 +64,15 @@ while true; do
 done
 
 
-gcloud iam service-accounts create mysql2dc-credentials --display-name  "Service Account for MySQL to Data Catalog connector" --project $DEVSHELL_PROJECT_ID
+gcloud iam service-accounts create mysql2dc-credentials --display-name  "Service Account for MySQL to Data Catalog connector" --project $PROJECT_ID
 
 gcloud iam service-accounts keys create "mysql2dc-credentials.json" \
---iam-account "mysql2dc-credentials@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com"
+--iam-account "mysql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com"
 
-gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
---member "serviceAccount:mysql2dc-credentials@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+--member "serviceAccount:mysql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
 --quiet \
---project $DEVSHELL_PROJECT_ID \
+--project $PROJECT_ID \
 --role "roles/datacatalog.admin"
 
 cd infrastructure/terraform/
@@ -84,7 +86,7 @@ cd ~/cloudsql-mysql-tooling
 
 docker run --rm --tty -v \
 "$PWD":/data mesmacosta/mysql2datacatalog:stable \
---datacatalog-project-id=$DEVSHELL_PROJECT_ID \
+--datacatalog-project-id=$PROJECT_ID \
 --datacatalog-location-id=$REGION \
 --mysql-host=$public_ip_address \
 --mysql-user=$username \
