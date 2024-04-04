@@ -1,32 +1,4 @@
 
-export PROJECT_ID=$(gcloud config get-value project)
-
-gcloud iam service-accounts create postgresql2dc-credentials --display-name  "Service Account for PostgreSQL to Data Catalog connector" --project $PROJECT_ID
-
-gcloud iam service-accounts keys create "postgresql2dc-credentials.json" \
---iam-account "postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com"
-
-gcloud projects add-iam-policy-binding $PROJECT_ID --member "serviceAccount:postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" --quiet --project $PROJECT_ID --role "roles/datacatalog.admin"
-
-cd infrastructure/terraform/
-
-public_ip_address=$(terraform output -raw public_ip_address)
-username=$(terraform output -raw username)
-password=$(terraform output -raw password)
-database=$(terraform output -raw db_name)
-
-cd ~/cloudsql-postgresql-tooling
-
-docker run --rm --tty -v \
-"$PWD":/data mesmacosta/postgresql2datacatalog:stable \
---datacatalog-project-id=$PROJECT_ID \
---datacatalog-location-id=$REGION \
---postgresql-host=$public_ip_address \
---postgresql-user=$username \
---postgresql-pass=$password \
---postgresql-database=$database
-
-sleep 15
 
 ./cleanup-db.sh
 
