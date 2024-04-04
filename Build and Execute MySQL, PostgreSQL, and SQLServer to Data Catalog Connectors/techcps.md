@@ -96,8 +96,9 @@ gcloud iam service-accounts keys create "postgresql2dc-credentials.json" \
 
 gcloud projects add-iam-policy-binding $PROJECT_ID --member "serviceAccount:postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" --quiet --project $PROJECT_ID --role "roles/datacatalog.admin"
 
+```
 
-
+```
 cd infrastructure/terraform/
 
 public_ip_address=$(terraform output -raw public_ip_address)
