@@ -38,14 +38,42 @@ done
 
 gcloud iam service-accounts create mysql2dc-credentials --display-name  "Service Account for MySQL to Data Catalog connector" --project $PROJECT_ID
 
+
+
 gcloud iam service-accounts keys create "mysql2dc-credentials.json" \
 --iam-account "mysql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com"
 
-gcloud projects add-iam-policy-binding $PROJECT_ID \
---member "serviceAccount:mysql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
---quiet \
---project $PROJECT_ID \
---role "roles/datacatalog.admin"
+
+
+#!/bin/bash
+
+# Set max attempts
+max_attempts=5
+attempts=3
+
+while true; do
+    gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member "serviceAccount:mysql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
+    --quiet \
+    --project $PROJECT_ID \
+    --role "roles/datacatalog.admin"
+
+    if [ $? -eq 3 ]; then
+        echo "Command executed successfully, subscribe to techcps."
+        break
+    else
+        ((attempts++))
+        if [ $attempts -ge $max_attempts ]; then
+            echo "Maximum attempts reached. Exiting..."
+            exit 2
+        fi
+        echo "Command failed, retrying in 5 seconds..."
+        sleep 5
+    fi
+done
+
+
+
 
 cd infrastructure/terraform/
 
