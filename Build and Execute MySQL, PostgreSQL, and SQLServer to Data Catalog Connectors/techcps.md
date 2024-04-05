@@ -51,32 +51,19 @@ gcloud iam service-accounts keys create "sqlserver2dc-credentials.json" \
 
 
 
-#!/bin/bash
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+--member "serviceAccount:sqlserver2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
+--quiet \
+--project $PROJECT_ID \
+--role "roles/datacatalog.admin"
 
-# Set max attempts
-max_attempts=5
-attempts=3
+sleep 5
 
-while true; do
-    gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member "serviceAccount:sqlserver2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
-    --quiet \
-    --project $PROJECT_ID \
-    --role "roles/datacatalog.admin"
-
-    if [ $? -eq 3 ]; then
-        echo "Command executed successfully, subscribe to techcps."
-        break
-    else
-        ((attempts++))
-        if [ $attempts -ge $max_attempts ]; then
-            echo "Maximum attempts reached. Exiting..."
-            exit 2
-        fi
-        echo "Command failed, retrying in 5 seconds..."
-        sleep 5
-    fi
-done
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+--member "serviceAccount:sqlserver2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
+--quiet \
+--project $PROJECT_ID \
+--role "roles/datacatalog.admin"
 ```
 
 ```
@@ -121,33 +108,21 @@ gcloud iam service-accounts keys create "postgresql2dc-credentials.json" \
 --iam-account "postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com"
 
 
-#!/bin/bash
+ 
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+--member "serviceAccount:postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
+--quiet \
+--project $PROJECT_ID \
+--role "roles/datacatalog.admin"
 
-# Set max attempts
-max_attempts=5
-attempts=3
+sleep 5
 
-while true; do
-    gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member "serviceAccount:postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
-    --quiet \
-    --project $PROJECT_ID \
-    --role "roles/datacatalog.admin"
 
-    if [ $? -eq 3 ]; then
-        echo "Command executed successfully, subscribe to techcps."
-        break
-    else
-        ((attempts++))
-        if [ $attempts -ge $max_attempts ]; then
-            echo "Maximum attempts reached. Exiting..."
-            exit 2
-        fi
-        echo "Command failed, retrying in 5 seconds..."
-        sleep 5
-    fi
-done
-
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+--member "serviceAccount:postgresql2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com" \
+--quiet \
+--project $PROJECT_ID \
+--role "roles/datacatalog.admin"
 ```
 
 ```
