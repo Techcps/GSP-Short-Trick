@@ -1,4 +1,5 @@
 
+export REGION="${ZONE%-*}"
 
 gcloud storage buckets create gs://$DEVSHELL_PROJECT_ID-techcps --location=$REGION
 
