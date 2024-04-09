@@ -3,7 +3,7 @@
 
 # [ NEW! 2024, Updated solution ](https://youtu.be/Ya20I7QlikQ)
 
-# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
 
 * In the GCP Console active your Cloud Shell and run the following commands:
@@ -36,15 +36,15 @@ mkdir ~/hello-http && cd $_
 touch index.js && touch package.json
 
 
-cat > index.js <<EOF
+cat > index.js <<EOF_CP
 const functions = require('@google-cloud/functions-framework');
 functions.http('helloWorld', (req, res) => {
   res.status(200).send('HTTP with Node.js in GCF 2nd gen!');
 });
-EOF
+EOF_CP
 
 
-cat > package.json <<EOF
+cat > package.json <<EOF_CP
 {
   "name": "nodejs-functions-gen2-codelab",
   "version": "0.0.1",
@@ -53,18 +53,20 @@ cat > package.json <<EOF
     "@google-cloud/functions-framework": "^2.0.0"
   }
 }
-EOF
+EOF_CP
 
+sleep 180
 
 gcloud functions deploy nodejs-http-function \
   --gen2 \
-  --runtime nodejs16 \
+  --runtime nodejs18 \
   --entry-point helloWorld \
   --source . \
   --region $REGION \
   --trigger-http \
   --timeout 600s \
-  --max-instances 1
+  --max-instances 1 \
+  --quiet
 
 ```
 
@@ -73,38 +75,42 @@ gcloud functions deploy nodejs-http-function \
 ```
 gcloud functions deploy nodejs-http-function \
   --gen2 \
-  --runtime nodejs16 \
+  --runtime nodejs18 \
   --entry-point helloWorld \
   --source . \
   --region $REGION \
   --trigger-http \
   --timeout 600s \
-  --max-instances 1
-
+  --max-instances 1 \
+  --quiet
 ```
 
 ```
+
+gcloud functions call nodejs-http-function \
+  --gen2 --region $REGION
+
 PROJECT_NUMBER=$(gcloud projects list --filter="project_id:$PROJECT_ID" --format='value(project_number)')
 SERVICE_ACCOUNT=$(gsutil kms serviceaccount -p $PROJECT_NUMBER)
+
 gcloud projects add-iam-policy-binding $PROJECT_ID \
   --member serviceAccount:$SERVICE_ACCOUNT \
   --role roles/pubsub.publisher
-
 
 mkdir ~/hello-storage && cd $_
 touch index.js && touch package.json
 
 
-cat > index.js <<EOF
+cat > index.js <<EOF_CP
 const functions = require('@google-cloud/functions-framework');
 functions.cloudEvent('helloStorage', (cloudevent) => {
   console.log('Cloud Storage event with Node.js in GCF 2nd gen!');
   console.log(cloudevent);
 });
-EOF
+EOF_CP
 
 
-cat > package.json <<EOF
+cat > package.json <<EOF_CP
 {
   "name": "nodejs-functions-gen2-codelab",
   "version": "0.0.1",
@@ -113,22 +119,27 @@ cat > package.json <<EOF
     "@google-cloud/functions-framework": "^2.0.0"
   }
 }
-EOF
+EOF_CP
 
 
 BUCKET="gs://gcf-gen2-storage-$PROJECT_ID"
 gsutil mb -l $REGION $BUCKET
 
 
+sleep 60
+
+
 gcloud functions deploy nodejs-storage-function \
   --gen2 \
-  --runtime nodejs16 \
+  --runtime nodejs18 \
   --entry-point helloStorage \
   --source . \
   --region $REGION \
   --trigger-bucket $BUCKET \
   --trigger-location $REGION \
-  --max-instances 1
+  --max-instances 1 \
+  --quiet  
+
 ```
 
 ## NOTE: Again if you get permissions error, please wait a minutes and run the following commands:
@@ -136,13 +147,14 @@ gcloud functions deploy nodejs-storage-function \
 ```
 gcloud functions deploy nodejs-storage-function \
   --gen2 \
-  --runtime nodejs16 \
+  --runtime nodejs18 \
   --entry-point helloStorage \
   --source . \
   --region $REGION \
   --trigger-bucket $BUCKET \
   --trigger-location $REGION \
-  --max-instances 1
+  --max-instances 1 \
+  --quiet  
 ```
 
 ## NOTE: Go to IAM & Admin > Audit Logs
@@ -164,35 +176,42 @@ git clone https://github.com/GoogleCloudPlatform/eventarc-samples.git
 
 cd ~/eventarc-samples/gce-vm-labeler/gcf/nodejs
 
+sleep 20
+
 gcloud functions deploy gce-vm-labeler \
   --gen2 \
-  --runtime nodejs16 \
+  --runtime nodejs18 \
   --entry-point labelVmCreation \
   --source . \
   --region $REGION \
   --trigger-event-filters="type=google.cloud.audit.log.v1.written,serviceName=compute.googleapis.com,methodName=beta.compute.instances.insert" \
   --trigger-location $REGION \
-  --max-instances 1
+  --max-instances 1 \
+  --quiet
 
-gcloud compute instances create instance-1 --zone=$ZONE
+gcloud compute instances create instance-1 --zone=$ZONE  
+
 ```
 
 ```
+
 
 mkdir ~/hello-world-colored && cd $_
 touch main.py
 
 
-cat > main.py <<EOF
+cat > main.py <<EOF_CP
 import os
 
 color = os.environ.get('COLOR')
 
 def hello_world(request):
     return f'<body style="background-color:{color}"><h1>Hello World!</h1></body>'
-EOF
+EOF_CP
 
 echo > requirements.txt 
+
+Sleep 15
 
 COLOR=yellow
 gcloud functions deploy hello-world-colored \
@@ -204,14 +223,15 @@ gcloud functions deploy hello-world-colored \
   --trigger-http \
   --allow-unauthenticated \
   --update-env-vars COLOR=$COLOR \
-  --max-instances 1 
+  --max-instances 1 \
+  --quiet
 
 
 mkdir ~/min-instances && cd $_
 touch main.go
 
 
-cat > main.go <<EOF
+cat > main.go <<EOF_CP
 package p
 
 import (
@@ -227,7 +247,7 @@ func init() {
 func HelloWorld(w http.ResponseWriter, r *http.Request) {
         fmt.Fprint(w, "Slow HTTP Go in GCF 2nd gen!")
 }
-EOF
+EOF_CP
 
 
 echo "module example.com/mod" > go.mod
@@ -241,7 +261,13 @@ gcloud functions deploy slow-function \
   --region $REGION \
   --trigger-http \
   --allow-unauthenticated \
-  --max-instances 4
+  --max-instances 4 \
+  --quiet
+
+
+gcloud functions call slow-function \
+  --gen2 --region $REGION
+  
 
 gcloud run deploy slow-function \
 --image=$REGION-docker.pkg.dev/$DEVSHELL_PROJECT_ID/gcf-artifacts/slow--function:version_1 \
@@ -250,17 +276,23 @@ gcloud run deploy slow-function \
 --region=$REGION \
 --project=$DEVSHELL_PROJECT_ID \
  && gcloud run services update-traffic slow-function --to-latest --region=$REGION
+
+
+gcloud functions call slow-function \
+  --gen2 --region $REGION
+
 ```
 
 ## Now check the progress on TASK 6 After that run the following commands:
 
 ```
+
 SLOW_URL=$(gcloud functions describe slow-function --region $REGION --gen2 --format="value(serviceConfig.uri)")
 
 hey -n 10 -c 10 $SLOW_URL
 
 
-gcloud run services delete slow-function --region $REGION
+gcloud run services delete slow-function --region $REGION --quiet
 
 gcloud functions deploy slow-concurrent-function \
   --gen2 \
@@ -271,7 +303,8 @@ gcloud functions deploy slow-concurrent-function \
   --trigger-http \
   --allow-unauthenticated \
   --min-instances 1 \
-  --max-instances 4
+  --max-instances 4 \
+  --quiet
 
 
 gcloud run deploy slow-concurrent-function \
@@ -282,6 +315,7 @@ gcloud run deploy slow-concurrent-function \
 --region=$REGION \
 --project=$DEVSHELL_PROJECT_ID \
  && gcloud run services update-traffic slow-concurrent-function --to-latest --region=$REGION
+
 ```
 ## NOTE: go to Cloud Run
 ## Click the slow-concurrent-function service.
