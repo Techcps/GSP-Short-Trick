@@ -32,4 +32,6 @@ spec:
     - containerPort: 80
 EOF
 
+gcloud logging read "resource.type='k8s_cluster' AND protoPayload.request.metadata.annotations.'alpha.image-policy.k8s.io/break-glass'='true'"
+
 ./delete.sh -c my-cluster-1
