@@ -1,11 +1,11 @@
 
 
-
 export PROJECT_ID="$(gcloud config get-value project)"
 
 bq load --autodetect --source_format=NEWLINE_DELIMITED_JSON $PROJECT_ID:soccer.$EVENT_NAME gs://spls/bq-soccer-analytics/events.json
 
 bq load --autodetect --source_format=CSV $PROJECT_ID:soccer.$TABLE_NAME gs://spls/bq-soccer-analytics/tags2name.csv
+
 
 
 bq query --use_legacy_sql=false \
@@ -34,6 +34,8 @@ numPkAtt >= 5
 ORDER BY
 PKSuccessRate DESC, numPKAtt DESC
 "
+
+
 
 
 bq query --use_legacy_sql=false \
@@ -78,9 +80,13 @@ ShotDistRound0
 "
 
 
+
+
+sleep 10
+
 bq query --use_legacy_sql=false \
 "
-CREATE FUNCTION \`$FUNCTION_NAME\`(x INT64, y INT64)
+CREATE FUNCTION \`$FUNCTION_NAME_1\`(x INT64, y INT64)
 RETURNS FLOAT64
 AS (
  /* Translate 0-100 (x,y) coordinate-based distances to absolute positions
@@ -92,17 +98,21 @@ AS (
  );
 "
 
+sleep 10
 
-bq query --use_legacy_sql=false '
-CREATE FUNCTION `$FUNCTION_NAME_2`(x INT64, y INT64)
+
+
+
+bq query --use_legacy_sql=false \
+"CREATE FUNCTION \`$FUNCTION_NAME_2\`(x INT64, y INT64)
 RETURNS FLOAT64
-LANGUAGE js AS """
+LANGUAGE js AS '''
 var CP_VALUE_X2 = parseFloat('$CP_VALUE_X2');
 var CP_VALUE_Y2 = parseFloat('$CP_VALUE_Y2');
 var CP_VALUE = parseFloat('$CP_VALUE');
 
 // Have to translate 0-100 (x,y) coordinates to absolute positions using
-// "average" field dimensions of $CP_VALUE_X2x$CP_VALUE_Y2 before using in various distance calcs
+// 'average' field dimensions of $CP_VALUE_X2x$CP_VALUE_Y2 before using in various distance calcs
 var d1 = Math.sqrt(Math.pow((CP_VALUE_X2 - (x * CP_VALUE_X2/100)), 2) + Math.pow((CP_VALUE + (7.32/2) - (y * CP_VALUE_Y2/100)), 2));
 var d2 = Math.sqrt(Math.pow((CP_VALUE_X2 - (x * CP_VALUE_X2/100)), 2) + Math.pow((CP_VALUE - (7.32/2) - (y * CP_VALUE_Y2/100)), 2));
 var d3 = Math.sqrt(Math.pow(CP_VALUE_X2 - (x * CP_VALUE_X2/100), 2) + Math.pow(CP_VALUE + 7.32/2 - (y * CP_VALUE_Y2/100), 2));
@@ -115,8 +125,8 @@ var angle = Math.acos((Math.pow(d1, 2) + Math.pow(d2, 2) - Math.pow(7.32, 2)) / 
 var angleDegrees = angle * (180 / Math.PI);
 
 return angleDegrees;
-""";
-'
+''';"
+
 
 
 bq query --use_legacy_sql=false '
@@ -210,5 +220,4 @@ MODEL `'$MODEL_NAME'`,
 )
 ORDER BY
 predictedgoalProb'
-
 
