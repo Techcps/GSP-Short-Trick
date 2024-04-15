@@ -9,8 +9,11 @@ gcloud config set project $DEVSHELL_PROJECT_ID
 
 git clone https://github.com/GoogleCloudPlatform/gke-logging-sinks-demo
 
+sleep 10
 
 cd gke-logging-sinks-demo
+
+sleep 10
 
 gcloud config set compute/region $REGION
 gcloud config set compute/zone $ZONE
