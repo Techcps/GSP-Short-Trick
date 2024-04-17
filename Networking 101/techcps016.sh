@@ -42,21 +42,22 @@ gcloud compute firewall-rules create "nw101-allow-rdp" --allow tcp:3389 --networ
 
 gcloud compute instances create us-test-01 \
 --subnet subnet-$REGION1 \
---zone ZONE \
+--zone $ZONE1 \
 --machine-type e2-standard-2 \
 --tags ssh,http,rules
 
 
 gcloud compute instances create us-test-02 \
 --subnet subnet-$REGION2 \
---zone ZONE \
+--zone $ZONE2 \
 --machine-type e2-standard-2 \
 --tags ssh,http,rules
 
 gcloud compute instances create us-test-03 \
 --subnet subnet-$REGION3 \
---zone ZONE \
+--zone $ZONE3 \
 --machine-type e2-standard-2 \
 --tags ssh,http,rules
+
 
 
