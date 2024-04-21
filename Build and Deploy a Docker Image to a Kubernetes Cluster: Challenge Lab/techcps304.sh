@@ -15,5 +15,3 @@ deployment.apps/echo-web created
 kubectl expose deployment echo-web --type=LoadBalancer --port=80 --target-port=8000
 service/echo-web exposed
 
-kubectl get svc -w
-
