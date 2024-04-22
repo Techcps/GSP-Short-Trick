@@ -135,7 +135,7 @@ EOF_CP
 
 
 
-sleep 180
+sleep 240
 
 
 #!/bin/bash
@@ -166,10 +166,9 @@ while [ "$deploy_success" = false ]; do
 done
 
 
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Store%2C%20Process%2C%20and%20Manage%20Data%20on%20Google%20Cloud%20Challenge%20Lab/map.jpg
 
-gsutil cp map.jpg gs://$BUCKET_NAME
+curl -O https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Store%2C%20Process%2C%20and%20Manage%20Data%20on%20Google%20Cloud%20Challenge%20Lab/map.jpg
 
-
+gsutil cp map.jpg gs://$BUCKET_NAME/
 
 
