@@ -171,4 +171,29 @@ curl -O https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Store%2C%
 
 gsutil cp map.jpg gs://$BUCKET_NAME/
 
+sleep 5
+
+curl -O https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Store%2C%20Process%2C%20and%20Manage%20Data%20on%20Google%20Cloud%20Challenge%20Lab/map.jpg
+
+gsutil cp map.jpg gs://$BUCKET_NAME/
+
+sleep 5
+
+curl -O https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Store%2C%20Process%2C%20and%20Manage%20Data%20on%20Google%20Cloud%20Challenge%20Lab/map.jpg
+
+gsutil cp map.jpg gs://$BUCKET_NAME/
+
+
+sleep 5
+
+curl -O https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Store%2C%20Process%2C%20and%20Manage%20Data%20on%20Google%20Cloud%20Challenge%20Lab/map.jpg
+
+gsutil cp map.jpg gs://$BUCKET_NAME/
+
+
+sleep 5
+
+curl -O https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Store%2C%20Process%2C%20and%20Manage%20Data%20on%20Google%20Cloud%20Challenge%20Lab/map.jpg
+
+gsutil cp map.jpg gs://$BUCKET_NAME/
 
