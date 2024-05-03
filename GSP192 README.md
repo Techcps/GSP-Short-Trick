@@ -3,7 +3,7 @@
 
 # If you consider that the video helped you to complete your lab, so please do like and subscribe. https://www.youtube.com/@techcps
 
-Click Activate Cloud Shell Activate Cloud Shell icon at the top of the Google Cloud console.
+Click Activate Cloud Shell Activate Cloud Shell icon at the top of the Google Cloud console
 
 ## Go to Task 3. Run the pipeline
 * Copy Region
