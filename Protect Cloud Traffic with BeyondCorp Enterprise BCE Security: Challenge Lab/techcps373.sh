@@ -12,3 +12,8 @@ gcloud app create --project=$(gcloud config get-value project) --region=$REGION
 
 gcloud app deploy --quiet
 
+
+
+export AUTH_DOMAIN=$(gcloud config get-value project).uc.r.appspot.com
+echo $AUTH_DOMAIN
+
