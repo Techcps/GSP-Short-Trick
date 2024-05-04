@@ -310,7 +310,7 @@ sudo tee median-score.html > /dev/null <<MEDIAN_SCORE_CONTENT
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 </head>
 <body>
-  <h1>Congrats! CP, You have a good score!!</h1>
+  <h1>You have a median score that we need a second verification.</h1>
 </body>
 </html>
 MEDIAN_SCORE_CONTENT
