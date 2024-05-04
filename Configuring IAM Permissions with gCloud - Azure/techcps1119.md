@@ -18,6 +18,15 @@ gcloud --version
 gcloud auth login --no-launch-browser --quiet
 ```
 
+```
+export REGION="${ZONE%-*}"
+
+gcloud config set compute/region "$REGION"
+gcloud config set compute/zone "$ZONE"
+
+gcloud compute instances create lab-1
+```
+
 ## Change your current zone for another zone in the same region
 >  For example, if your current zone is us-central1-a, you could select us-central1-b or "c" or "d"
 
