@@ -24,7 +24,7 @@ export REGION="${ZONE%-*}"
 gcloud config set compute/region "$REGION"
 gcloud config set compute/zone "$ZONE"
 
-gcloud compute instances create lab-1 --zone $ZONE --machine-type=e2-standard-2
+gcloud compute instances create lab-1
 ```
 
 ## Change your current zone for another zone in the same region
