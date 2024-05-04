@@ -16,6 +16,7 @@ gcloud compute ssh centos-clean --zone=$ZONE --project=$DEVSHELL_PROJECT_ID --qu
 gcloud --version
 
 gcloud auth login --quiet
+```
 
 ```
 export REGION="${ZONE%-*}"
