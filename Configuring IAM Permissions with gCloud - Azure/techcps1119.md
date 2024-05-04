@@ -11,6 +11,9 @@ export ZONE=
 ```
 gcloud compute ssh centos-clean --zone=$ZONE --project=$DEVSHELL_PROJECT_ID --quiet
 
+```
+
+```
 gcloud --version
 
 gcloud auth login --no-launch-browser --quiet
