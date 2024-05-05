@@ -11,18 +11,21 @@ artifactregistry.googleapis.com \
 cloudbuild.googleapis.com \
 clouddeploy.googleapis.com
 
-sleep 15
+sleep 45
 
 gcloud container clusters create test --node-locations="$ZONE" --num-nodes=1  --async
 gcloud container clusters create staging --node-locations="$ZONE" --num-nodes=1  --async
 gcloud container clusters create prod --node-locations="$ZONE" --num-nodes=1  --async
 
+
 gcloud container clusters list --format="csv(name,status)"
+
 
 gcloud artifacts repositories create web-app \
 --description="Image registry for tutorial web app" \
 --repository-format=docker \
 --location=$REGION
+
 
 
 cd ~/
@@ -32,8 +35,10 @@ git checkout c3cae80 --quiet
 cd tutorials/base
 
 
+
 envsubst < clouddeploy-config/skaffold.yaml.template > web/skaffold.yaml
 cat web/skaffold.yaml
+
 
 
 cd web
@@ -42,17 +47,23 @@ skaffold build --interactive=false \
 --file-output artifacts.json
 cd ..
 
+
+
 gcloud artifacts docker images list \
 $REGION-docker.pkg.dev/$PROJECT_ID/web-app \
 --include-tags \
 --format yaml
 
+
+
 cat web/artifacts.json | jq
+
 
 
 gcloud config set deploy/region $REGION
 cp clouddeploy-config/delivery-pipeline.yaml.template clouddeploy-config/delivery-pipeline.yaml
 gcloud beta deploy apply --file=clouddeploy-config/delivery-pipeline.yaml
+
 
 
 gcloud beta deploy delivery-pipelines describe web-app
@@ -75,6 +86,7 @@ while true; do
 done
 
 
+
 CONTEXTS=("test" "staging" "prod")
 for CONTEXT in ${CONTEXTS[@]}
 do
@@ -94,11 +106,14 @@ do
     gcloud beta deploy apply --file clouddeploy-config/target-$CONTEXT.yaml
 done
 
+
+
 cat clouddeploy-config/target-test.yaml
 
 cat clouddeploy-config/target-prod.yaml
 
 gcloud beta deploy targets list
+
 
 
 gcloud beta deploy releases create web-app-001 \
