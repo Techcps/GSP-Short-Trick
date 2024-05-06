@@ -1,0 +1,71 @@
+{
+  "title": "Untitled prompt",
+  "description": "",
+  "parameters": {
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "VERTEX_AI_SEARCH"
+          }
+        ]
+      }
+    },
+    "stopSequences": [],
+    "temperature": 1,
+    "tokenLimits": 2048,
+    "topP": 1
+  },
+  "type": "structured",
+  "context": "the color of the sky is",
+  "inputPrefixes": [
+    ""
+  ],
+  "outputPrefixes": [
+    ""
+  ],
+  "examples": [
+    {
+      "inputs": [
+        "the color of the grass is"
+      ],
+      "outputs": [
+        "the color of the grass is green"
+      ]
+    },
+    {
+      "inputs": [
+        "A well-made and entertaining film"
+      ],
+      "outputs": [
+        "positive"
+      ]
+    },
+    {
+      "inputs": [
+        "I fell asleep after 10 minutes"
+      ],
+      "outputs": [
+        "negative"
+      ]
+    },
+    {
+      "inputs": [
+        "The movie was ok"
+      ],
+      "outputs": [
+        "neutral"
+      ]
+    }
+  ],
+  "testData": [
+    {
+      "inputs": [
+        "It was a time well spent!"
+      ]
+    }
+  ],
+  "systemInstruction": "",
+  "model": "gemini-1.0-pro-002"
+}
