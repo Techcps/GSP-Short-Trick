@@ -35,7 +35,20 @@ gcloud scheduler jobs create pubsub publisher-job --schedule="* * * * *" \
     --topic=$TOPIC_ID --message-body="Hello!"
 
 
-gcloud scheduler jobs run publisher-job --location=$REGION
+
+
+#!/bin/bash
+
+while true; do
+    if gcloud scheduler jobs run publisher-job --location="$REGION"; then
+        echo "Command executed successfully. Now running next command.."
+        break 
+    else
+        echo "Retrying.. Please like and subscribe to techcps[https://www.youtube.com/@techcps]."
+        sleep 10 
+    fi
+done
+
 
 
 
