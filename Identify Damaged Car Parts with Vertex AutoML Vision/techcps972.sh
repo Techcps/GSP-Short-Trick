@@ -15,10 +15,10 @@ gsutil cp gs://car_damage_lab_metadata/data.csv .
 
 sed -i -e "s/car_damage_lab_images/${BUCKET}/g" ./data.csv
 
-cat ./data.csv
 
 gsutil cp ./data.csv gs://${BUCKET}
 
+sleep 30
 
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/main/Identify%20Damaged%20Car%20Parts%20with%20Vertex%20AutoML%20Vision/payload.json
 
