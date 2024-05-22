@@ -12,8 +12,8 @@ sudo chmod +x techcps1054.sh
 ./techcps1054.sh
 ```
 
-# Note Check your progress on Task 1-4
-## Do not run the next command until you get a score on Task 1 to 4
+# Note Check your progress on Task 1-3
+## Do not run the next command until you get a score on Task 1 to 3
 
 ```
 cbt -instance personalized-sales ls
