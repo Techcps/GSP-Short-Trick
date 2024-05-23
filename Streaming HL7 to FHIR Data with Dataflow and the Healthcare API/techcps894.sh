@@ -318,6 +318,10 @@ sleep 5
 kubectl get pods
 
 
+
+
+
+
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -345,11 +349,14 @@ spec:
          args: ["-output=mllp", "-mllp_destination=$(kubectl get svc | grep mllp-adapter | awk {print'$4'}):2575"]
 EOF
 
+
+
+
+
 kubectl get pods
 
-sleep 5 
 
-kubectl get pods
+
 
 
 curl -X GET \
