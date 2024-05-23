@@ -43,10 +43,29 @@ gcloud beta healthcare dicom-stores create $DICOM_STORE_ID --dataset=$DATASET_ID
 
 
 
-curl -X POST \
-     -H "Authorization: Bearer "$(sudo gcloud auth print-access-token) \
-     -H "Content-Type: application/json; charset=utf-8" \
-"https://healthcare.googleapis.com/v1beta1/projects/$PROJECT_ID/locations/$REGION/datasets/$DATASET_ID/dicomStores?dicomStoreId=dicomstore2"
+
+#!/bin/bash
+
+
+function create_dicom_store() {
+  curl -X POST \
+    -H "Authorization: Bearer "$(sudo gcloud auth print-access-token) \
+    -H "Content-Type: application/json; charset=utf-8" \
+    "https://healthcare.googleapis.com/v1beta1/projects/$PROJECT_ID/locations/$REGION/datasets/$DATASET_ID/dicomStores?dicomStoreId=dicomstore2"
+}
+
+while true; do
+  create_dicom_store
+
+  if [ $? -eq 0 ]; then
+    echo "DICOM store created successfully."
+    break
+  else
+    echo "Retrying. Please like share and subscribe to techcps.!!"
+    sleep 5  # Wait for 5 seconds before retrying
+  fi
+done
+
 
 
 sleep 15 
@@ -92,3 +111,5 @@ gcloud beta healthcare dicom-stores export gcs $DICOM_STORE_ID --dataset=$DATASE
 
 gcloud beta healthcare dicom-stores export gcs $DICOM_STORE_ID --dataset=$DATASET_ID --gcs-uri-prefix=$BUCKET_ID --mime-type="image/png" --location=$REGION
 
+
+gcloud beta healthcare dicom-stores import gcs $DICOM_STORE_ID --dataset=$DATASET_ID --location=$REGION --gcs-uri=gs://spls/gsp626/LungCT-Diagnosis/R_004/*
