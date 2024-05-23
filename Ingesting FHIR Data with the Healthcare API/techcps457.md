@@ -2,6 +2,7 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
+# NOTE: Go to Task 1 and Export the variables
 
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Ingesting%20FHIR%20Data%20with%20the%20Healthcare%20API/techcps.sh
