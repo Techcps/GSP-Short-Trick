@@ -49,7 +49,7 @@ while [ "$deploy_success" = false ]; do
     deploy_success=true
   else
     echo "Retrying, please subscribe to techcps (https://www.youtube.com/@techcps)..."
-    sleep 10
+    sleep 30
   fi
 done
 
