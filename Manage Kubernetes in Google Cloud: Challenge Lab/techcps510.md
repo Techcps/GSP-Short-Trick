@@ -20,8 +20,6 @@ severity=WARNING
 ## EXPORT to all the below variablbe:
 
 ```
-export REPO_NAME=
-
 export CLUSTER_NAME=
 
 export ZONE=
@@ -29,6 +27,8 @@ export ZONE=
 export NAMESPACE=
 
 export INTERVAL=
+
+export REPO_NAME=
 
 export SERVICE_NAME=
 ```
