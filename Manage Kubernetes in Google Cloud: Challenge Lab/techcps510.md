@@ -2,7 +2,7 @@
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
 ## Go to Logging > log base metric
-## Metric type: Counter <img src="https://github.com/Techcps/GSP-Short-Trick/assets/104138529/4df212f5-1e73-4bea-b706-3653d058e87e" width="50" height="50" />
+## Metric type: Counter <img src="https://github.com/Techcps/GSP-Short-Trick/assets/104138529/4df212f5-1e73-4bea-b706-3653d058e87e" width="25" height="25" />
 
 ## Log Metric Name:
 ```
