@@ -1,0 +1,43 @@
+
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
+
+## Go to Logging > log base metric
+## Metric type: Counter & Log Metric Name:
+```
+pod-image-errors
+```
+
+## In the built box editer, add the following query:
+```
+resource.type="k8s_pod"
+severity=WARNING
+```
+
+## Tap here to open the [Online Notepad](https://www.rapidtables.com/tools/notepad.html#)
+
+## EXPORT to all the below variablbe:
+
+```
+export REPO_NAME=
+
+export CLUSTER_NAME=
+
+export ZONE=
+
+export NAMESPACE=
+
+export INTERVAL=
+
+export SERVICE_NAME=
+```
+
+```
+curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Manage%20Kubernetes%20in%20Google%20Cloud%3A%20Challenge%20Lab/techcps.sh
+sudo chmod +x techcps.sh
+./techcps.sh
+```
+
+## Congratulations, you're all done with the lab 😄
+
+# Thanks for watching :)
+
