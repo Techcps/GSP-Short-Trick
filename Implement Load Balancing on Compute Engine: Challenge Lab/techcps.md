@@ -12,11 +12,11 @@ export INSTANCE_NAME=
 
 export PORT=
 
-export FIREWALL_RULES=
+export FIREWALL_RULE=
 ```
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Implement%20Load%20Balancing%20on%20Compute%20Engine%3A%20Challenge%20Lab/techcps313.sh
+curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Implement%20Load%20Balancing%20on%20Compute%20Engine:%20Challenge%20Lab/techcps313.sh
 sudo chmod +x techcps313.sh
 ./techcps313.sh
 ```
