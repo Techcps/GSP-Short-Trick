@@ -1,17 +1,21 @@
 
 
 
-
 gcloud auth list
 
+gcloud config set project $DEVSHELL_PROJECT_ID
+
+gcloud config set compute/zone $ZONE
+
 export REGION="${ZONE%-*}"
+gcloud config set compute/region $REGION
+
 
 gcloud compute instances create $INSTANCE_NAME \
-          --network nucleus-vpc \
-          --zone $ZONE  \
-          --machine-type e2-micro  \
-          --image-family debian-10  \
-          --image-project debian-cloud 
+    --zone=$ZONE \
+    --machine-type=e2-micro \
+    --image-family=debian-10 \
+    --image-project=debian-cloud
 
           
 gcloud compute networks create nucleus-vpc --subnet-mode=auto
@@ -38,7 +42,7 @@ gcloud compute target-pools create nginx-pool --region=$REGION
 
 gcloud compute instance-groups managed create web-server-group --region=$REGION --base-instance-name web-server --size 2 --template web-server-template
 
-gcloud compute firewall-rules create $FIREWALL_NAME --network nucleus-vpc --allow tcp:80
+gcloud compute firewall-rules create $FIREWALL_RULE --network nucleus-vpc --allow tcp:80
 
 gcloud compute http-health-checks create http-basic-check
 
@@ -56,10 +60,9 @@ gcloud compute target-http-proxies create http-lb-proxy --url-map web-server-map
 
 gcloud compute forwarding-rules create http-content-rule --global --target-http-proxy http-lb-proxy --ports 80
 
-gcloud compute forwarding-rules create $FIREWALL_RULES --global --target-http-proxy http-lb-proxy --ports 80
+gcloud compute forwarding-rules create $FIREWALL_RULE --global --target-http-proxy http-lb-proxy --ports 80
 
 
 gcloud compute forwarding-rules list
-
 
 
