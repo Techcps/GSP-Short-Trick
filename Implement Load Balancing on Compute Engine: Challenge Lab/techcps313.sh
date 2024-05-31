@@ -6,8 +6,14 @@ gcloud auth list
 
 export REGION="${ZONE%-*}"
 
-gcloud compute instances create $INSTANCE_NAME --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --network nucleus-vpc --machine-type e2-micro --image-family debian-10 --image-project debian-cloud 
+gcloud compute instances create $INSTANCE_NAME \
+          --network nucleus-vpc \
+          --zone $ZONE  \
+          --machine-type e2-micro  \
+          --image-family debian-10  \
+          --image-project debian-cloud 
 
+          
 gcloud compute networks create nucleus-vpc --subnet-mode=auto
 
 gcloud container clusters create nucleus-backend --zone=$ZONE --num-nodes 1 --network nucleus-vpc
