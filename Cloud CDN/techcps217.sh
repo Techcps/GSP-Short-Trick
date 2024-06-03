@@ -4,13 +4,13 @@ gcloud auth list
 
 export PROJECT_ID=$(gcloud config get-value project)
 
-export BUCKET_NAME="$PROJECT_ID-techcps"
+export BUCKET_NAME="$PROJECT_ID"
 
-gsutil mb -l US gs://$BUCKET_NAME-techcps
+gsutil mb -l US gs://$BUCKET_NAME
 
-gsutil cp gs://cloud-training/gcpnet/cdn/cdn.png gs://$BUCKET_NAME-techcps
+gsutil cp gs://cloud-training/gcpnet/cdn/cdn.png gs://$BUCKET_NAME
 
-gsutil iam ch allUsers:objectViewer gs://$BUCKET_NAME-techcps
+gsutil iam ch allUsers:objectViewer gs://$BUCKET_NAME
 
 # Get the access token
 TOKEN_ID=$(gcloud auth application-default print-access-token)
