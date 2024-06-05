@@ -1,4 +1,5 @@
 
+gcloud compute ssh xss-test-vm-instance --zone $ZONE --project=$DEVSHELL_PROJECT_ID --quiet
 
 cat > app.py <<EOF_CP
 import flask
