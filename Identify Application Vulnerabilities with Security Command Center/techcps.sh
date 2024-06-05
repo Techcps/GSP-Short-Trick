@@ -1,9 +1,6 @@
 
 
 
-
-export ZONE=us-central1-a
-
 export REGION="${ZONE%-*}"
 
 gcloud services enable websecurityscanner.googleapis.com
