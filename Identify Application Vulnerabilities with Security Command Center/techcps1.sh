@@ -1,5 +1,4 @@
 
-gcloud compute ssh xss-test-vm-instance --zone $ZONE --project=$DEVSHELL_PROJECT_ID --quiet
 
 cat > app.py <<EOF_CP
 import flask
@@ -33,7 +32,6 @@ def output():
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=8080)
 EOF_CP
-
 
 
 python3 app.py
