@@ -2,11 +2,11 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-## Export Admin USER
+## Export: Admin User
 ```
 export USER=
 ```
-## EXPORT Admin Password
+## Export: Admin Password
 ```
 export PASS=
 ```
