@@ -1,5 +1,20 @@
 
 
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
+
+# Export the below variables:
+```
+export USER=
+```
+```
+export PASS=
+```
+
+```
+cqlsh -u $USER -p $PASS
+```
+
+```
 CREATE KEYSPACE space_flights WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
 CREATE TABLE space_flights.catalog (
@@ -33,4 +48,8 @@ select * from space_flights.catalog;
 
 SELECT * FROM space_flights.catalog WHERE spacecraft_name = 'vostok2';
 
+```
 
+## Congratulations, you're all done with the lab 😄
+
+# Thanks for watching :)
