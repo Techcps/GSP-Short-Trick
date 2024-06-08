@@ -12,7 +12,7 @@ gcloud compute ssh linux-instance --project $DEVSHELL_PROJECT_ID --zone $ZONE --
 ```
 
 ## 🚨 Check your progress on Task 1-3
-## ❌ Do not run the next command until you get the on Task 1-3
+## ❌ Do not run the next command until you get the score on Task 1-3
 
 ```
 cat > request.json <<EOF_CP
