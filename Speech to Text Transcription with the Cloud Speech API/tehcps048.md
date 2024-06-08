@@ -1,14 +1,28 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-## 🚨 Export ZONE:
 
 ```
-export ZONE=
-```
+gcloud services enable apikeys.googleapis.com
+gcloud alpha services api-keys create --display-name="techcps"
+CP=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=techcps")
+API_KEY=$(gcloud alpha services api-keys get-key-string $CP --format="value(keyString)")
 
-```
-gcloud compute ssh linux-instance --project $DEVSHELL_PROJECT_ID --zone $ZONE --quiet --command "curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Speech%20to%20Text%20Transcription%20with%20the%20Cloud%20Speech%20API/techcps.sh && sudo chmod +x techcps.sh && ./techcps.sh"
+cat > request.json <<EOF_CP
+{
+  "config": {
+      "encoding":"FLAC",
+      "languageCode": "en-US"
+  },
+  "audio": {
+      "uri":"gs://cloud-samples-data/speech/brooklyn_bridge.flac"
+  }
+}
+EOF_CP
+
+curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
+"https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > result.json
+cat result.json
 ```
 
 ## 🚨 Check your progress on Task 1-3
