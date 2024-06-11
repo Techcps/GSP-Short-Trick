@@ -15,5 +15,7 @@ gcloud dataplex assets create customer-details-dataset --location=$REGION --lake
 gcloud data-catalog tag-templates create protected_data_template --location=$REGION --field=id=protected_data_flag,display-name="Protected Data Flag",type='enum(YES|NO)' --display-name="Protected Data Template"
 
 
-echo "https://console.cloud.google.com/dataplex/projects/$DEVSHELL_PROJECT_ID/locations/$REGION/entryGroups/@bigquery/entries/cHJvamVjdHMvcXdpa2xhYnMtZ2NwLTAxLWFjZWEyMDNkMDk3Mi9kYXRhc2V0cy9jdXN0b21lcnMvdGFibGVzL2N1c3RvbWVyX2RldGFpbHM?cloudshell=true&project=$DEVSHELL_PROJECT_ID"
+echo "Click the below link, Please like share and subscribe to Techcps"
+
+echo "https://console.cloud.google.com/dataplex/search?project=$DEVSHELL_PROJECT_ID&cloudshell=true&q=customer_details"
 
