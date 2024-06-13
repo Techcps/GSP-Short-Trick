@@ -3,9 +3,9 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-# Make sure login with Global owner user id
+# 🚨 Make sure to login with Global owner user id
 
-## Motor vehicle collision project id
+## 🚨 Motor vehicle collision project id
 
 ```
 bq query --use_legacy_sql=false "
@@ -25,7 +25,7 @@ LIMIT 10;
 "
 ```
 
-## Bike Share dataset project id
+## 🚨 Bike Share dataset project id
 
 ```
 bq query --use_legacy_sql=false "
@@ -88,7 +88,7 @@ SELECT * FROM male;
 "
 ```
 
-## Task 6: Follow the lab & video instructions
+## 🚨 Task 6: Follow the lab & video instructions
 
 ## Congratulations, you're all done with the lab 😄
 
