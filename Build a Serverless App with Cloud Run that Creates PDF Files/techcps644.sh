@@ -74,10 +74,10 @@ COPY package.json package*.json ./
 RUN npm install --only=production
 COPY . .
 CMD [ "npm", "start" ]
-EOF_END
+EOF_CP
 
 
-cat > index.js <<'EOF_END'
+cat > index.js <<'EOF_CP'
 const {promisify} = require('util');
 const {Storage}   = require('@google-cloud/storage');
 const exec        = promisify(require('child_process').exec);
