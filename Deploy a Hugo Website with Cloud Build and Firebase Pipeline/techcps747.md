@@ -29,7 +29,7 @@ sudo chmod +x techcps2.sh
 ## 🚨Now select the currect project and press enter key
 ![currect project](https://github.com/Techcps/GSP-Short-Trick/assets/104138529/71fb5a65-c8b1-40f5-b23b-3afeb8f89b88)
 
-## 🚨Now press enter key two times
+## 🚨Now press the enter key three times
 
 ## Congratulations, you're all done with the lab 😄
 
