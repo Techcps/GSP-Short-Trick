@@ -8,7 +8,8 @@
 
 ## 🚨 Go to Develop > qwiklabs-ecommerce LookML project.
 
-## 🚨 Open the training_ecommerce.model file & Remove the default code and paste the below code:
+## 🚨 Open the training_ecommerce.model file
+> Remove the default code and paste the below code:
 ```
 connection: "bigquery_public_data_looker"
 
