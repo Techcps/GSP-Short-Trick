@@ -18,7 +18,7 @@ sudo chmod +x techcps341.sh
 ## 🚨When ask Enter the CP Form number (1, 2, or 3):
 ## 🚨Type 1 and hit the Enter button
 
-# 🚨 If form number 1 is not working then try form number 2
+## 🚨 If form number 1 is not working then try form number 2
 
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Create%20ML%20Models%20with%20BigQuery%20ML%3A%20Challenge%20Lab/techcps341.sh
@@ -30,7 +30,7 @@ sudo chmod +x techcps341.sh
 ## 🚨Type 2 and hit the Enter button
 
 
-# 🚨 If form number 2 is not working then try form number 3
+## 🚨 If form number 2 is not working then try form number 3
 
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Create%20ML%20Models%20with%20BigQuery%20ML%3A%20Challenge%20Lab/techcps341.sh
