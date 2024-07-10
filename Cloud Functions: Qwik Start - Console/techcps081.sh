@@ -59,9 +59,8 @@ gcloud functions deploy GCFunction \
   --trigger-http \
   --runtime=nodejs20 \
   --allow-unauthenticated \
-  --max-instances=5
-  --source . \
-  --quiet
+  --max-instances=5 \
+  --source . --quiet
 }
 
 deploy_success=false
