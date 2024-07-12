@@ -1,8 +1,5 @@
 
-gcloud config set project $DEVSHELL_PROJECT_ID
-export PROJECT_ID=$(gcloud config get-value project)
-
-
+CP="$(gcloud projects list --format='value(PROJECT_ID)')"
 
 cat > genai.py <<EOF_CP
 import vertexai
@@ -30,7 +27,7 @@ def generate_text(project_id: str, location: str) -> str:
 
 # --------  Important: Variable declaration  --------
 
-project_id = "$PROJECT_ID"
+project_id = "$CP"
 location = "$REGION"
 
 #  --------   Call the Function  --------
