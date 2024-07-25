@@ -2,6 +2,9 @@
 gcloud auth list
 gcloud config list project
 
+gcloud services disable cloudfunctions.googleapis.com
+gcloud services enable cloudfunctions.googleapis.com
+
 cat > index.js <<EOF_CP
 exports.helloWorld = (req, res) => {
     res.status(200).send('Hello World!');
@@ -22,8 +25,8 @@ while [ "$deploy_success" = false ]; do
     echo "Function deployed successfully (https://www.youtube.com/@techcps)."
     deploy_success=true
   else
-    echo "Retring please subscribe to techcps (https://www.youtube.com/@techcps)."
-    sleep 10
+    echo "Retrying, please subscribe to techcps (https://www.youtube.com/@techcps).."
+    sleep 20
   fi
 done
 
