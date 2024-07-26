@@ -240,16 +240,31 @@ kubectl expose deployment production-deployment -n prod --name=prod-deployment-s
 
 # Export the below variables name
 export CPSPACE="prod"
+
 export DEPLOYMENT="production-deployment"
+
 export SERVICE="prod-deployment-service"
+
 export PORT=8080
+
 export TARGET_PORT=8080
 
+
+#!/bin/bash
 
 expose_deployment() {
   kubectl expose deployment $DEPLOYMENT -n $CPSPACE --name=$SERVICE --type=LoadBalancer --port=$PORT --target-port=$TARGET_PORT
   return $?
 }
+
+
+# Loop until the expose deployment function succeeds
+while ! expose_deployment; do
+  echo "Failed and retrying the expose deployment function..."
+  sleep 10
+done
+
+echo "Successfully exposed the deployment function..."
 
 
 kubectl -n $CPSPACE rollout undo deployment/$DEPLOYMENT
@@ -270,6 +285,5 @@ kubectl -n $CPSPACE rollout undo deployment/$DEPLOYMENT
 
 cd sample-app
 kubectl -n prod rollout undo deployment/production-deployment
-
 
 
