@@ -11,7 +11,7 @@ echo "--------------------------"
 echo "Click here to Download the form.pdf file to your local machine [https://storage.googleapis.com/cloud-training/document-ai/generic/form.pdf]..."
 
 
-echo "------------Please like share and subscribe to Techcps [https://www.youtube.com/@techcps]--------------"
+echo "------------Please like share and subscribe to Techcps [ https://www.youtube.com/@techcps ] --------------"
 
 
 export ZONE=$(gcloud compute instances list document-ai-dev --format 'csv[no-heading](zone)')
