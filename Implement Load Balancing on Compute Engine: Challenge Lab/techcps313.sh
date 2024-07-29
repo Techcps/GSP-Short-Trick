@@ -8,10 +8,10 @@ export REGION="${ZONE%-*}"
 gcloud config set compute/region $REGION
 
 gcloud compute instances create $INSTANCE_NAME \
-  --zone=$ZONE \
-  --machine-type=e2-micro \
-  --image=debian-10-buster-v20210701 \
-  --image-project=debian-cloud
+    --zone=$ZONE \
+    --machine-type=e2-micro \
+    --image-family=debian-11 \
+    --image-project=debian-cloud
 
 gcloud compute networks create nucleus-vpc --subnet-mode=auto
 
