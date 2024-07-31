@@ -13,7 +13,7 @@ export VPC=
 export ZONE=
 ```
 
-## 🚨Copy and run the below commands in Cloud Shell:
+## 🚨Copy and run the below commands:
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Build%20Infrastructure%20with%20Terraform%20on%20Google%20Cloud:%20Challenge%20Lab/techcps345.sh
 sudo chmod +x techcps345.sh
