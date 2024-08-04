@@ -45,7 +45,9 @@ sleep 15
 
 kubectl get deployments
 
-sleep 15
+sleep 30
+
+
 
 echo "http://$(kubectl get service frontend-external -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')"
 
@@ -61,6 +63,7 @@ gcloud artifacts repositories create my-repo \
   --location=$REGION \
   --description="My private Docker repository"      
 
+echo "http://$(kubectl get service frontend-external -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')"
 
 echo "Congratulations, you're all done with the lab"
 echo "Please like share and subscribe to techcps(https://www.youtube.com/@techcps)..."
