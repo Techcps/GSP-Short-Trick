@@ -15,7 +15,6 @@ export GCLOUD_PROJECT=$DEVSHELL_PROJECT_ID
 
 pip install -r requirements.txt
 
-python run_server.py
 
 gcloud app create --region="$REGION"
 
