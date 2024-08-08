@@ -4,7 +4,7 @@
 
 ## 🚨 [Click here to Download the file to your local system](https://storage.cloud.google.com/qwiklabs-resources-ccai-quest/pigeon-travel-gsp-792.zip)
 
-## 🚨 index,js
+## 🚨 index.js
 ```
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
 // for Dialogflow fulfillment library docs, samples, and to report issues
