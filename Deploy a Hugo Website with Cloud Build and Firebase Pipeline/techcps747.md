@@ -20,7 +20,7 @@ curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Deploy%20a%20H
 sudo chmod +x techcps2.sh
 ./techcps2.sh
 ```
-## 🚨Use Up and Down key and select the below image checkpoint
+## 🚨Use Up and Down key and press Spacebar key to select the below image checkpoint option
 ![Checkpoint](https://github.com/Techcps/GSP-Short-Trick/assets/104138529/a8664350-4250-4abb-bebb-710aee2de14d)
 
 ## 🚨Now select the use an existing project and press enter key
