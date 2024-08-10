@@ -6,7 +6,9 @@
 * Enble to all this three GCP Service role name
 
 > **Cloud Functions**
+
 > **Cloud Run**
+
 > **App Engine**
 
 ## 🚨Export the variables name correctly:
