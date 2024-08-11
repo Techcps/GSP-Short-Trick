@@ -2,7 +2,9 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-## 🚨 [Open this link in an Incognito window to Download the file to your local system](https://storage.cloud.google.com/qwiklabs-resources-ccai-quest/pigeon-travel-gsp-792.zip) or [Download the file from my GitHub Repo link](https://github.com/Techcps/GSP-Short-Trick/blob/main/Building%20Virtual%20Agent%20Fulfillment/pigeon-travel-gsp-792.zip)
+## 🚨 [Open this link in an Incognito window to Download the file to your local system](https://storage.cloud.google.com/qwiklabs-resources-ccai-quest/pigeon-travel-gsp-792.zip) or 
+
+## 🚨 [Download the file from my GitHub Repo file link](https://github.com/Techcps/GSP-Short-Trick/blob/main/Building%20Virtual%20Agent%20Fulfillment/pigeon-travel-gsp-792.zip)
 
 
 ## 🚨 index.js
