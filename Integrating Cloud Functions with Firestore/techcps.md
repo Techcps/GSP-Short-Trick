@@ -29,17 +29,17 @@ gcloud services enable artifactregistry.googleapis.com cloudfunctions.googleapis
 ### 🚨 **Add Fields** with the following values:
 
 
-|       Field name       |       Field type	       |       Field value       |
-| ---------------------- | ----------------------- | ----------------------- |
-|       firstname        |         string 	       |          Lucas          |
+|                   Field name                   |                   Field type	              |                   Field value                   |
+| ---------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
+|                   firstname                    |                    string 	                |                      Lucas                      |
 
 
 - Click the **Add a Field (+)** button to add Second field:
 
 
-|       Field name       |       Field type	       |       Field value       |
-| ---------------------- | ----------------------- | ----------------------- |
-|        lastname        |         string 	       |         Sherman         |
+|                   Field name                   |                   Field type	              |                   Field value                   |
+| ---------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
+|                    lastname                    |                 string 	                  |                     Sherman                     |
 
 
 ### 🚨 **Click Save**
@@ -59,9 +59,10 @@ sudo chmod +x techcps.sh
 ### 🚨 Now Delete the old Second field and again create with the following values:
 
 
-|       Field name       |       Field type	       |       Field value       |
-| ---------------------- | ----------------------- | ----------------------- |
-|        lastname        |         string 	       |         Sherman         |
+
+|                   Field name                   |                   Field type	              |                   Field value                   |
+| ---------------------------------------------- | ------------------------------------------ | ----------------------------------------------- |
+|                    lastname                    |                 string 	                  |                     Sherman                     |
 
 
 ## Congratulations, you're all done with the lab 😄
