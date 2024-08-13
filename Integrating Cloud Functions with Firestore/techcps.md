@@ -24,7 +24,7 @@ gcloud services enable artifactregistry.googleapis.com cloudfunctions.googleapis
 
 - For **Collection ID** type **customers**
 
-- Click **Document ID**: **`Genarate Automatically`**
+- Click **Document ID**: **Genarate Automatically**
 
 ### 🚨 **Add Fields** with the following values:
 
