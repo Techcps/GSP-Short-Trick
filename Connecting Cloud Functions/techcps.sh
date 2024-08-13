@@ -1,5 +1,6 @@
 
 
+
 gcloud auth list
 
 export PROJECT_ID=$(gcloud config get-value project)
@@ -26,6 +27,7 @@ gcloud services enable \
 
 sleep 30
 
+
 REDIS_INSTANCE=customerdb
 
 gcloud redis instances create $REDIS_INSTANCE \
@@ -42,6 +44,7 @@ REDIS_PORT=$(gcloud redis instances describe $REDIS_INSTANCE --region=$REGION --
 gcloud compute networks vpc-access connectors create test-connector --region=$REGION --machine-type=e2-micro --network=default --range=10.8.0.0/28 --max-instances=10 --min-instances=2
 
 
+
 gcloud compute networks vpc-access connectors \
   describe test-connector \
   --region $REGION
@@ -55,7 +58,8 @@ gcloud pubsub topics create $TOPIC
 mkdir ~/redis-pubsub && cd $_
 touch main.py && touch requirements.txt
 
-cat > main.py <<EOF_CP
+
+cat > main.py <<'EOF_CP'
 import os
 import base64
 import json
@@ -114,7 +118,6 @@ while [ "$deploy_success" = false ]; do
 done
 
 
-
 gcloud pubsub topics publish $TOPIC --message='{"id": 1234, "firstName": "Lucas" ,"lastName": "Sherman", "Phone": "555-555-5555"}'
 
 sleep 10
@@ -124,7 +127,7 @@ mkdir ~/redis-http && cd $_
 touch main.py && touch requirements.txt
 
 
-cat > main.py <<EOF_CP
+cat > main.py <<'EOF_CP'
 import os
 import redis
 from flask import request
@@ -153,7 +156,6 @@ cat > requirements.txt <<EOF_CP
 functions-framework==3.2.0
 redis==4.3.4
 EOF_CP
-
 
 
 deploy_function() {
@@ -186,9 +188,7 @@ done
 
 FUNCTION_URI=$(gcloud functions describe http-get-redis --gen2 --region $REGION --format "value(serviceConfig.uri)"); echo $FUNCTION_URI
 
-
 curl -H "Authorization: bearer $(gcloud auth print-identity-token)" "${FUNCTION_URI}?id=1234"
-
 
 gsutil cp gs://cloud-training/CBL492/startup.sh .
 
@@ -220,9 +220,7 @@ sleep 30
 
 VM_INT_IP=$(gcloud compute instances describe webserver-vm --format='get(networkInterfaces[0].networkIP)' --zone $ZONE); echo $VM_INT_IP
 
-
 VM_EXT_IP=$(gcloud compute instances describe webserver-vm --format='get(networkInterfaces[0].accessConfigs[0].natIP)' --zone $ZONE); echo $VM_EXT_IP
-
 
 
 
@@ -230,7 +228,7 @@ mkdir ~/vm-http && cd $_
 touch main.py && touch requirements.txt
 
 
-cat > main.py <<EOF_CP
+cat > main.py <<'EOF_CP'
 import functions_framework
 import requests
 
@@ -295,7 +293,8 @@ gcloud services disable cloudfunctions.googleapis.com
 
 gcloud services enable cloudfunctions.googleapis.com
 
-sleep 20
+
+sleep 30
 
 
 cd ~
@@ -339,4 +338,3 @@ curl -H "Authorization: bearer $(gcloud auth print-identity-token)" "${FUNCTION_
 
 gcloud pubsub topics publish $TOPIC --message='{"id": 1234, "firstName": "Lucas" ,"lastName": "Sherman", "Phone": "555-555-5555"}'
  
-
