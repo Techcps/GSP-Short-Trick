@@ -108,14 +108,16 @@ while [ "$deploy_success" = false ]; do
         echo "Function deployed successfully."
         deploy_success=true
     else
-        echo "Retrying in 10 seconds, subscribe to techcps[https://www.youtube.com/@techcps]"
-        sleep 10
+        echo "Retrying in 30 seconds, subscribe to techcps[https://www.youtube.com/@techcps]"
+        sleep 30
     fi
 done
 
 
 
 gcloud pubsub topics publish $TOPIC --message='{"id": 1234, "firstName": "Lucas" ,"lastName": "Sherman", "Phone": "555-555-5555"}'
+
+sleep 10
 
 
 mkdir ~/redis-http && cd $_
@@ -224,7 +226,7 @@ VM_EXT_IP=$(gcloud compute instances describe webserver-vm --format='get(network
 
 
 
- mkdir ~/vm-http && cd $_
+mkdir ~/vm-http && cd $_
 touch main.py && touch requirements.txt
 
 
@@ -246,7 +248,7 @@ def connectVM(request):
 EOF_CP
 
 
-# Save the requirements to requirements.txt
+
 cat > requirements.txt <<EOF_END
 functions-framework==3.2.0
 Werkzeug==2.3.7
@@ -289,25 +291,40 @@ curl -H "Authorization: bearer $(gcloud auth print-identity-token)" "${FUNCTION_
 curl -H "Authorization: bearer $(gcloud auth print-identity-token)" "${FUNCTION_URI}?ip=$VM_EXT_IP"
 
 
+gcloud services disable cloudfunctions.googleapis.com
 
+gcloud services enable cloudfunctions.googleapis.com
+
+sleep 20
+
+
+cd ~
+cd vm-http
+
+export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format='value(projectNumber)')
+export PROJECT_ID=$(gcloud config get-value project)
 
 deploy_function() {
-gcloud functions deploy vm-connector \
- --runtime python310 \
- --entry-point connectVM \
- --source . \
- --region $REGION \
- --trigger-http \
- --timeout 10s \
- --max-instances 1 \
- --no-allow-unauthenticated \
- --vpc-connector projects/$PROJECT_ID/locations/$REGION/connectors/test-connector
+    gcloud functions deploy vm-connector \
+        --runtime python310 \
+        --entry-point connectVM \
+        --source . \
+        --region $REGION \
+        --trigger-http \
+        --timeout 10s \
+        --max-instances 1 \
+        --no-allow-unauthenticated \
+        --vpc-connector projects/$PROJECT_ID/locations/$REGION/connectors/test-connector \
+        --service-account "$PROJECT_NUMBER-compute@developer.gserviceaccount.com"
 }
 
 deploy_success=false
 
+export SERVICE_NAME="vm-connector"
+
 while [ "$deploy_success" = false ]; do
-    if deploy_function; then
+    deploy_function
+    if gcloud functions describe $SERVICE_NAME --region=$REGION &> /dev/null; then
         echo "Function deployed successfully."
         deploy_success=true
     else
@@ -319,10 +336,6 @@ done
 
 curl -H "Authorization: bearer $(gcloud auth print-identity-token)" "${FUNCTION_URI}?ip=$VM_INT_IP"
 
-
-cd ~
-cd redis-pubsub/
-TOPIC=add_redis
 
 gcloud pubsub topics publish $TOPIC --message='{"id": 1234, "firstName": "Lucas" ,"lastName": "Sherman", "Phone": "555-555-5555"}'
  
