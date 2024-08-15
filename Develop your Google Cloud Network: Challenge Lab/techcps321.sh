@@ -158,6 +158,7 @@ for USER in $USERS; do
   fi
 done
 
+sleep 45
 
 get_external_ip=$(kubectl get service wordpress  -o=jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
