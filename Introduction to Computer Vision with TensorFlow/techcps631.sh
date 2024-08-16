@@ -3,15 +3,19 @@ python --version
 
 python -c "import tensorflow;print(tensorflow.__version__)"
 
+pip install tensorflow tensorflow-datasets google-cloud-logging numpy
+
 pip3 install --upgrade pip
 
-wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/requirements.txt
-
-/usr/bin/python3 -m pip install -r requirements.txt
+/usr/bin/python3 -m pip install -U google-cloud-logging --user
 
 /usr/bin/python3 -m pip install -U pylint --user
 
 pip install --upgrade tensorflow
+
+wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/requirements.txt
+
+/usr/bin/python3 -m pip install -r requirements.txt
 
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/model.py
 
