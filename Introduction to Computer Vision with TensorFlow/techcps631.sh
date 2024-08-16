@@ -13,35 +13,29 @@ wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introducti
 
 pip install --upgrade tensorflow
 
-https://github.com/Techcps/GSP-Short-Trick/blob/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/model_1.py
-
-python model_1.py
-
-sleep 10
-
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/model.py
 
 python model.py
 
-sleep 5
+wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/CP1/model.py
+
+python model.py
+
+wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/CP/model.py
+
+python model.py
 
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/callback_model.py
 
 python callback_model.py
 
-sleep 5
-
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/updated_model_1.py
 
 python updated_model_1.py
 
-sleep 5
-
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/updated_model_2.py
 
 python updated_model_2.py
-
-sleep 5
 
 wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/updated_model_3.py
 
