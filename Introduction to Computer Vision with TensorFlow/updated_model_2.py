@@ -21,12 +21,11 @@ BATCH_SIZE = 32
 # Normalizing and batch processing of data
 ds_train = ds_train.map(lambda x, y: (tf.cast(x, tf.float32)/255.0, y)).batch(BATCH_SIZE)
 ds_test = ds_test.map(lambda x, y: (tf.cast(x, tf.float32)/255.0, y)).batch(BATCH_SIZE)
-
+# Define the model
 model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
                                     tf.keras.layers.Dense(64, activation=tf.nn.relu),
                                     tf.keras.layers.Dense(64, activation=tf.nn.relu),
                                     tf.keras.layers.Dense(10, activation=tf.nn.softmax)])
-
 # Compile data
 model.compile(optimizer = tf.keras.optimizers.Adam(),
               loss = tf.keras.losses.SparseCategoricalCrossentropy(),
