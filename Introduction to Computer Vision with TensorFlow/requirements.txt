@@ -1,0 +1,6 @@
+google-cloud-logging
+tensorflow
+tensorflow-datasets
+numpy>=1.16.5,<1.23.0
+scipy
+protobuf==3.20.*
