@@ -43,3 +43,24 @@ model.compile(optimizer = tf.keras.optimizers.Adam(),
               loss = tf.keras.losses.SparseCategoricalCrossentropy(),
               metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
 model.fit(ds_train, epochs=5)
+
+cloud_logger.info(model.evaluate(ds_test))
+
+# Save the entire model as a SavedModel.
+model.save('saved_model')
+
+# Reload a fresh Keras model from the saved model
+new_model = tf.keras.models.load_model('saved_model')
+
+# Summary of loaded SavedModel
+new_model.summary()
+
+
+# Save the entire model to a keras file.
+model.save('my_model.keras')
+
+# Recreate the exact same model, including its weights and the optimizer
+new_model_keras = tf.keras.models.load_model('my_model.keras')
+
+# Summary of loaded keras model
+new_model_keras.summary()
