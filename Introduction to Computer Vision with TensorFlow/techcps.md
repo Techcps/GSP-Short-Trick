@@ -1,17 +1,6 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-## 🚨 Go to Application Menu > Terminal > New Terminal
-
-### 🚨How to paste the below commands to run it
-- For Windows press **Ctrl+Shift+V** then Enter and allow pop-up message
-- For Mac press **Cmd+Shift+V** then Enter and allow pop-up message
-
-```
-python --version
-python -c "import tensorflow;print(tensorflow.__version__)"
-pip3 install --upgrade pip
-```
 ## 🚨 Go to Application Menu > File > New File
 - Paste the below **commands**
 ```
@@ -24,8 +13,16 @@ protobuf==3.20.*
 ```
 - Save as file name: **`requirements.txt`**
 
+## 🚨 Go to Application Menu > Terminal > New Terminal
+### 🚨How to paste the below commands to run it
+- For Windows press **Ctrl+Shift+V** then allow pop-up message and press Enter Key
+- For Mac press **Cmd+Shift+V** then allow pop-up message press Enter Key
+
 ## 🚨 Run the below script in the Terminal
 ```
+python --version
+python -c "import tensorflow;print(tensorflow.__version__)"
+pip3 install --upgrade pip
 /usr/bin/python3 -m pip install -r requirements.txt
 /usr/bin/python3 -m pip install -U pylint --user
 ```
