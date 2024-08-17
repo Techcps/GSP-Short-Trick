@@ -2,7 +2,7 @@
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
 ## 🚨 Go to Application Menu > File > New Text File
-- Paste the below **commands**
+- Paste the below **code**
 ```
 google-cloud-logging
 tensorflow
@@ -28,7 +28,7 @@ pip3 install --upgrade pip
 ```
 
 ## 🚨 Go to Application Menu > File > New Text File
-- Paste the below **commands**
+- Paste the below **code**
 
 ```
 # Import and configure logging
