@@ -1,4 +1,18 @@
 
+
+gcloud auth list
+
+export PROJECT_ID=$(gcloud config get-value project)
+export PROJECT_ID=$DEVSHELL_PROJECT_ID
+
+gcloud config set compute/zone $ZONE
+export REGION="${ZONE%-*}"
+gcloud config set compute/region $REGION
+
+export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format='value(projectNumber)')
+gcloud config set project $DEVSHELL_PROJECT_ID
+
+
 mkdir ~/redis-http && cd $_
 touch main.py && touch requirements.txt
 
