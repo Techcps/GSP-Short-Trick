@@ -13,6 +13,16 @@ export PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format='
 gcloud config set project $DEVSHELL_PROJECT_ID
 
 
+
+REDIS_INSTANCE=customerdb
+
+gcloud redis instances describe $REDIS_INSTANCE --region=$REGION
+
+REDIS_IP=$(gcloud redis instances describe $REDIS_INSTANCE --region=$REGION --format="value(host)"); echo $REDIS_IP
+
+REDIS_PORT=$(gcloud redis instances describe $REDIS_INSTANCE --region=$REGION --format="value(port)"); echo $REDIS_PORT
+
+
 mkdir ~/redis-http && cd $_
 touch main.py && touch requirements.txt
 
