@@ -8,8 +8,6 @@ export PROJECT_ID=$(gcloud config get-value project)
 
 export PROJECT_ID=$DEVSHELL_PROJECT_ID
 
-gcloud services disable dataflow.googleapis.com --force
-gcloud services enable dataflow.googleapis.com
 
 gcloud spanner databases execute-sql banking-db --instance=banking-instance \
  --sql="INSERT INTO Customer (CustomerId, Name, Location) VALUES ('bdaaaa97-1b4b-4e58-b4ad-84030de92235', 'Richard Nelson', 'Ada Ohio')"
@@ -39,7 +37,7 @@ EOF_CP
 python3 insert.py
 
 
-sleep 30
+sleep 60
 
 cat > batch_insert.py <<'EOF_CP'
 from google.cloud import spanner
@@ -71,17 +69,19 @@ EOF_CP
 
 python3 batch_insert.py
 
-sleep 30
+sleep 60
 
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 touch emptyfile
 gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/emptyfile
 
 
+gcloud services disable dataflow.googleapis.com --force
 gcloud services enable dataflow.googleapis.com
 
 
-sleep 45
+
+sleep 90
 
 gcloud dataflow jobs run spanner-load --gcs-location gs://dataflow-templates-$REGION/latest/GCS_Text_to_Cloud_Spanner --region $REGION --staging-location gs://$DEVSHELL_PROJECT_ID/tmp/ --parameters instanceId=banking-instance,databaseId=banking-db,importManifest=gs://cloud-training/OCBL372/manifest.json
 
