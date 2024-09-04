@@ -2,7 +2,8 @@
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
-## 🚨Export the REGION name correctly:
+## (https://github.com/user-attachments/assets/19777018-dda6-48d2-8aae-10c17bab1ed3)
+🚨Export the REGION name correctly:
 
 ```
 export REGION=
