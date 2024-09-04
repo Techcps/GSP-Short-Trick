@@ -13,7 +13,7 @@ sudo chmod +x techcps1007.sh
 ./techcps1007.sh
 ```
 
-##@ Congratulations, you're all done with the lab 😄
+## Congratulations, you're all done with the lab 😄
 
 ---
 
