@@ -1,6 +1,6 @@
 
 
-## 💡 Lab Link: [Deploying a Fault-Tolerant Microsoft Active Directory Environment - GSP118](https://www.cloudskillsboost.google/focuses/1817?parent=catalog)
+## 💡 Lab Link: [Tagging Dataplex Assets - GSP1145](https://www.cloudskillsboost.google/focuses/62711?parent=catalog)
 
 ## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
 
