@@ -1,8 +1,6 @@
 
 
-# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)![Jion](https://github.com/user-attachments/assets/6ee41001-c795-467c-8d96-06b56c246b9c) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
-
-![](https://github.com/user-attachments/assets/6ee41001-c795-467c-8d96-06b56c246b9c)
+# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)& join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
 
 🚨Export the REGION name correctly:
 
