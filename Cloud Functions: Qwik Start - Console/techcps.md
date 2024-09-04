@@ -1,8 +1,6 @@
 
 
 # Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
-- https://icons8.com/icon/19318/youtube **Please like share & subscribe to** [Techcps](https://www.youtube.com/@techcps)
-
 
 ## 🚨Export the REGION name correctly:
 
