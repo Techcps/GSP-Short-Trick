@@ -1,25 +1,16 @@
 
-## 💡 Lab Link: [Networking 101 GSP016](https://www.cloudskillsboost.google/focuses/1743?parent=catalog)
+## 💡 Lab Link: [Creating Dynamic Secrets for Google Cloud with Vault - GSP1007](https://www.cloudskillsboost.google/focuses/32204?parent=catalog)
 
 ## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
 
 ---
 
-## 🚨Export the Variables Name correctly:
-```
-export REGION1=
-
-export REGION2=
-
-export REGION3=
-```
-
 ## 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Networking%20101/techcps.sh
-sudo chmod +x techcps.sh
-./techcps.sh
+curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Creating%20Dynamic%20Secrets%20for%20Google%20Cloud%20with%20Vault/techcps1007.sh
+sudo chmod +x techcps1007.sh
+./techcps1007.sh
 ```
 
 ## Congratulations, you're all done with the lab 😄
