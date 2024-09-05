@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Cloud Spanner: Qwik Start - GSP102](https://www.cloudskillsboost.google/focuses/1774?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/-GbB_-dnUcI)
 
 ---
 
