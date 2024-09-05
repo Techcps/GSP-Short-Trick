@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Clean Up Unused IP Addresses - GSP646](https://www.cloudskillsboost.google/focuses/7841?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/j7KkpIkMWio)
 
 ---
 
