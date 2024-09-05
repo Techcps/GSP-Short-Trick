@@ -39,7 +39,7 @@ gcloud compute instances create linux-qa --zone $ZONE --project=$DEVSHELL_PROJEC
 useradd -m -p sa1trmaMoZ25A cp
 EOF"
 
-gcloud compute instances create linux-prod --zone $ZONE --project=$DEVSHELL_PROJECT_IDv --image-project=debian-cloud --image-family=debian-11 --custom-cpu 1 --custom-memory 4 --network-interface subnet=prod,private-network-ip=10.0.0.4,no-address --metadata startup-script="\#! /bin/bash
+gcloud compute instances create linux-prod --zone $ZONE --project=$DEVSHELL_PROJECT_ID --image-project=debian-cloud --image-family=debian-11 --custom-cpu 1 --custom-memory 4 --network-interface subnet=prod,private-network-ip=10.0.0.4,no-address --metadata startup-script="\#! /bin/bash
 useradd -m -p sa1trmaMoZ25A cp
 EOF"
 
