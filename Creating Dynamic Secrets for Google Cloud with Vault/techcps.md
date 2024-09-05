@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Creating Dynamic Secrets for Google Cloud with Vault - GSP1007](https://www.cloudskillsboost.google/focuses/32204?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/3Vw1p5itVrA)
 
 ---
 
