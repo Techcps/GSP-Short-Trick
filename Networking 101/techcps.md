@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Networking 101 GSP016](https://www.cloudskillsboost.google/focuses/1743?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/4ulXnF4BrcE)
 
 ---
 
