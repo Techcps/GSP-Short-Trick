@@ -39,3 +39,36 @@ bq query --use_legacy_sql=false --nouse_cache \
 "
 
 
+
+bq query --use_legacy_sql=false --nouse_cache \
+"
+ SELECT
+     w1mpro_ep,
+     mjd,
+     load_id,
+     frame_id
+ FROM
+     \`bigquery-public-data.wise_all_sky_data_release.mep_wise\`
+ ORDER BY
+     mjd ASC
+ LIMIT 500
+"
+
+sleep 5
+
+bq query --use_legacy_sql=false --nouse_cache \
+"
+ SELECT
+     w1mpro_ep,
+     mjd,
+     load_id,
+     frame_id
+ FROM
+     \`bigquery-public-data.wise_all_sky_data_release.mep_wise\`
+ ORDER BY
+     mjd ASC
+ LIMIT 500
+"
+
+
+
