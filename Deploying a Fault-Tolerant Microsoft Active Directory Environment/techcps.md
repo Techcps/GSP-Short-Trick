@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Deploying a Fault-Tolerant Microsoft Active Directory Environment - GSP118](https://www.cloudskillsboost.google/focuses/1817?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/O2EZhqO83_c)
 
 ---
 
