@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Setting Up Cost Control with Quota - GSP651](https://www.cloudskillsboost.google/focuses/7847?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/EpJtATA9BZ8)
 
 ---
 
