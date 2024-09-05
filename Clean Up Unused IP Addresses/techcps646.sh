@@ -7,12 +7,22 @@ gcloud config set compute/zone $ZONE
 export REGION=${ZONE%-*}
 gcloud config set compute/region $REGION
 
+export PROJECT_ID=$(gcloud config get-value project)
+
+export PROJECT_ID=$DEVSHELL_PROJECT_ID
+
+gcloud config set project $DEVSHELL_PROJECT_ID
 
 gcloud services enable cloudscheduler.googleapis.com --project=$PROJECT_ID
 
 sleep 30
 
 git clone https://github.com/GoogleCloudPlatform/gcf-automated-resource-cleanup.git && cd gcf-automated-resource-cleanup/
+
+export PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2>/dev/null)
+WORKDIR=$(pwd)
+
+sleep 10
 
 export PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2>/dev/null)
 WORKDIR=$(pwd)
