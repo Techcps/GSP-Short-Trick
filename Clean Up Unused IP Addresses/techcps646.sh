@@ -34,6 +34,10 @@ export UNUSED_IP=unused-ip-address
 
 
 gcloud compute addresses create $USED_IP --project=$PROJECT_ID --region=$REGION
+
+sleep 15
+
+
 gcloud compute addresses create $UNUSED_IP --project=$PROJECT_ID --region=$REGION
 
 
