@@ -27,7 +27,7 @@ gcloud beta alloydb clusters create gcloud-lab-cluster --password=Change3Me --ne
 
 ---
 
-Click (+) icon to launch 3rd Cloud Terminal
+### 💡 Click (+) icon to launch 3rd Cloud Terminal
 
 1. Export the **ZONE** Name correctly
 ```
