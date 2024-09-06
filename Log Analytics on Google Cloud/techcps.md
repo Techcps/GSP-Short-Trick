@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Log Analytics on Google Cloud - GSP1088](https://www.cloudskillsboost.google/focuses/49749?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/1IUNZevC2qI)
 
 ---
 
