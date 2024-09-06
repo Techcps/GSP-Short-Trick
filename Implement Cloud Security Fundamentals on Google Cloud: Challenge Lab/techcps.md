@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Implement Cloud Security Fundamentals on Google Cloud: Challenge Lab - GSP342](https://www.cloudskillsboost.google/focuses/14572?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/ygA338iL8Mg)
 
 ---
 
