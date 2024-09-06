@@ -5,7 +5,7 @@
 
 ---
 
-## 💡 [Open this link in new tab](https://console.cloud.google.com/alloydb/clusters?referrer=search&project=$DEVSHELL_PROJECT_ID)
+## 💡 [Open this link in new tab](https://console.cloud.google.com/alloydb/clusters?referrer=search&project=)
 
 1. Export the **ZONE** Name correctly
 ```
@@ -22,7 +22,7 @@ gcloud compute ssh alloydb-client --zone=$ZONE --project=$DEVSHELL_PROJECT_ID --
 export ALLOYDB=
 ```
 
-4. Below commands to **store the Private IP address of the AlloyDB instance on the AlloyDB client VM**
+4. Below commands **store the Private IP address of the AlloyDB instance on the AlloyDB client VM**
 ```
 echo $ALLOYDB  > alloydbip.txt 
 ```
