@@ -7,34 +7,34 @@
 
 ## 💡 [Open this link in new tab](https://console.cloud.google.com/alloydb/clusters?referrer=search&project=$DEVSHELL_PROJECT_ID)
 
-- 1. Export the **ZONE** Name correctly
+1. Export the **ZONE** Name correctly
 ```
 export ZONE=
 ```
 
-- 2. Connect **SSH** of **`alloydb-client`**
+2. Connect **SSH** of **`alloydb-client`**
 ```
 gcloud compute ssh alloydb-client --zone=$ZONE --project=$DEVSHELL_PROJECT_ID --quiet
 ```
 
-- 3. **Replacing ALLOYDB_ADDRESS with the Private IP address of the AlloyDB instance**
+3. **Replacing ALLOYDB_ADDRESS with the Private IP address of the AlloyDB instance**
 ```
 export ALLOYDB=
 ```
 
-- 4. Below commands to **store the Private IP address of the AlloyDB instance on the AlloyDB client VM**
+4. Below commands to **store the Private IP address of the AlloyDB instance on the AlloyDB client VM**
 ```
 echo $ALLOYDB  > alloydbip.txt 
 ```
 
-- 5. This commands launch the **PostgreSQL (psql) client**
+5. This commands launch the **PostgreSQL (psql) client**
 ```
 psql -h $ALLOYDB -U postgres
 ```
 
 > You will be prompted to provide the postgres user's password **(`Change3Me`)** which you entered when you created the cluster
 
-- 6. Input and run the following **SQL commands separately to enable the extension**
+6. Input and run the following **SQL commands separately to enable the extension**
 ```
 \c postgres
 ```
@@ -45,23 +45,23 @@ CREATE EXTENSION IF NOT EXISTS PGAUDIT;
 select extname, extversion from pg_extension where extname = 'pgaudit';
 ```
 
-- 7. Type **`\q`** to exit the psql client.
+7. Type **`\q`** to exit the psql client.
 
-- 8. Type **`exit`** to close the terminal window.
+8. Type **`exit`** to close the terminal window.
 
 ---
 
 ### 💡 Click (+) icon to active 2nd Cloud Shell
 
-- 1. Export the **REGION** Name correctly in **both Cloud Shell**
+1. Export the **REGION** Name correctly in **both Cloud Shell**
 export REGION=
 
-- 2. Run the below commands in your **first Cloud Shell**
+2. Run the below commands in your **first Cloud Shell**
 ```
 gcloud alloydb instances create lab-instance-rp1 --project=$DEVSHELL_PROJECT_ID --region=$REGION --cluster=lab-cluster --instance-type=READ_POOL --cpu-count=2 --read-pool-node-count=2
 ```
 
-- 3. Run the below commands in your **second Cloud Shell**
+3. Run the below commands in your **second Cloud Shell**
 ```
 gcloud beta alloydb backups create lab-backup --region=$REGION --project=$DEVSHELL_PROJECT_ID --cluster=lab-cluster
 ```
