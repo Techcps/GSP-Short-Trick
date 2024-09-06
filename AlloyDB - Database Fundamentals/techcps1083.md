@@ -31,7 +31,7 @@ gcloud beta alloydb clusters create gcloud-lab-cluster --password=Change3Me --ne
 
 1. Export the **ZONE** Name correctly
 ```
-export ZONE=us-east1-c
+export ZONE=
 ```
 
 2. Connect **SSH** of **`alloydb-client`**
