@@ -49,7 +49,7 @@ select extname, extversion from pg_extension where extname = 'pgaudit';
 
 - 8. Type **`exit`** to close the terminal window.
 
-```
+---
 
 ### 💡 Click (+) icon to active 2nd Cloud Shell
 
