@@ -1,5 +1,5 @@
 
-## 💡 Lab Link: [Check Point: Next-Gen Data Center Security CloudGuard for Google Cloud - GSP818](https://www.cloudskillsboost.google/focuses/15822?parent=catalog)
+## 💡 Lab Link: [Cloud Spanner - Loading Data and Performing Backups - GSP1049](https://www.cloudskillsboost.google/focuses/54354?parent=catalog)
 
 ## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
 
