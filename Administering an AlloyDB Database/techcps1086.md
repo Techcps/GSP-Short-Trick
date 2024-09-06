@@ -54,7 +54,9 @@ select extname, extversion from pg_extension where extname = 'pgaudit';
 ### 💡 Click (+) icon to active 2nd Cloud Shell
 
 1. Export the **REGION** Name correctly in **both Cloud Shell**
+```
 export REGION=
+```
 
 2. Run the below commands in your **first Cloud Shell**
 ```
