@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Check Point: Next-Gen Data Center Security CloudGuard for Google Cloud - GSP818](https://www.cloudskillsboost.google/focuses/15822?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/CmuAGyHrBh0)
 
 ---
 
