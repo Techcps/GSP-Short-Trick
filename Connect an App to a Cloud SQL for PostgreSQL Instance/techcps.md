@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Connect an App to a Cloud SQL for PostgreSQL Instance - GSP919](https://www.cloudskillsboost.google/focuses/57387?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/Iv0KRu7znQc)
 
 ---
 
