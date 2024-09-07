@@ -11,7 +11,7 @@
 
 ### 💡 Copy a template app to the AppSheet account for your lab
 
-1. **In the left navigation menu, click Copy app <img src="https://github.com/user-attachments/assets/e5447353-2bd9-4e9e-ae2f-db8495b196ba" width="16" height="16" /> **
+1. **In the left navigation menu, click Copy app <img src="https://github.com/user-attachments/assets/e5447353-2bd9-4e9e-ae2f-db8495b196ba" width="16" height="16" />**
 
 2. **In the Copy app form, for App name as**:
 
