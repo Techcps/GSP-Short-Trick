@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [AlloyDB - Database Fundamentals - GSP1083](https://www.cloudskillsboost.google/focuses/100852?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/MFlyqNJRHt4)
 
 ---
 
