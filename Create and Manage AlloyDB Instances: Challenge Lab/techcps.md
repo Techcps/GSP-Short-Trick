@@ -3,7 +3,7 @@
 
 ## 💡 Lab Link: [Create and Manage AlloyDB Instances: Challenge Lab - GSP395](https://www.cloudskillsboost.google/focuses/100853?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/wp4DhdFv7bQ)
 
 ---
 
