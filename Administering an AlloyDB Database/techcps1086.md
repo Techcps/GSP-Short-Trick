@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Administering an AlloyDB Database - GSP1086](https://www.cloudskillsboost.google/focuses/100851?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/SI-VeAqKN6M)
 
 ---
 
