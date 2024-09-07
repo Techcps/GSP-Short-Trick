@@ -1,7 +1,5 @@
 
 
-export ZONE=
-
 gcloud auth list
 
 export PROJECT_ID=$(gcloud config get-value project)
