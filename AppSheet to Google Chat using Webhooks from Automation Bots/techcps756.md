@@ -13,7 +13,7 @@
 
 ### 💡 Copy a template app to the AppSheet account for your lab
 
-1. **In the left navigation menu, click Copy app (<img src="https://github.com/user-attachments/assets/e5447353-2bd9-4e9e-ae2f-db8495b196ba" width="16" height="16" />)****
+1. **In the left navigation menu, click Copy app <img src="https://github.com/user-attachments/assets/e5447353-2bd9-4e9e-ae2f-db8495b196ba" width="16" height="16" /> **
 
 2. **In the Copy app form, for App name as**:
 
@@ -24,7 +24,7 @@ Inventory Manager
 
 ## 💡 [Open this link in new tab](https://www.appsheet.com/Template/AppDef?appName=InventoryManager-939262569-24-09-03&utm_source=share_app_link)
 
-3. **In the left navigation menu, click Copy app (<img src="https://github.com/user-attachments/assets/e5447353-2bd9-4e9e-ae2f-db8495b196ba" width="16" height="16" />)**
+3. **In the left navigation menu, click Copy app <img src="https://github.com/user-attachments/assets/e5447353-2bd9-4e9e-ae2f-db8495b196ba" width="16" height="16" />**
 
 
 ### Congratulations, you're all done with the lab 😄
