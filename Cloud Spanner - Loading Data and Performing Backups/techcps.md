@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Cloud Spanner - Loading Data and Performing Backups - GSP1049](https://www.cloudskillsboost.google/focuses/54354?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/vgT8Qk2hzPA)
 
 ---
 
