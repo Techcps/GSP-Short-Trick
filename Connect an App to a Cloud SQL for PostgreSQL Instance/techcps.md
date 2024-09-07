@@ -6,9 +6,9 @@
 
 ---
 
-## 🚨Export the REGION Name correctly
+## 🚨Export the ZONE Name correctly
 ```
-export REGION=
+export ZONE=
 ```
 
 ## 🚨Copy and run the below commands in Cloud Shell:
