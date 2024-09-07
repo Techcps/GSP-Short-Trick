@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [AppSheet to Google Chat using Webhooks from Automation Bots - GSP756](https://www.cloudskillsboost.google/focuses/55390?parent=catalog)
 
-## 🚀 [ Manually Lab Solution [Watch Here](https://www.youtube.com/@techcps) ] && [ Short-Solution [Watch Here](https://www.youtube.com/@techcps) ]
+## 🚀 [ Manually Lab Solution [Watch Here](https://www.youtube.com/@techcps) ] && [ Short-Solution [Watch Here](https://youtu.be/PYh-ZI1Bwz0) ]
 
 ---
 
