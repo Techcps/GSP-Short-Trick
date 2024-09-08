@@ -12,13 +12,13 @@
 
 ## 🚨 Download the below 4 files:
 
-- 🚀 Cymbal Product Analysis File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/Cymbal%20Product%20Analysis.json)
+- 🚀 **Cymbal Product Analysis File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/Cymbal%20Product%20Analysis.json)**
 
-- 🚀 Cymbal Tagline Generator Template File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/Cymbal%20Tagline%20Generator%20Template.json)
+- 🚀 **Cymbal Tagline Generator Template File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/Cymbal%20Tagline%20Generator%20Template.json)**
 
-- 🚀 Tagline Generator File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/tagline-generator.ipynb)
+- 🚀 **Tagline Generator File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/tagline-generator.ipynb)**
 
-- 🚀 Image Analysis File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/image-analysis.ipynb)
+- 🚀 **Image Analysis File [Click here!](https://github.com/Techcps/GSP-Short-Trick/blob/main/Prompt%20Design%20in%20Vertex%20AI%20Challenge%20Lab/image-analysis.ipynb)**
 
 
 ### Congratulations, you're all done with the lab 😄
