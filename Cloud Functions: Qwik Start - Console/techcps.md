@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Cloud Functions: Qwik Start - Console - GSP081](https://www.cloudskillsboost.google/focuses/1763?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/79w-L0xb_MI)
 
 ---
 
