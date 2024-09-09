@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Prompt Design in Vertex AI: Challenge Lab - GSP519](https://www.cloudskillsboost.google/focuses/86504?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/b8aMTOLYcC0)
 
 ---
 
