@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Google Sheets: Getting Started - GSP49](https://www.cloudskillsboost.google/focuses/5828?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/-abpaniEL4Y)
 
 ---
 
