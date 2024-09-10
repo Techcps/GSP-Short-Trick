@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Troubleshooting Common SQL Errors with BigQuery - GSP408](https://www.cloudskillsboost.google/focuses/3642?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/tKqZhp33SJI)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/MkDRIeWszsI)
 
 ---
 
