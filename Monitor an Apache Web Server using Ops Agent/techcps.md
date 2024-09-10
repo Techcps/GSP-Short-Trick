@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Monitor an Apache Web Server using Ops Agent - GSP1108](https://www.cloudskillsboost.google/focuses/56596?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/3vNqet2BGr4)
 
 ---
 
