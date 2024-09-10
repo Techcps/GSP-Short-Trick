@@ -5,7 +5,7 @@
 
 ---
 
-## 🚀 In a new incognito window, open the [Google Sheets home page](https://docs.google.com/spreadsheets/)
+## 🚀 Task 1. In a new incognito window, open the [Google Sheets home page](https://docs.google.com/spreadsheets/)
 
 ---
 
@@ -100,6 +100,7 @@
 ---
 
 ## 🚨 Task 7. Calculated columns
+
 1.Return to the **taxi_trips** tab and Click on the **Calculated columns** button
 
 2. **Calculated column name** > **tip_percentage**
