@@ -100,8 +100,7 @@
 ---
 
 ## 🚨 Task 7. Calculated columns
-
-1.Return to the **taxi_trips** tab and Click on the **Calculated columns** button
+1. Return to the **taxi_trips** tab and Click on the **Calculated columns** button
 
 2. **Calculated column name** > **tip_percentage**
 
