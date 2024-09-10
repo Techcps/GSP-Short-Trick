@@ -14,10 +14,10 @@
 
 --- 
 
-## 🚨 Copy the Code from here
+## 🚨 Replace the Code from here
 
-- Replace the **"Code.gs"** file [Click here](https://github.com/Techcps/GSP/blob/main/Creating%20a%20Gmail%20Add-on/code.gs.md)
-- Replace the **"appsscript.json"** file [Click here](https://github.com/Techcps/GSP/blob/main/Creating%20a%20Gmail%20Add-on/appsscript.json.md)
+- Copy the **"Code.gs"** file [Click here](https://github.com/Techcps/GSP/blob/main/Creating%20a%20Gmail%20Add-on/code.gs.md)
+- Copy the **"appsscript.json"** file [Click here](https://github.com/Techcps/GSP/blob/main/Creating%20a%20Gmail%20Add-on/appsscript.json.md)
 
 ---
 
