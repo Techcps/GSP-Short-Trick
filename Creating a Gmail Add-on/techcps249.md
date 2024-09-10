@@ -8,9 +8,9 @@
 
 ## 🚨 Launch Apps Script link to open in a new tab [Click Here](https://script.google.com/macros/create)
 
-1. Click the **Settings icon** then select the Show **"appsscript.json"**
-2. Click **Untitled project** in the upper left
-3. Set the project name **Gmail Add-on Quickstart** and then click Rename
+- Click the **Settings icon** then select the Show **"appsscript.json"**
+- Click **Untitled project** in the upper left
+- Set the project name **Gmail Add-on Quickstart** and then click Rename
 
 --- 
 
