@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Creating a Looker Modeled Query and Working with Quick Start - GSP984](https://www.cloudskillsboost.google/focuses/22176?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/_gJHxXt-mqw)
 
 ---
 
