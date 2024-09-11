@@ -125,7 +125,7 @@
 
 ### Thanks for watching :)
 
-## 🚨NOTE: copyright by Google Cloud
-- **This script doesn't belong to this page**, it has been **edited and shared for the purpose of Educational**. DM for credit or removal request **(no copyright intended) © All rights and credits reserved to the respective owner(A)**
+### 🚨NOTE: copyright by Google Cloud
+- **This script doesn't belong to this page, it has been edited and shared for the purpose of Educational. DM for credit or removal request (no copyright intended) © All rights and credits reserved to the respective owner(A)**
 - **Credit to the respective owner [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
 
