@@ -53,3 +53,84 @@ def render_image_playground_tab(multimodal_model_pro: GenerativeModel):
         with tab2:
             st.write("Prompt used:")
             st.text(prompt_list)
+
+    
+    with screens:
+        oven_screen_uri = "gs://cloud-training/OCBL447/gemini-app/images/oven.jpg"
+        oven_screen_url = "https://storage.googleapis.com/"+oven_screen_uri.split("gs://")[1]
+
+        oven_screen_img = Part.from_uri(oven_screen_uri, mime_type="image/jpeg")
+        st.image(oven_screen_url, width=350, caption="Image of an oven control panel")
+        st.write("Provide instructions for resetting the clock on this appliance in English")
+
+        prompt = """How can I reset the clock on this appliance? Provide the instructions in English.
+                If instructions include buttons, also explain where those buttons are physically located.
+                """
+
+        tab1, tab2 = st.tabs(["Response", "Prompt"])
+        generate_instructions_description = st.button("Generate instructions", key="generate_instructions_description")
+        with tab1:
+            if generate_instructions_description and prompt: 
+                with st.spinner("Generating instructions using Gemini..."):
+                    response = get_gemini_pro_vision_response(multimodal_model_pro, [oven_screen_img, prompt])
+                    st.markdown(response)
+                    logging.info(response)
+        with tab2:
+            st.write("Prompt used:")
+            st.text(prompt+"\n"+"input_image")
+
+   
+    with diagrams:
+        er_diag_uri = "gs://cloud-training/OCBL447/gemini-app/images/er.png"
+        er_diag_url = "https://storage.googleapis.com/"+er_diag_uri.split("gs://")[1]
+
+        er_diag_img = Part.from_uri(er_diag_uri,mime_type="image/png")
+        st.image(er_diag_url, width=350, caption="Image of an ER diagram")
+        st.write("Document the entities and relationships in this ER diagram.")
+
+        prompt = """Document the entities and relationships in this ER diagram."""
+
+        tab1, tab2 = st.tabs(["Response", "Prompt"])
+        er_diag_img_description = st.button("Generate documentation", key="er_diag_img_description")
+        with tab1:
+            if er_diag_img_description and prompt: 
+                with st.spinner("Generating..."):
+                    response = get_gemini_pro_vision_response(multimodal_model_pro,[er_diag_img,prompt])
+                    st.markdown(response)
+                    logging.info(response)
+        with tab2:
+            st.write("Prompt used:")
+            st.text(prompt+"\n"+"input_image")
+
+
+    with equations:
+        math_image_uri = "gs://cloud-training/OCBL447/gemini-app/images/math_eqn.jpg"
+        math_image_url = "https://storage.googleapis.com/"+math_image_uri.split("gs://")[1]
+
+        math_image_img = Part.from_uri(math_image_uri,mime_type="image/jpeg")
+        st.image(math_image_url,width=350, caption="Image of a math equation")
+        st.markdown(f"""
+                Ask questions about the math equation as follows: 
+                - Extract the formula.
+                - What is the symbol right before Pi? What does it mean?
+                - Is this a famous formula? Does it have a name?
+                    """)
+
+        prompt = """Follow the instructions. Surround math expressions with $. Use a table with a row for each instruction and its result.
+                INSTRUCTIONS:
+                - Extract the formula.
+                - What is the symbol right before Pi? What does it mean?
+                - Is this a famous formula? Does it have a name?
+                """
+
+        tab1, tab2 = st.tabs(["Response", "Prompt"])
+        math_image_description = st.button("Generate answers", key="math_image_description")
+        with tab1:
+            if math_image_description and prompt: 
+                with st.spinner("Generating answers for formula using Gemini..."):
+                    response = get_gemini_pro_vision_response(multimodal_model_pro, [math_image_img, prompt])
+                    st.markdown(response)
+                    logging.info(response)
+        with tab2:
+            st.write("Prompt used:")
+            st.text(prompt)
