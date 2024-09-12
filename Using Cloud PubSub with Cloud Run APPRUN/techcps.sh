@@ -9,7 +9,15 @@ export PROJECT_ID=$DEVSHELL_PROJECT_ID
 
 gcloud services disable pubsub.googleapis.com --force
 
-gcloud services enable pubsub.googleapis.com run.googleapis.com --project=$DEVSHELL_PROJECT_ID
+
+
+sleep 20
+
+
+
+
+gcloud services enable pubsub.googleapis.com --project=$DEVSHELL_PROJECT_ID
+gcloud services enable run.googleapis.com --project=$DEVSHELL_PROJECT_ID
 
 sleep 20
 
