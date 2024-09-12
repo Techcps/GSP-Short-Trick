@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Using Cloud PubSub with Cloud Run [APPRUN]](https://www.cloudskillsboost.google/focuses/30846?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/CpDsUBzhFVA)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/6hRrxREoUeo)
 
 ---
 
