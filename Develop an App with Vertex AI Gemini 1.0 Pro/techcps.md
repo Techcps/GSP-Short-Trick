@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Develop an App with Vertex AI Gemini 1.0 Pro](https://cloudskillsboost.google/focuses/86788?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/CpDsUBzhFVA)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/E7LhnCxvfSU)
 
 ---
 
