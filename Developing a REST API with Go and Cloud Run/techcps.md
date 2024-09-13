@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Developing a REST API with Go and Cloud Run - GSP761](https://www.cloudskillsboost.google/focuses/14662?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/gRK_gKrYc18)
 
 ---
 
