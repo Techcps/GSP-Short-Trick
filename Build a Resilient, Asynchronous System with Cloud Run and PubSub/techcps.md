@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Build a Resilient, Asynchronous System with Cloud Run and Pub/Sub - GSP650](https://cloudskillsboost.google/focuses/8389?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/EyETFR5iHBs)
 
 ---
 
