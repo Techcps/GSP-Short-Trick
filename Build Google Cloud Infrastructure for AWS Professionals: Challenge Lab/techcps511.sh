@@ -27,6 +27,10 @@ gcloud deployment-manager deployments create prod-network \
 cd ..
 griffin-prod-wp
 
+sleep 10
+
+cd ..
+griffin-prod-wp
 
 gcloud compute instances create bastion --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --network-interface=network=griffin-dev-vpc,subnet=griffin-dev-mgmt --network-interface=network=griffin-prod-vpc,subnet=griffin-prod-mgmt --tags=ssh && gcloud compute firewall-rules create fw-ssh-dev --project=$DEVSHELL_PROJECT_ID --target-tags ssh --allow=tcp:22 --network=griffin-dev-vpc --source-ranges=0.0.0.0/0 && gcloud compute firewall-rules create fw-ssh-prod --project=$DEVSHELL_PROJECT_ID --target-tags ssh --allow=tcp:22 --network=griffin-prod-vpc --source-ranges=0.0.0.0/0
 
@@ -86,8 +90,66 @@ kubectl create secret generic cloudsql-instance-credentials \
 INSTANCE_ID=$(gcloud sql instances describe griffin-dev-db --project=$DEVSHELL_PROJECT_ID --format='value(connectionName)')
 
 
-wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Build%20Google%20Cloud%20Infrastructure%20for%20AWS%20Professionals%3A%20Challenge%20Lab/wp-deployment.yaml
+cat > wp-deployment.yaml <<EOF_CP
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - image: wordpress
+          name: wordpress
+          env:
+          - name: WORDPRESS_DB_HOST
+            value: 127.0.0.1:3306
+          - name: WORDPRESS_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: username
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: password
+          ports:
+            - containerPort: 80
+              name: wordpress
+          volumeMounts:
+            - name: wordpress-persistent-storage
+              mountPath: /var/www/html
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.33.2
+          command: ["/cloud_sql_proxy",
+                    "-instances=$INSTANCE_ID=tcp:3306",
+                    "-credential_file=/secrets/cloudsql/key.json"]
+          securityContext:
+            runAsUser: 2  # non-root user
+            allowPrivilegeEscalation: false
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+      volumes:
+        - name: wordpress-persistent-storage
+          persistentVolumeClaim:
+            claimName: wordpress-volumeclaim
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
 
+EOF_CP
 
 kubectl create -f wp-deployment.yaml
 
@@ -125,9 +187,43 @@ external_ip        = "$EXTERNAL_IP"
 EOF_CP
 
 
-wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Build%20Google%20Cloud%20Infrastructure%20for%20AWS%20Professionals%3A%20Challenge%20Lab/techcps.tf
+cat > techcps.tf << "EOF_CP"
+variable "devsell_project_id" {
+  description = "The project ID"
+}
+
+variable "external_ip" {
+  description = "The external IP address"
+}
+
+provider "google" {
+  project = var.devsell_project_id
+}
+
+resource "google_monitoring_uptime_check_config" "example" {
+  display_name = "techcps"
+  timeout      = "60s"
+
+  http_check {
+    port           = "80"
+    request_method = "GET"
+  }
+
+  monitored_resource {
+    type = "uptime_url"
+    labels = {
+      project_id = var.devsell_project_id
+      host       = var.external_ip  # Replace with your external IP
+    }
+  }
+
+  checker_type = "STATIC_IP_CHECKERS"
+}
+
+EOF_CP
 
 terraform init
 terraform apply --auto-approve
+
 
 
