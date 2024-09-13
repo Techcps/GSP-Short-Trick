@@ -152,7 +152,6 @@ spec:
 EOF_CP
 
 kubectl create -f wp-deployment.yaml
-
 kubectl create -f wp-service.yaml
 
 
