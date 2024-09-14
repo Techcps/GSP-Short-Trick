@@ -19,6 +19,7 @@ sudo chmod +x techcps1.sh
 ./techcps1.sh
 ```
 
+## Now just go and check your progress on task 1-6 (6* first check my progress)
 ---
 
 ## 💡 Click this link to open Audit Logs: [Click here](https://console.cloud.google.com/iam-admin/audit?referrer=search&cloudshell=true)
