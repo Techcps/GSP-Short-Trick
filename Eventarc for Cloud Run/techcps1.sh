@@ -30,7 +30,8 @@ gcloud eventarc providers describe \
 
 # Task 4
 
-gcloud beta eventarc attributes types list
+
+export SERVICE_NAME=event-display
 
 export IMAGE_NAME="gcr.io/cloudrun/hello"
 
