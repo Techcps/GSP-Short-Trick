@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Build Google Cloud Infrastructure for AWS Professionals: Challenge Lab - GSP511](https://www.cloudskillsboost.google/focuses/60389?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/3vBV9boIETk)
 
 ---
 
