@@ -25,7 +25,9 @@ sudo chmod +x techcps1.sh
 - In the list of services, check the box for **Google Cloud Storage**
 - **On the right hand side, click the LOG TYPE tab and selected to all this three**:
 > **Admin Read**
+
 > **Data Read**
+
 > **Data Write**
 
 ## Click Save
