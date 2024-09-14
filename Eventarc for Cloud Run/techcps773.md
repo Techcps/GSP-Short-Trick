@@ -5,24 +5,22 @@
 
 ---
 
-## 🚨Export the REGION name correctly:
+### 🚨Export the REGION name correctly:
 
 ```
 export REGION=
 ```
 
-## 🚨Copy and run the below commands in Cloud Shell:
+### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Eventarc%20for%20Cloud%20Run/techcps1.sh
 sudo chmod +x techcps1.sh
 ./techcps1.sh
 ```
-
-## Now just go and check your progress on task 1-6 (6* first check my progress)
 ---
 
-## 💡 Click this link to open Audit Logs: [Click here](https://console.cloud.google.com/iam-admin/audit?referrer=search&cloudshell=true)
+### 💡 Click this link to open Audit Logs: [Click here](https://console.cloud.google.com/iam-admin/audit?referrer=search)
 - In the list of services, check the box for **Google Cloud Storage**
 - **On the right hand side, click the LOG TYPE tab and selected to all this three**:
 > **Admin Read**
@@ -31,10 +29,12 @@ sudo chmod +x techcps1.sh
 
 > **Data Write**
 
-## Click Save
+### Click Save
+
+### Now just go and check your progress on task 1-6 (6* first check my progress)
 ---
 
-## 🚨Copy and run the below commands in Cloud Shell:
+### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Eventarc%20for%20Cloud%20Run/techcps2.sh
