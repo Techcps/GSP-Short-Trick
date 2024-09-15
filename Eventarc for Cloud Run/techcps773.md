@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Eventarc for Cloud Run- GSP773](https://www.cloudskillsboost.google/focuses/15657?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/n5nA8xSbfXg)
 
 ---
 
