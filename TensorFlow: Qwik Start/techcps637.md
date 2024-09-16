@@ -10,7 +10,6 @@
 
 ### ©Credit
 - **DM for credit or removal request (no copyright intended) ©All rights and credits for the original content belong to Google Cloud [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
----
 
 ---
 ## 💡 Press Ctrl+shift+v then Enter to run the following commands in Terminal
