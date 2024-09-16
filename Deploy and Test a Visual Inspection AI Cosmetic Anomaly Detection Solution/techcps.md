@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Deploy and Test a Visual Inspection AI Cosmetic Anomaly Detection Solution - GSP898](https://www.cloudskillsboost.google/focuses/34183?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/Vl93h2F8MYo)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/shbL2A3mNZA)
 
 ---
 
