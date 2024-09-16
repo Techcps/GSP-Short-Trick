@@ -4,6 +4,15 @@
 ## 🚀 Lab Solution [Watch Here](https://youtu.be/Ljhk2F6Bu90)
 
 ---
+
+### ⚠️ Disclaimer
+- **This script and guide are provided for  the educational purposes to help you understand the lab services and boost your career. Before using the script, please open and review it to familiarize yourself with Google Cloud services. Ensure that you follow 'Qwiklabs' terms of service and YouTube’s community guidelines. The goal is to enhance your learning experience, not to bypass it.**
+
+### ©Credit
+- **DM for credit or removal request (no copyright intended) ©All rights and credits for the original content belong to Google Cloud [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
+---
+
+---
 ## 💡 Press Ctrl+shift+v then Enter to run the following commands in Terminal
 
 ```
@@ -26,11 +35,3 @@ source techcps637.sh
 - **Follow us on [LinkedIn](https://www.linkedin.com/company/techcps/)** <img src="https://github.com/user-attachments/assets/b9da471b-2f46-4d39-bea9-acdb3b3a23b0" alt="icon" width="25" height="25">
 
 ### Thanks for watching and stay connected :)
-
----
-
-### 🚨NOTE: copyright by Google Cloud
-- **This script doesn't belong to this page, it has been edited and shared for the purpose of Educational. DM for credit or removal request (no copyright intended) ©All rights and credits for the original content belong to Google Cloud.**
-- **Credit to the respective owner [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
-
----
