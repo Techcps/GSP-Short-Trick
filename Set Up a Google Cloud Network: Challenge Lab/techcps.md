@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Set Up a Google Cloud Network: Challenge Lab - GSP314](https://www.cloudskillsboost.google/focuses/10417?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/2BIDj6EMbhY)
 
 ---
 
