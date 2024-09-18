@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Build Google Cloud Infrastructure for Azure Professionals: Challenge Lab - GSP512](https://cloudskillsboost.google/focuses/60393?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/TM7imJcx8_A)
 
 ---
 
