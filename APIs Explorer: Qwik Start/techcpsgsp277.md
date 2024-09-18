@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [APIs Explorer: Qwik Start - GSP277](https://www.cloudskillsboost.google/focuses/2457?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/ZE0-RZ60aXg)
 
 ---
 
