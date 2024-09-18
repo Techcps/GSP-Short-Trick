@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Understanding and Combining GKE Autoscaling Strategies - GSP768](https://www.cloudskillsboost.google/focuses/15636?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/T4JGfP-uRnI)
 
 ---
 
