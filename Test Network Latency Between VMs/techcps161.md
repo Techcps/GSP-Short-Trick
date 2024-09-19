@@ -13,7 +13,7 @@
 
 ---
 
-## 🚨Export the ZONES name correctly:
+## 🚨Export the ZONE names correctly:
 
 ```
 export ZONE_1=
