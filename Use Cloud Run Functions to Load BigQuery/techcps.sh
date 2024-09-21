@@ -1,4 +1,5 @@
 
+
 gcloud auth list
 
 export PROJECT_ID=$(gcloud config get-value project)
@@ -9,13 +10,6 @@ ZONE="$(gcloud compute instances list --project=$DEVSHELL_PROJECT_ID --format='v
 
 export REGION=${ZONE%-*}
 
-echo "export REGION=$REGION" > techcps1.sh
-echo "export PROJECT_ID=$PROJECT_ID" >> techcps1.sh
-
-source techcps1.sh
-
-cat > cp.sh <<'EOF_CP'
-source /tmp/techcps1.sh
 
 gsutil mb -p  $PROJECT_ID gs://$PROJECT_ID
 
@@ -23,7 +17,21 @@ gsutil mb -p  $PROJECT_ID gs://$PROJECT_ID-bqtemp
 
 bq mk -d  loadavro
 
+echo "export REGION=$REGION" > techcps1.sh
+echo "export PROJECT_ID=$DEVSHELL_PROJECT_ID" >> techcps1.sh
+
+
+source techcps1.sh
+
+
+cat > cp.sh <<'EOF_CP'
+source /tmp/techcps1.sh
+
 gcloud config set functions/region $REGION
+
+gcloud services disable cloudfunctions.googleapis.com
+
+gcloud services enable cloudfunctions.googleapis.com
 
 cat > index.js <<EOF
 /**
@@ -73,11 +81,9 @@ exports.loadBigQueryFromAvro = async (event, context) => {
 
 EOF
 
-gcloud services disable cloudfunctions.googleapis.com
+gsutil mb -p  $PROJECT_ID gs://$PROJECT_ID
 
-gcloud services enable cloudfunctions.googleapis.com
-
-sleep 15
+bq mk -d  loadavro
 
 gcloud projects add-iam-policy-binding $PROJECT_ID \
 --member="serviceAccount:$PROJECT_ID@appspot.gserviceaccount.com" \
@@ -100,10 +106,11 @@ sleep 30
 
 gcloud storage cp campaigns.avro gs://$PROJECT_ID
 
+
 EOF_CP
 
 
-gcloud compute scp techcps.sh lab-vm:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
+gcloud compute scp techcps1.sh lab-vm:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
 gcloud compute scp cp.sh lab-vm:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
