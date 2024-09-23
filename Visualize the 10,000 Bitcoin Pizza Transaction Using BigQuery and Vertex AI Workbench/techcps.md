@@ -1,5 +1,5 @@
 
-## 💡 Lab Link: [Visualize the 10,000 Bitcoin Pizza Transaction Using BigQuery and Vertex AI Workbench - GSP604](https://www.cloudskillsboost.google/focuses/5568?parent=catalog)
+## 💡 Lab Link: Visualize the 10,000 Bitcoin Pizza Transaction Using BigQuery and Vertex AI Workbench - [GSP604](https://www.cloudskillsboost.google/focuses/5568?parent=catalog)
 
 ## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
 
