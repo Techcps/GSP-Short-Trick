@@ -32,7 +32,7 @@ sudo chmod +x techcps793.sh
 
 - **Click this to open Dialogflow Console [Click here](https://dialogflow.cloud.google.com/)**
 
-- **Click Here [Download File](https://github.com/Techcps/GSP-Short-Trick/blob/main/Adding%20a%20Phone%20Gateway%20to%20a%20Virtual%20Agent/pigeon-travel-gsp-793-cloud-function/techcps.zip)**
+- **Click this link to download the file [Click here](https://github.com/Techcps/GSP-Short-Trick/blob/main/Adding%20a%20Phone%20Gateway%20to%20a%20Virtual%20Agent/pigeon-travel-gsp-793-cloud-function/techcps.zip)**
 
 ---
 
