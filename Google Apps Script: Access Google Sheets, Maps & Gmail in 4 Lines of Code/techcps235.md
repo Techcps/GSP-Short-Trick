@@ -13,8 +13,6 @@
 
 ---
 
-### 🚀 To create a new sheet, open [Google Sheets](http://sheets.google.com/create)
-
 - **1. 🚨On the blank spreadsheet, click into the first cell in the upper left-hand corner (A1). It should be in column A and row 1**:
 
 ```
