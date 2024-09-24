@@ -7,18 +7,19 @@ export DATASET_CP2=covid_data
 gcloud auth list
 
 export PROJECT_ID=$(gcloud config get-value project)
-gcloud config set project $PROJECT_ID
 
+export PROJECT_ID=$DEVSHELL_PROJECT_ID
 
-bq mk $PROJECT_ID:covid
+bq mk $DEVSHELL_PROJECT_ID:covid
 
+sleep 15
 
 bq query --use_legacy_sql=false \
 "
 CREATE OR REPLACE TABLE $DATASET_CP1.oxford_policy_tracker
 PARTITION BY date
 OPTIONS(
-partition_expiration_days=1080,
+partition_expiration_days=1445,
 description='oxford_policy_tracker table in the COVID 19 Government Response public dataset with  an expiry time set to 90 days.'
 ) AS
 SELECT
@@ -28,6 +29,7 @@ FROM
 WHERE
    alpha_3_code NOT IN ('GBR', 'BRA', 'CAN','USA')
 "
+
 
 
 
