@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Google Apps Script: Access Google Sheets, Maps & Gmail in 4 Lines of Code - GSP235](https://www.cloudskillsboost.google/focuses/3688?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/FInwHT5u3lA)
 
 ---
 
