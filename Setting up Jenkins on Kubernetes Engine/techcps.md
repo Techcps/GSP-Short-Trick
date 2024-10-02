@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Setting up Jenkins on Kubernetes Engine - GSP117](https://www.cloudskillsboost.google/focuses/1776?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/iaXprYH2v6c)
 
 ---
 
