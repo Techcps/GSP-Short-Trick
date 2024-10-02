@@ -1,7 +1,7 @@
 
-## 💡 Lab Link: [Build a Data Warehouse with BigQuery: Challenge Lab - GSP340](https://www.cloudskillsboost.google/focuses/14341?parent=catalog)
+## 💡 Lab Link: [Continuous Delivery with Jenkins in Kubernetes Engine - GSP051](https://www.cloudskillsboost.google/focuses/1104?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/iDDNrnPkuO0)
+## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
 
 ---
 
