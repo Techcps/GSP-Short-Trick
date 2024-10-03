@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Automatically Deploy Python Web Apps from Version Control to Cloud Run - GSP1204](https://www.cloudskillsboost.google/focuses/80415?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/zlX4ilbJcLE)
 
 ---
 
