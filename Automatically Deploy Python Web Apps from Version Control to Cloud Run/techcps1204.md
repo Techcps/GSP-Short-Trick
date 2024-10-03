@@ -21,6 +21,9 @@ sudo chmod +x techcps1.sh
 ---
 
 ## 🚨Now please watch the video very carefully and follow the video instructions
+- **For GitHub Account**
+
+- **Login with your personal or temporary GitHub Account**
 
 ---
 
