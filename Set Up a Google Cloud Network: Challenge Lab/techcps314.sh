@@ -27,7 +27,7 @@ gcloud compute firewall-rules create $RULE_CP1 --project=$DEVSHELL_PROJECT_ID --
 gcloud compute firewall-rules create $RULE_CP2 --project=$DEVSHELL_PROJECT_ID --network=$VPC_NAME --direction=INGRESS --priority=65535 --action=ALLOW --rules=tcp:3389 --source-ranges=0.0.0.0/24 --target-tags=all
 
 
-gcloud compute firewall-rules create $RULE_CP3 --project=$DEVSHELL_PROJECT_ID --network=$VPC_NAME --direction=INGRESS --priority=65535 --action=ALLOW --rules=icmp --source-ranges=0.0.0.0/24 --target-tags=all
+gcloud compute firewall-rules create $RULE_CP3 --project=$DEVSHELL_PROJECT_ID --network=$VPC_NAME --direction=INGRESS --priority=1000 --action=ALLOW --rules=icmp --source-ranges=0.0.0.0/24 --target-tags=all
 
 export VM_NAME_1=us-test-01
 
