@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Deploy and Test a Visual Inspection AI Component Anomaly Detection Solution - GSP896](https://www.cloudskillsboost.google/focuses/34182?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/TZJDtOBQ7gU)
 
 ---
 
