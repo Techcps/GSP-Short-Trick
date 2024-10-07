@@ -15,8 +15,8 @@
 ## 🚨Copy and run the below commands in Cloud Shell:
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Ingesting%20New%20Datasets%20into%20BigQuery/techcps411.sh
-sudo chmod +x techcps.sh
-./techcps.sh
+sudo chmod +x techcps411.sh
+./techcps411.sh
 ```
 ---
 
