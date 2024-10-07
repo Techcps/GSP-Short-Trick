@@ -19,7 +19,6 @@ sleep 30
 mkdir ~/hello-http && cd $_
 touch index.js && touch package.json
 
-
 cat > index.js <<EOF_CP
 /**
  * Responds to any HTTP request.
@@ -28,20 +27,17 @@ cat > index.js <<EOF_CP
  * @param {!express:Response} res HTTP response context.
  */
 exports.helloWorld = (req, res) => {
-    let message = req.query.message || req.body.message || 'Hello World!';
-    res.status(200).send(message);
-  };
-  
+  let message = req.query.message || req.body.message || 'Hello World!';
+  res.status(200).send(message);
+};
 EOF_CP
 
 cat > package.json <<EOF_CP
 {
-    "name": "sample-http",
-    "version": "0.0.1"
-  }
-  
+  "name": "sample-http",
+  "version": "0.0.1"
+}
 EOF_CP
-
 
 #!/bin/bash
 
