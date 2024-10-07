@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Monitoring and Logging for Cloud Functions - GSP092](https://www.cloudskillsboost.google/focuses/1833?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/hIS1PgTnLqk)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/8GMAhcrxLQg)
 
 ---
 
