@@ -12,6 +12,13 @@
 - **DM for credit or removal request (no copyright intended) ©All rights and credits for the original content belong to Google Cloud [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
 
 ---
+
+## 🚨Export the Zone Name correctly:
+
+```
+export ZONE=
+```
+
 ## 🚨Copy and run the below commands in Cloud Shell:
 ```
 curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Streaming%20Data%20to%20Bigtable/techcps1.sh
