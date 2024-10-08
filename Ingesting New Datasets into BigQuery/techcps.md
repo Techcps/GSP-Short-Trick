@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Ingesting New Datasets into BigQuery - GSP411](https://www.cloudskillsboost.google/focuses/3692?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/uZSi9HqPxOk)
 
 ---
 
@@ -18,10 +18,6 @@ curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Ingesting%20Ne
 sudo chmod +x techcps411.sh
 ./techcps411.sh
 ```
----
-
-## 🚨Now please watch the video very carefully and follow the video instructions
-
 ---
 
 ## 🚨Copy and run the below commands in Cloud Shell:
