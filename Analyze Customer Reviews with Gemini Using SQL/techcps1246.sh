@@ -284,7 +284,7 @@ FROM
 
 bq query --use_legacy_sql=false \
 "
-SELECT * FROM `gemini_demo.customer_reviews_cs_response_formatted`
+SELECT * FROM \`gemini_demo.customer_reviews_cs_response_formatted\`
 "
 
 
