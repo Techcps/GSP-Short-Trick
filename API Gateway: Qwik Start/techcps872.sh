@@ -27,7 +27,7 @@ cd nodejs-docs-samples/functions/helloworld/helloworldGet
 #!/bin/bash
 
 deploy_function() {
-  gcloud functions deploy helloGET --runtime nodejs14 --trigger-http --allow-unauthenticated --region $REGION
+  gcloud functions deploy helloGET --runtime nodejs20 --trigger-http --allow-unauthenticated --region $REGION
 }
 
 deploy_success=false
