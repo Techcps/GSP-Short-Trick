@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Analyze Customer Reviews with Gemini Using SQL - GSP1246](https://www.cloudskillsboost.google/focuses/98856?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/ws6-Re0aKnc)
 
 ---
 
