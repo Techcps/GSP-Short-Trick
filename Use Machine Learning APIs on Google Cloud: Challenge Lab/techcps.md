@@ -24,7 +24,7 @@ sudo chmod +x techcps329.sh
 
 ---
 
-## 🚨Export the below variables name correctly
+## 🚨Export the variables name correctly
 
 ### Congratulations, you're all done with the lab 😄
 
