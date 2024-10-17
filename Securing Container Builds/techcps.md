@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Securing Container Builds - GSP1185](https://www.cloudskillsboost.google/focuses/80692?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/tR3RG7eVEdU)
 
 ---
 
