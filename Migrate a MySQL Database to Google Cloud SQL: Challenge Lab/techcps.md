@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Migrate a MySQL Database to Google Cloud SQL: Challenge Lab - GSP306](https://www.cloudskillsboost.google/focuses/1740?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/UwY_0YGjSZo)
 
 ---
 
