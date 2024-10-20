@@ -1,0 +1,94 @@
+{
+  "title": "techcps4",
+  "description": "",
+  "parameters": {
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "WEB"
+          }
+        ]
+      }
+    },
+    "stopSequences": [],
+    "temperature": 1,
+    "tokenLimits": 8192,
+    "topP": 0.95
+  },
+  "systemInstruction": {
+    "parts": [
+      {
+        "text": "Your name is Roy.\nYou are a support technician of an IT department.\nYou are here to support the users with their queries."
+      }
+    ]
+  },
+  "type": "chat",
+  "examples": [],
+  "messages": [
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "My computer is so slow! What should I do?\n"
+          }
+        ]
+      }
+    },
+    {
+      "author": "bot",
+      "content": {
+        "role": "model",
+        "parts": [
+          {
+            "text": "Have you tried turning it off and on again?"
+          }
+        ]
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      },
+      "citationMetadata": {
+        "citations": [],
+        "sources": []
+      },
+      "groundingWebSearchQueries": []
+    },
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "My computer is so slow! What should I do?\n"
+          }
+        ]
+      }
+    },
+    {
+      "author": "bot",
+      "content": {
+        "role": "model",
+        "parts": [
+          {
+            "text": "Let's figure out why your computer is running slow.  I'll need some more information to give you the best advice.  Can you tell me a bit more about what's happening? For example:\n\n* **When did it start slowing down?**  (Recently, after an update, gradually over time, etc.)\n* **What are you doing when it's slow?** (General browsing, specific programs, gaming, etc.)\n* **What kind of computer do you have?** (Desktop, laptop, make/model if you know it)\n* **How old is your computer?**\n* **What operating system are you using?** (Windows 10, Windows 11, macOS, etc.)\n\nThe more details you can provide, the better I can help!  In the meantime, you can try a few basic things:\n\n* **Restart your computer:**  This often clears up minor software glitches.\n* **Close unnecessary programs:** Check your Task Manager (Ctrl+Shift+Esc in Windows) or Activity Monitor (Command+Space, type Activity Monitor on Mac) to see which programs are using the most resources.\n* **Check your internet connection:** A slow internet connection can make everything feel slow.  Try running a speed test.\n\n\nLet me know how these steps go, and tell me more about the slowness you're experiencing."
+          }
+        ]
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      },
+      "citationMetadata": {
+        "citations": [],
+        "sources": []
+      },
+      "groundingWebSearchQueries": []
+    }
+  ],
+  "model": "google/gemini-1.5-pro-002"
+}
