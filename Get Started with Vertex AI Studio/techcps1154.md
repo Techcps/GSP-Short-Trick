@@ -30,7 +30,9 @@ gcloud auth list && gcloud services enable compute.googleapis.com iam.googleapis
 
 ---
 
-### 🚀 Clixk this link to open Vertex Ai [Click Here](https://console.cloud.google.com/vertex-ai/studio/saved-prompts?project=)
+### 🚀 Click this link to open Vertex Ai [Click Here](https://console.cloud.google.com/vertex-ai/studio/saved-prompts?project=)
+
+---
 
 ### Congratulations, you're all done with the lab 😄
 
