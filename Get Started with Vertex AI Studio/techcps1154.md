@@ -21,7 +21,7 @@ gcloud auth list && gcloud services enable compute.googleapis.com iam.googleapis
 
 ---
 
-## 💡 Download the below 4 files:
+### 💡 Download the below 4 files:
 
 - **File 1 [Click Here](https://github.com/Techcps/GSP-Short-Trick/blob/main/Get%20Started%20with%20Vertex%20AI%20Studio/techcps1.json)**
 - **File 2 [Click Here](https://github.com/Techcps/GSP-Short-Trick/blob/main/Get%20Started%20with%20Vertex%20AI%20Studio/techcps2.json)**
@@ -30,7 +30,7 @@ gcloud auth list && gcloud services enable compute.googleapis.com iam.googleapis
 
 ---
 
-## 🚀 Clixk this link to open Vertex Ai [Click Here](https://console.cloud.google.com/vertex-ai/studio/saved-prompts?project=)
+### 🚀 Clixk this link to open Vertex Ai [Click Here](https://console.cloud.google.com/vertex-ai/studio/saved-prompts?project=)
 
 ### Congratulations, you're all done with the lab 😄
 
