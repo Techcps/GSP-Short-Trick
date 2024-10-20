@@ -14,10 +14,7 @@
 
 ---
 
-### 🚨Copy and run the below commands in Cloud Shell
-```
-gcloud auth list && gcloud services enable compute.googleapis.com iam.googleapis.com iamcredentials.googleapis.com monitoring.googleapis.com logging.googleapis.com notebooks.googleapis.com aiplatform.googleapis.com bigquery.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com container.googleapis.com
-```
+### 🚀 Enable Vertex AI API [Click Here](https://console.cloud.google.com/marketplace/product/google/aiplatform.googleapis.com?q=search&referrer=search&project=)
 
 ---
 
