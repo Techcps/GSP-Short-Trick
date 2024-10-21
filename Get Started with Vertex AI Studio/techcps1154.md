@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Get Started with Vertex AI Studio - GSP1154](https://www.cloudskillsboost.google/focuses/63564?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/zDrj-p-zQlg)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/x-BZX5gDRaw)
 
 ---
 
