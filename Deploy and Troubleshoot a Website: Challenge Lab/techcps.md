@@ -1,5 +1,5 @@
 
-## 💡 Lab Link: Deploy and Troubleshoot a Website: Challenge Lab - GSP101](https://www.cloudskillsboost.google/focuses/1734?parent=catalog)
+## 💡 Lab Link: [Deploy and Troubleshoot a Website: Challenge Lab - GSP101](https://www.cloudskillsboost.google/focuses/1734?parent=catalog)
 
 ## 🚀 Lab Solution [Watch Here](https://youtu.be/TuR1Zuitask)
 
