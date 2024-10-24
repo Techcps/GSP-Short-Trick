@@ -5,6 +5,8 @@ cd pet-theory/lab02
 
 npm i && npm audit fix --force
 
+gcloud firestore databases create --location=nam5
+
 firebase login --no-localhost
 
 firebase init
