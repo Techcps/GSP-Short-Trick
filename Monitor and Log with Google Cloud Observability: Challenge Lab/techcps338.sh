@@ -1,4 +1,10 @@
 
+
+echo "Please export the values correctly."
+
+read -p "Enter custom_metric: " custom_metric
+read -p "Enter VALUE: " VALUE
+
 gcloud auth list
 
 export PROJECT_ID=$(gcloud config get-value project)
