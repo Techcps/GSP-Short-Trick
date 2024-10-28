@@ -22,9 +22,6 @@ sudo chmod +x techcps338.sh
 ./techcps338.sh
 ```
 
-https://github.com/Techcps/GSP-Short-Trick/blob/main/
-
-
 ### 🚨Export the variables name correctly:
 
 
