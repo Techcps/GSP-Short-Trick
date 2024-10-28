@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Monitor and Log with Google Cloud Observability: Challenge Lab - GSP338](https://www.cloudskillsboost.google/focuses/13786?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/Izvu0IZ4qoU)
 
 ---
 
