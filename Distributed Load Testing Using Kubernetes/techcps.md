@@ -22,7 +22,6 @@ sudo chmod +x techcps182.sh
 ./techcps182.sh
 ```
 
-### 💡Run the function based on the selected form number
 ### 🚨Export the BucketS name correctly:
 
 ### Congratulations, you're all done with the lab 😄
