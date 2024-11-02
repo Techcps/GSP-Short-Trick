@@ -22,7 +22,7 @@ sudo chmod +x techcps182.sh
 ./techcps182.sh
 ```
 
-### 🚨Export the BucketS name correctly:
+### 🚨Export the zone name correctly:
 
 ### Congratulations, you're all done with the lab 😄
 
