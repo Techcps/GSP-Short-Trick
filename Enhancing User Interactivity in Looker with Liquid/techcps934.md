@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Enhancing User Interactivity in Looker with Liquid - GSP934](https://www.cloudskillsboost.google/focuses/21216?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/iHMps4M2HcE)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/QYCfw5j2A8A)
 
 ---
 
