@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Creating Cross-region Load Balancing - GSP157](https://www.cloudskillsboost.google/focuses/642?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/eF4aR-qi1ks)
 
 ---
 
