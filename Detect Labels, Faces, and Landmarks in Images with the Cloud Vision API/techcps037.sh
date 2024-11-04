@@ -1,4 +1,4 @@
-
+#new!
 
 gcloud auth list
 
@@ -13,11 +13,11 @@ export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 gsutil mb gs://$PROJECT_ID
 
 
-curl -L -o donuts.png https://github.com/Techcps/GSP-Short-Trick/master/Detect%20Labels%2C%20Faces%2C%20and%20Landmarks%20in%20Images%20with%20the%20Cloud%20Vision%20API%20GSP037/donuts.png
+curl -L -o donuts.png https://github.com/Techcps/GSP-Short-Trick/master/Detect%20Labels%2C%20Faces%2C%20and%20Landmarks%20in%20Images%20with%20the%20Cloud%20Vision%20API/donuts.png
 
-curl -L -o selfie.png https://github.com/Techcps/GSP-Short-Trick/master/Detect%20Labels%2C%20Faces%2C%20and%20Landmarks%20in%20Images%20with%20the%20Cloud%20Vision%20API%20GSP037/selfie.png
+curl -L -o selfie.png https://github.com/Techcps/GSP-Short-Trick/master/Detect%20Labels%2C%20Faces%2C%20and%20Landmarks%20in%20Images%20with%20the%20Cloud%20Vision%20API/selfie.png
 
-curl -L -o city.png https://github.com/Techcps/GSP-Short-Trick/master/Detect%20Labels%2C%20Faces%2C%20and%20Landmarks%20in%20Images%20with%20the%20Cloud%20Vision%20API%20GSP037/city.png
+curl -L -o city.png https://github.com/Techcps/GSP-Short-Trick/master/Detect%20Labels%2C%20Faces%2C%20and%20Landmarks%20in%20Images%20with%20the%20Cloud%20Vision%20API/city.png
 
 
 gsutil cp donuts.png gs://$PROJECT_ID/donuts.png
