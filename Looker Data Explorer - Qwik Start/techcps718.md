@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Looker Data Explorer - Qwik Start - GSP718](https://www.cloudskillsboost.google/focuses/16552?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/80hJHcsBu_8)
 
 ---
 
