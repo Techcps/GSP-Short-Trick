@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [Mitigate Threats and Vulnerabilities with Security Command Center: Challenge Lab - GSP382](https://www.cloudskillsboost.google/focuses/71935?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/KyC-tYCejhM)
 
 ---
 
