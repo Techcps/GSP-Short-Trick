@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Extract, Analyze, and Translate Text from Images with the Cloud ML APIs - GSP075](https://www.cloudskillsboost.google/focuses/1836?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/nveSesd_62o)
 
 ---
 
