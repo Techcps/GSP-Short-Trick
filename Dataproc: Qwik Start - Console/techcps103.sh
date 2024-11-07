@@ -1,21 +1,29 @@
 
+gcloud auth list
 
 export REGION="${ZONE%-*}"
 
-
 gcloud config set dataproc/region $REGION
 
-PROJECT_ID=$(gcloud config get-value project) && \
-gcloud config set project $PROJECT_ID
+export PROJECT_ID=$(gcloud config get-value project)
 
-PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
+export PROJECT_ID=$DEVSHELL_PROJECT_ID
+
+export PROJECT_NUMBER="$(gcloud projects describe $DEVSHELL_PROJECT_ID --format='get(projectNumber)')"
 
 gcloud services enable dataproc.googleapis.com
 
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
+gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
   --member=serviceAccount:$PROJECT_NUMBER-compute@developer.gserviceaccount.com \
   --role=roles/storage.admin
+
+gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
+    --member serviceAccount:$PROJECT_NUMBER-compute@developer.gserviceaccount.com \
+    --role=roles/dataproc.worker
+
+gcloud compute networks subnets update default \
+    --region=$REGION \
+    --enable-private-ip-google-access  
 
 
 gcloud dataproc clusters create example-cluster \
@@ -38,5 +46,4 @@ gcloud dataproc jobs submit spark \
 gcloud dataproc clusters update example-cluster \
 --num-workers=4 \
 --region=$REGION
-
 
