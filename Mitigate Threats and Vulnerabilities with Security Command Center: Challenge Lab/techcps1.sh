@@ -1,13 +1,11 @@
 
 ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
 
-gcloud scc muteconfigs create muting-flow-log-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting VPC Flow Logs" --filter="category=\"FLOW_LOGS_DISABLED\"" --type=STATIC
+# gcloud scc muteconfigs create muting-flow-log-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting VPC Flow Logs" --filter="category=\"FLOW_LOGS_DISABLED\"" --type=STATIC
 
-gcloud scc muteconfigs create muting-audit-logging-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting audit logs" --filter="category=\"AUDIT_LOGGING_DISABLED\"" --type=STATIC
+# gcloud scc muteconfigs create muting-audit-logging-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting audit logs" --filter="category=\"AUDIT_LOGGING_DISABLED\"" --type=STATIC
 
-gcloud scc muteconfigs create muting-admin-sa-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting admin service account findings" --filter="category=\"ADMIN_SERVICE_ACCOUNT\"" --type=STATIC
-
-sleep 20
+# gcloud scc muteconfigs create muting-admin-sa-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting admin service account findings" --filter="category=\"ADMIN_SERVICE_ACCOUNT\"" --type=STATIC
 
 gcloud compute firewall-rules delete default-allow-rdp  --quiet && gcloud compute firewall-rules delete default-allow-ssh --quiet
 
