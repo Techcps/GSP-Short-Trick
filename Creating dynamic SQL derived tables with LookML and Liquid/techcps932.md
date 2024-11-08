@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Creating dynamic SQL derived tables with LookML and Liquid - GSP932](https://www.cloudskillsboost.google/focuses/21215?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/EwOQAB2-38A)
 
 ---
 
@@ -166,7 +166,7 @@ explore: events {
 
 ---
 
-### 🚨 Open user_factse.view file
+### 🚨 Open user_facts.view file
 - **Remove the default code and paste the below code:**
 ```
 view: user_facts {
