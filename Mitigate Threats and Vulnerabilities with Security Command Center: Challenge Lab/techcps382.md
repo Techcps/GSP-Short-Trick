@@ -17,8 +17,10 @@
 ```
 gcloud scc muteconfigs create muting-flow-log-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting VPC Flow Logs" --filter="category=\"FLOW_LOGS_DISABLED\"" --type=STATIC && gcloud scc muteconfigs create muting-audit-logging-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting audit logs" --filter="category=\"AUDIT_LOGGING_DISABLED\"" --type=STATIC && gcloud scc muteconfigs create muting-admin-sa-findings --project=$DEVSHELL_PROJECT_ID --location=global --description="Rule for muting admin service account findings" --filter="category=\"ADMIN_SERVICE_ACCOUNT\"" --type=STATIC
 ```
-## Now just go and check your progress on Tasj 2
+## Now just go and check your progress on Task 2
 - **Do not run the next command until you get score on task 2**
+
+---
 
 ### 🚨Copy and run the below commands in Cloud Shell:
 
@@ -29,6 +31,7 @@ sudo chmod +x techcps1.sh
 ```
 
 - **Reserve Static External IP** address name **`static-ip`** and click **Reserve** and **save**
+
 ---
 
 ```
