@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Optimize Costs for Google Kubernetes Engine: Challenge Lab - GSP343](https://www.cloudskillsboost.google/focuses/16327?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/MNlCQCM3uXY)
 
 ---
 
