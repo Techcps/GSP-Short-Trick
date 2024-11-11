@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [Build an End-to-End Data Capture Pipeline using Document AI - GSP927](https://www.cloudskillsboost.google/focuses/21027?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/_rTzMS-JQew)
 
 ---
 
