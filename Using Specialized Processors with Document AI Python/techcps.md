@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Using Specialized Processors with Document AI (Python) - GSP1140](https://www.cloudskillsboost.google/focuses/67859?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/QxRlDPfJ27o)
 
 ---
 
