@@ -16,7 +16,7 @@
 ### ⚠️ Download the below file
 
 - 💡 **Open this link and download the file [Click Here](https://github.com/Techcps/GSP-Short-Trick/blob/main/Validate%20Data%20in%20Google%20Sheets/techcps1062.xlsx)**
-- 
+  
 ---
 
 ### 🚀 Now follow the video instructions carefully
