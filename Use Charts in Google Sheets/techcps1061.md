@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Use Charts in Google Sheets - GSP1061](https://www.cloudskillsboost.google/focuses/46920?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/pxNvID4mWcM)
 
 ---
 
