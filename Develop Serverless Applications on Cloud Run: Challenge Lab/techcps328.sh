@@ -1,21 +1,22 @@
 
-#!/bin/bash
-
+# Set text styles
 YELLOW=$(tput setaf 3)
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 
 echo "Please set the below values correctly"
+read -p "${YELLOW}${BOLD}Enter the REGION: ${RESET}" REGION
+read -p "${YELLOW}${BOLD}Enter the CP1_PBS: ${RESET}" CP1_PBS
+read -p "${YELLOW}${BOLD}Enter the CP2_FSS: ${RESET}" CP2_FSS
+read -p "${YELLOW}${BOLD}Enter the CP3_PBS: ${RESET}" CP3_PBS
+read -p "${YELLOW}${BOLD}Enter the CP4_BSA: ${RESET}" CP4_BSA
+read -p "${YELLOW}${BOLD}Enter the CP5_BPS: ${RESET}" CP5_BPS
+read -p "${YELLOW}${BOLD}Enter the CP6_FSA: ${RESET}" CP6_FSA
+read -p "${YELLOW}${BOLD}Enter the CP7_FPS: ${RESET}" CP7_FPS
 
-# Export the variables name correctly
-read -p -e "${YELLOW}${BOLD}Enter the REGION: ${RESET}" REGION
-read -p -e "${YELLOW}${BOLD}Enter the CP1_PBS: ${RESET}" CP1_PBS
-read -p -e "${YELLOW}${BOLD}Enter the CP2_FSS: ${RESET}" CP2_FSS
-read -p -e "${YELLOW}${BOLD}Enter the CP3_PBS: ${RESET}" CP3_PBS
-read -p -e "${YELLOW}${BOLD}Enter the CP4_BSA: ${RESET}" CP4_BSA
-read -p -e "${YELLOW}${BOLD}Enter the CP5_BPS: ${RESET}" CP5_BPS
-read -p -e "${YELLOW}${BOLD}Enter the CP6_FSA: ${RESET}" CP6_FSA
-read -p -e "${YELLOW}${BOLD}Enter the CP7_FPS: ${RESET}" CP7_FPS
+# Export variables after collecting input
+export REGION CP1_PBS CP2_FSS CP3_PBS CP4_BSA CP5_BPS CP6_FSA CP7_FPS
+
 
 gcloud auth list
 
