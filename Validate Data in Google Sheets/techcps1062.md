@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Validate Data in Google Sheets - GSP1062](https://www.cloudskillsboost.google/focuses/47356?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/Fd2aDBPZ93o)
 
 ---
 
