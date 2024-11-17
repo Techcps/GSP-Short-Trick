@@ -26,7 +26,8 @@ curl -X POST --data-binary @values.json \
     "https://www.googleapis.com/storage/v1/b?project=$DEVSHELL_PROJECT_ID"
     
 
-wget https://github.com/Techcps/GSP-Short-Trick/raw/master/Introduction%20to%20APIs%20in%20Google%20Cloud/demo-image.png
+wget https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20APIs%20in%20Google%20Cloud/demo-image.png
+
 
 # Verify if the image is downloaded
 if [ -f demo-image.png ]; then
