@@ -81,7 +81,7 @@ images:
   - ${REGION}-docker.pkg.dev/\${PROJECT_ID}/artifact-scanning-repo/sample-image
 EOF_CP
 
-# Submit the build with substitutions
+
 gcloud builds submit --region=$REGION
 
 
@@ -226,54 +226,42 @@ rm -rf cloud-builders-community
 
 
 
-cat > cloudbuild.yaml <<EOF_CP
-steps:
 
-# TODO: #1. Build Step. Replace the <image-name> placeholder with the correct value.
+cat > cloudbuild.yaml << EOF_CP
+steps:
+# TODO: #1. Build Step
 - id: "build"
   name: 'gcr.io/cloud-builders/docker'
-  args:
-    - 'build'
-    - '-t'
-    - '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest'
-    - '.'
-
-# TODO: #2. Push to Artifact Registry. Replace the <image-name> placeholder with the correct value.
+  args: ['build', '-t', '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest', '.']
+  waitFor: ['-']
+# TODO: #2. Push to Artifact Registry
 - id: "push"
   name: 'gcr.io/cloud-builders/docker'
-  args:
-    - 'push'
-    - '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest'
-
-# TODO: #3. Run a vulnerability scan. Replace the <image-name> placeholder with the correct value.
-- id: "scan"
+  args: ['push',  '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest']
+# TODO: #3. Run a vulnerability scan
+- id: scan
   name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
-    - '-c'
-    - |
-      gcloud artifacts docker images scan \
-      ${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest \
-      --location=us \
-      --format="value(response.scan)" > /workspace/scan_id.txt
-
-# TODO: #4. Analyze the result of the scan. IF CRITICAL vulnerabilities are found, fail the build. 
-# Replace the <correct vulnerability> placeholders with the correct values. Case sensitive!
-- id: "severity-check"
+  - '-c'
+  - |
+      (gcloud artifacts docker images scan \\
+      ${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest \\
+      --location us \\
+      --format="value(response.scan)") > /workspace/scan_id.txt
+# TODO: #4. Analyze the result of the scan
+- id: severity check
   name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
-    - '-c'
-    - |
-      gcloud artifacts docker images list-vulnerabilities $(cat /workspace/scan_id.txt) \
-      --format="value(vulnerability.effectiveSeverity)" | grep -Fxq CRITICAL && \
-      echo "Failed vulnerability check for CRITICAL level" && exit 1 || \
-      echo "No CRITICAL vulnerability found, congrats!"
-
-# TODO: #5. Sign the image only if the previous severity check passes. 
-# Replace the placeholders with the correct values: <image-name>, <attestor-name>, and <key-version>.
-# Note the <key-version> should be the **full** path to the key version.
-- id: "create-attestation"
+  - '-c'
+  - |
+      gcloud artifacts docker images list-vulnerabilities \$(cat /workspace/scan_id.txt) \\
+      --format="value(vulnerability.effectiveSeverity)" | if grep -Fxq CRITICAL; \\
+      then echo "Failed vulnerability check for CRITICAL level" && exit 1; else echo \\
+      "No CRITICAL vulnerability found, congrats !" && exit 0; fi
+# TODO: #5. Sign the image only if the previous severity check passes
+- id: 'create-attestation'
   name: 'gcr.io/${PROJECT_ID}/binauthz-attestation:latest'
   args:
     - '--artifact-url'
@@ -282,43 +270,32 @@ steps:
     - 'projects/${PROJECT_ID}/attestors/vulnerability-attestor'
     - '--keyversion'
     - 'projects/${PROJECT_ID}/locations/global/keyRings/binauthz-keys/cryptoKeys/lab-key/cryptoKeyVersions/1'
-
-# TODO: #6. Re-tag the image for production and push it to the production repository using the latest tag. 
-# Replace the <image-name> and <production-image-name> placeholders with the correct values.
-- id: "tag-for-prod"
-  name: 'gcr.io/cloud-builders/docker'
-  args:
-    - 'tag'
-    - '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest'
-    - '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-prod-repo/sample-image:latest'
-
+# TODO: #6. Re-tag the image for production and push it to the production repository using the latest tag
 - id: "push-to-prod"
   name: 'gcr.io/cloud-builders/docker'
-  args:
-    - 'push'
+  args: 
+    - 'tag' 
+    - '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest'
     - '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-prod-repo/sample-image:latest'
-
-# TODO: #7. Deploy to Cloud Run. Replace the <image-name> and <your-region> placeholders with the correct values.
-- id: "deploy-to-cloud-run"
+- id: "push-to-prod-final"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['push', '${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-prod-repo/sample-image:latest']
+# TODO: #7. Deploy to Cloud Run
+- id: 'deploy-to-cloud-run'
   name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
-    - '-c'
-    - |
-      gcloud run deploy auth-service \
-      --image=${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-prod-repo/sample-image:latest \
-      --binary-authorization=default \
-      --region=$REGION \
-      --allow-unauthenticated
-
-# TODO: #8. Replace <image-name> placeholder with the value from the build step.
+  - '-c'
+  - |
+    gcloud run deploy auth-service --image=${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest \
+    --binary-authorization=default --region=$REGION --allow-unauthenticated
+# TODO: #8. Images section
 images:
   - ${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest
-
 EOF_CP
 
-# Submit the build with substitutions
-gcloud builds submit --region=$REGION
+
+gcloud builds submit  --region=$REGION
 
 
 cat > ./Dockerfile << EOF
@@ -332,8 +309,7 @@ RUN pip3 install Werkzeug==3.0.4
 CMD exec gunicorn --bind :\$PORT --workers 1 --threads 8 main:app
 EOF
 
-# Submit the build with substitutions
+
 gcloud builds submit --region=$REGION
 
 gcloud beta run services add-iam-policy-binding --region=$REGION --member=allUsers --role=roles/run.invoker auth-service
-
