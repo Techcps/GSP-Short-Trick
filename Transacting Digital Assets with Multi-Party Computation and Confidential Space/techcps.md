@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [DTransacting Digital Assets with Multi-Party Computation and Confidential Space - GSP1128](https://www.cloudskillsboost.google/focuses/61481?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/8-_bqoG5MYc)
 
 ---
 
