@@ -1,6 +1,6 @@
 
 
-### 💡 Lab Link: [Secure Software Delivery: Challenge Lab - GSP1128](https://www.cloudskillsboost.google/focuses/104244?parent=catalog)
+### 💡 Lab Link: [Secure Software Delivery: Challenge Lab - GSP1521](https://www.cloudskillsboost.google/focuses/104244?parent=catalog)
 
 ### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
 
