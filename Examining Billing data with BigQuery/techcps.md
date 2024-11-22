@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Examining Billing data with BigQuery](https://www.cloudskillsboost.google/focuses/19085?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/5RrxVDpGFZw)
 
 ---
 
