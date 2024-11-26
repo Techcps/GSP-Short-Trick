@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [Build a Data Mesh with Dataplex: Challenge Lab - GSP514](https://www.cloudskillsboost.google/focuses/67212?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/ooEezAChS6U)
 
 ---
 
