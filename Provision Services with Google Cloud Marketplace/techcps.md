@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [Provision Services with Google Cloud Marketplace - GSP003](https://www.cloudskillsboost.google/focuses/565?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/R3Zp06zFfuA)
 
 ---
 
