@@ -2,7 +2,6 @@
 
 # Set text styles
 YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
 
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
@@ -32,16 +31,17 @@ echo "----------------"
 
 echo ""
 
-echo "Open Firewall Rule ${BLUE}https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/details/allow-ingress-from-iap?project=$DEVSHELL_PROJECT_ID${RESET}"
+echo "Open Firewall Rule [https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/details/allow-ingress-from-iap?project=$DEVSHELL_PROJECT_ID]"
 
 echo ""
 
-echo "Open IAP Settings ${BLUE}https://console.cloud.google.com/security/iap?tab=ssh-tcp-resources&project=$DEVSHELL_PROJECT_ID${RESET}"
+echo "Open IAP Settings [https://console.cloud.google.com/security/iap?tab=ssh-tcp-resources&project=$DEVSHELL_PROJECT_ID]"
 
 echo ""
 
-echo "${YELLOW}$PROJECT_NUMBER-compute@developer.gserviceaccount.com${RESET}"
+echo "${YELLOW}${BOLD}$PROJECT_NUMBER-compute@developer.gserviceaccount.com${RESET}"
 
 echo ""
 
+echo ""
 
