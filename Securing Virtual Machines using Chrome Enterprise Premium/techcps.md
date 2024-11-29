@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [Securing Virtual Machines using Chrome Enterprise Premium - GSP1036](https://www.cloudskillsboost.google/focuses/104659?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/7Dqa07jhPTM)
 
 ---
 
