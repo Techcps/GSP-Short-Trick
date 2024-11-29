@@ -1,5 +1,17 @@
 
 
+# Set text styles
+YELLOW=$(tput setaf 3)
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+echo "Please set the below values correctly"
+read -p "${YELLOW}${BOLD}Enter the REGION1: ${RESET}" REGION1
+read -p "${YELLOW}${BOLD}Enter the REGION2: ${RESET}" REGION2
+read -p "${YELLOW}${BOLD}Enter the VM_ZONE: ${RESET}" VM_ZONE
+
+# Export variables after collecting input
+export REGION1 REGION2 VM_ZONE
 
 gcloud compute firewall-rules create default-allow-http --project=$DEVSHELL_PROJECT_ID --direction=INGRESS --priority=1000 --network=default --source-ranges=0.0.0.0/0 --target-tags=http-server --action=ALLOW --rules=tcp:80 && gcloud compute firewall-rules create default-allow-health-check --project=$DEVSHELL_PROJECT_ID --direction=INGRESS --priority=1000 --network=default --source-ranges=130.211.0.0/22,35.191.0.0/16 --target-tags=http-server --action=ALLOW --rules=tcp
 
