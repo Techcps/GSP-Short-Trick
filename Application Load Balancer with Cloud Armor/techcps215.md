@@ -1,7 +1,7 @@
 
 ## 💡 Lab Link: [Application Load Balancer with Cloud Armor - GSP215](https://www.cloudskillsboost.google/focuses/1232?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/lBmDjCE6l9w)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/7D0hcw2WE0U)
 
 ---
 
