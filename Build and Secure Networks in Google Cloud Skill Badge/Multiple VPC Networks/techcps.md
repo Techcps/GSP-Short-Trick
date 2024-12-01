@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [Multiple VPC Networks - GSP211](https://www.cloudskillsboost.google/focuses/22772?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/1FtJTyvPE_w)
 
 ---
 
