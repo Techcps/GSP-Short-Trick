@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [How to Use a Network Policy on Google Kubernetes Engine - GSP480](https://www.cloudskillsboost.google/focuses/5572?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/bDRTKdTY6GQ)
 
 ---
 
