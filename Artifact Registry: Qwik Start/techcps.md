@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Artifact Registry: Qwik Start - GSP1131](https://www.cloudskillsboost.google/focuses/110513?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/2tAelIPNac8)
 
 ---
 
