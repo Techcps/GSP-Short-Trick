@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Loading Your Own Data into BigQuery - GSP865](https://www.cloudskillsboost.google/focuses/17816?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/DrnwnGwPkMw)
 
 ---
 
