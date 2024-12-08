@@ -1,7 +1,7 @@
 
 ### 💡 Lab Link: [APIs Explorer: Cloud SQL - GSP423](https://www.cloudskillsboost.google/focuses/3685?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/31Wbrzj5lY4)
 
 ---
 
