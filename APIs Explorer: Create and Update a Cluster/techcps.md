@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [APIs Explorer: Create and Update a Cluster - GSP288](https://www.cloudskillsboost.google/focuses/3332?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/zK35ED7XeJ8)
 
 ---
 
