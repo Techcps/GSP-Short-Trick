@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Create an Internal Load Balancer - GSP216](https://www.cloudskillsboost.google/focuses/1250?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/YYjgT20H7-Q)
 
 ---
 
