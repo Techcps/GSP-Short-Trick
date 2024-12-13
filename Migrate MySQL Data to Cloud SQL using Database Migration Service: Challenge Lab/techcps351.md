@@ -13,8 +13,9 @@
 
 ### Enable the following Google APIs:
 
-- **Database Migration API** and **Service Networking API**
+- **[Database Migration API](https://console.cloud.google.com/marketplace/product/google/datamigration.googleapis.com?q=search&referrer=search&project=)**
 
+- **[Service Networking API](https://console.cloud.google.com/marketplace/product/google/servicenetworking.googleapis.com?q=search&referrer=search&project=)**
 ---
 
 ### Task 4: Connect to the MySQL source instance
