@@ -13,9 +13,7 @@
 
 ### Enable the following Google APIs:
 
-- **[Database Migration API](https://console.cloud.google.com/marketplace/product/google/datamigration.googleapis.com?q=search&referrer=search&project=)**
-
-- **[Service Networking API](https://console.cloud.google.com/marketplace/product/google/servicenetworking.googleapis.com?q=search&referrer=search&project=)**
+- **Database Migration API** and **Service Networking API**
 
 ---
 
