@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Migrate MySQL Data to Cloud SQL using Database Migration Service: Challenge Lab - GSP351](https://www.cloudskillsboost.google/focuses/20393?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/F_s-smALoZs)
 
 ---
 
