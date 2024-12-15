@@ -14,7 +14,7 @@ export REGION
 
 gcloud services enable sqladmin.googleapis.com
 
-gcloud sql instances create my-instance --project=$DEVSHELL_PROJECT_ID --database-version=MYSQL_5_7 --tier=db-n1-standard-1
+gcloud sql instances create my-instance --project=$DEVSHELL_PROJECT_ID --region=$REGION --database-version=MYSQL_5_7 --tier=db-n1-standard-1
 
 gcloud sql databases create mysql-db --instance=my-instance --project=$DEVSHELL_PROJECT_ID
 
