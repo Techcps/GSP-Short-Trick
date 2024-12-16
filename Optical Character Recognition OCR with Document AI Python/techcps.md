@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Optical Character Recognition (OCR) with Document AI (Python) - GSP1138](https://www.cloudskillsboost.google/focuses/67857?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/dQ89p9JANHc)
 
 ---
 
