@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Automate Data Capture at Scale with Document AI: Challenge Lab - GSP367](https://www.cloudskillsboost.google/focuses/34185?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/DcJXiLcxkuI)
 
 ---
 
