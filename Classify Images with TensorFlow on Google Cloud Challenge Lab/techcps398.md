@@ -21,9 +21,7 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Classify%20Images%20with%20TensorFlow%20on%20Google%20Cloud%20Challenge%20Lab/techcps398.sh
-sudo chmod +x techcps398.sh
-./techcps398.sh
+gcloud auth list && gcloud services enable compute.googleapis.com iam.googleapis.com iamcredentials.googleapis.com monitoring.googleapis.com logging.googleapis.com notebooks.googleapis.com aiplatform.googleapis.com bigquery.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com container.googleapis.com
 ```
 
 ---
