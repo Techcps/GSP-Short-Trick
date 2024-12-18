@@ -2,7 +2,7 @@
 
 ### 💡 Lab Link: [Monitoring Multiple Projects with Cloud Monitoring - GSP090](https://www.cloudskillsboost.google/focuses/621?parent=catalog)
 
-### 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/5jztZloqLxI)
 
 ---
 
