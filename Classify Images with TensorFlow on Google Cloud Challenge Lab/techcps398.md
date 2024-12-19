@@ -2,7 +2,7 @@
 
 ## 💡 Lab Link: [Classify Images with TensorFlow on Google Cloud: Challenge Lab - GSP398](https://www.cloudskillsboost.google/focuses/53698?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://www.youtube.com/@techcps)
+## 🚀 Lab Solution [Watch Here](https://youtu.be/nhVl30iKn2U)
 
 ---
 
