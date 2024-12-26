@@ -1,8 +1,4 @@
 
-# Build and Execute MySQL, PostgreSQL, and SQLServer to Data Catalog Connectors [GSP814]
-
-# Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps) & join our [WhatsApp Channel](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)
-
 ```
 export REGION=
 ```
@@ -38,9 +34,9 @@ done
 
 sleep 10
 ```
-# Now this will take around 5 to 10 minutes to complete
-> So just wait and watch & make sure your laptap will not go for sleep
-
+### Now this will take around 5 to 10 minutes to complete
+> Make sure your laptap will not go for a sleep, so just wait and watch
+---
 ```
 gcloud iam service-accounts create sqlserver2dc-credentials \
 --display-name  "Service Account for SQL Server to Data Catalog connector" \
@@ -48,7 +44,6 @@ gcloud iam service-accounts create sqlserver2dc-credentials \
 
 gcloud iam service-accounts keys create "sqlserver2dc-credentials.json" \
 --iam-account "sqlserver2dc-credentials@$PROJECT_ID.iam.gserviceaccount.com"
-
 
 
 gcloud projects add-iam-policy-binding $PROJECT_ID \
@@ -65,6 +60,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 --project $PROJECT_ID \
 --role "roles/datacatalog.admin"
 ```
+---
 
 ```
 cd infrastructure/terraform/
@@ -87,16 +83,18 @@ docker run --rm --tty -v \
 --sqlserver-database=$database
 ```
 
-# Check the progress on Task 2 
+### Check the progress on Task 2 
 > Do not run next command until you get the score on Task 2
 
+---
+
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Build%20and%20Execute%20MySQL,%20PostgreSQL,%20and%20SQLServer%20to%20Data%20Catalog%20Connectors/techcps1.sh
+curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Build%20and%20Execute%20MySQL%20and%20PostgreSQL%20to%20Data%20Catalog%20Connectors/techcps1.sh
 sudo chmod +x techcps1.sh
 ./techcps1.sh
 ```
-# Now this can take around 10 to 15 minutes to complete
-> So just wait and watch & make sure your laptap will not go for sleep
+### Now this can take around 10 to 15 minutes to complete
+> Make sure your laptap will not go for a sleep, so just wait and watch
 
 ```
 gcloud iam service-accounts create postgresql2dc-credentials \
@@ -124,6 +122,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 --project $PROJECT_ID \
 --role "roles/datacatalog.admin"
 ```
+---
 
 ```
 cd infrastructure/terraform/
@@ -144,12 +143,8 @@ docker run --rm --tty -v \
 --postgresql-pass=$password \
 --postgresql-database=$database
 ```
-
+---
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Build%20and%20Execute%20MySQL,%20PostgreSQL,%20and%20SQLServer%20to%20Data%20Catalog%20Connectors/techcps2.sh
+curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Build%20and%20Execute%20MySQL%20and%20PostgreSQL%20to%20Data%20Catalog%20Connectors/techcps2.sh
 sudo chmod +x techcps2.sh
 ./techcps2.sh
-```
-## Congratulations, you're all done with the lab 😄
-
-# Thanks for watching :)
