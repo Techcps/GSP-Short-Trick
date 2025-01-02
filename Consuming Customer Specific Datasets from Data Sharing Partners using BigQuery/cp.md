@@ -26,7 +26,7 @@ sudo chmod +x techcps1.sh
 ./techcps1.sh
 ```
 
-```
+---
 
 ```
 export PUBLISHER_ID=
