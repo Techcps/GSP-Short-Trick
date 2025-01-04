@@ -46,7 +46,7 @@ echo $ALLOYDB  > alloydbip.txt
 psql -h $ALLOYDB -U postgres
 ```
 ---
-> You will be prompted to provide the postgres user's password **(Change3Me)** which you entered when you created the cluster
+- You will be prompted to provide the postgres user's password **(Change3Me)** which you entered when you created the cluster
 R TABLE departments ADD PRIMARY KEY (department_id);
 
 ```
