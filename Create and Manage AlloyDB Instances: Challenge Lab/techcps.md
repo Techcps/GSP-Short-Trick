@@ -19,11 +19,11 @@ export ZONE=
 
 2. Run the below commands in your **First Cloud Terminal**
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Create%20and%20Manage%20AlloyDB%20Instances%3A%20Challenge%20Lab/techcps395.sh
+curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Create%20and%20Manage%20AlloyDB%20Instances%3A%20Challenge%20Lab/techcps395.sh
 sudo chmod +x techcps395.sh
 ./techcps395.sh
 ```
-
+---
 3. Switch back to **Second Cloud Terminal**
 
 4. Connect **SSH** of **`alloydb-client`**
@@ -45,7 +45,7 @@ echo $ALLOYDB  > alloydbip.txt
 ```
 psql -h $ALLOYDB -U postgres
 ```
-
+---
 > You will be prompted to provide the postgres user's password **(Change3Me)** which you entered when you created the cluster
 R TABLE departments ADD PRIMARY KEY (department_id);
 
@@ -104,17 +104,25 @@ INSERT INTO departments VALUES (50, 'Shipping', 121, 1500);
 INSERT INTO departments VALUES (60, 'IT', 103, 1400);
 ```
 
+---
+
 ### Congratulations, you're all done with the lab 😄
 
 ---
 
 ### 🌐 Join our Community
 
-- **Join our [Discussion Group](https://t.me/Techcpschat)** <img src="https://github.com/user-attachments/assets/a4a4b767-151c-461d-bca1-da6d4c0cd68a" alt="icon" width="25" height="25">
-- **Please like share & subscribe to [Techcps](https://www.youtube.com/@techcps)** <img src="https://github.com/user-attachments/assets/6ee41001-c795-467c-8d96-06b56c246b9c" alt="icon" width="25" height="25">
-- **Join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A)** <img src="https://github.com/user-attachments/assets/aa10b8b2-5424-40bc-8911-7969f29f6dae" alt="icon" width="25" height="25">
-- **Join our [Telegram Channel](https://t.me/Techcps)** <img src="https://github.com/user-attachments/assets/a4a4b767-151c-461d-bca1-da6d4c0cd68a" alt="icon" width="25" height="25">
-- **Follow us on [LinkedIn](https://www.linkedin.com/company/techcps/)** <img src="https://github.com/user-attachments/assets/b9da471b-2f46-4d39-bea9-acdb3b3a23b0" alt="icon" width="25" height="25">
+- <img src="https://github.com/user-attachments/assets/a4a4b767-151c-461d-bca1-da6d4c0cd68a" alt="icon" width="25" height="25"> **Join our [Telegram Channel](https://t.me/Techcps) for the latest updates & [Discussion Group](https://t.me/Techcpschat) for the lab enquiry**
+- <img src="https://github.com/user-attachments/assets/aa10b8b2-5424-40bc-8911-7969f29f6dae" alt="icon" width="25" height="25"> **Join our [WhatsApp Community](https://whatsapp.com/channel/0029Va9nne147XeIFkXYv71A) for the latest updates**
+- <img src="https://github.com/user-attachments/assets/b9da471b-2f46-4d39-bea9-acdb3b3a23b0" alt="icon" width="25" height="25"> **Follow us on [LinkedIn](https://www.linkedin.com/company/techcps/) for updates and opportunities.**
+- <img src="https://github.com/user-attachments/assets/a045f610-775d-432a-b171-97a2d19718e2" alt="icon" width="25" height="25"> **Follow us on [TwitterX](https://twitter.com/Techcps_/) for the latest updates**
+- <img src="https://github.com/user-attachments/assets/84e23456-7ed3-402a-a8a9-5d2fb5b44849" alt="icon" width="25" height="25"> **Follow us on [Instagram](https://instagram.com/techcps/) for the latest updates**
+- <img src="https://github.com/user-attachments/assets/fc77ddc4-5b3b-42a9-a8da-e5561dce0c70" alt="icon" width="25" height="25"> **Follow us on [Facebook](https://facebook.com/techcps/) for the latest updates**
 
-### Thanks for watching :)
+---
+
+# <img src="https://github.com/user-attachments/assets/6ee41001-c795-467c-8d96-06b56c246b9c" alt="icon" width="45" height="45"> [Techcps](https://www.youtube.com/@techcps) Don't Forget to like share & subscribe
+
+### Thanks for watching and stay connected :)
+---
 
