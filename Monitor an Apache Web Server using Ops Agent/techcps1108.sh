@@ -58,7 +58,6 @@ sleep 60
 
 EOF_CP
 
-export ZONE=us-central1-a
 
 gcloud compute scp cp_disk.sh quickstart-vm:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
