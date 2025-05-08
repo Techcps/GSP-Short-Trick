@@ -20,7 +20,7 @@ kubectl get pods -o=wide
 
 gcloud container node-pools delete my-node-pool --cluster hello-demo-cluster --zone "$ZONE" --quiet
 
-gcloud container clusters create regional-demo --region=europe-west1 --num-nodes=1
+gcloud container clusters create regional-demo --region="$ZONE" --num-nodes=1
 
 
 cat << EOF > pod-1.yaml
