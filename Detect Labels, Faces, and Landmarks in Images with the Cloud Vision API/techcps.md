@@ -1,7 +1,7 @@
 
-## 💡 Lab Link: [Detect Labels, Faces, and Landmarks in Images with the Cloud Vision API - GSP037](https://www.cloudskillsboost.google/focuses/1841?parent=catalog)
+### 💡 Lab Link: [Detect Labels, Faces, and Landmarks in Images with the Cloud Vision API - GSP037](https://www.cloudskillsboost.google/focuses/1841?parent=catalog)
 
-## 🚀 Lab Solution [Watch Here](https://youtu.be/MIvlwg7c7cc)
+### 🚀 Lab Solution [Watch Here](https://youtu.be/wbOXtc_PIT0)
 
 ---
 
