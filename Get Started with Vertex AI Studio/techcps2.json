@@ -1,62 +1,125 @@
 {
-  "title": "Untitled prompt",
-  "description": "",
+
+  "title": "Sentiment Classification Prompt",
+
+  "description": "Classify text input as positive, negative, or neutral based on sentiment.",
+
   "parameters": {
+
     "groundingPromptConfig": {
+
       "disabled": true,
+
       "groundingConfig": {
+
         "sources": [
+
           {
+
             "type": "VERTEX_AI_SEARCH"
+
           }
+
         ]
+
       }
+
     },
+
     "stopSequences": [],
+
     "temperature": 0.9,
+
     "tokenLimits": 2048,
+
     "topP": 1
+
   },
-  "type": "structured",
+
+  "type": "freeform",
+
   "context": "",
+
   "inputPrefixes": [
+
     ""
+
   ],
+
   "outputPrefixes": [
+
     ""
+
   ],
+
   "examples": [
+
     {
+
       "inputs": [
+
         "A well-made and entertaining film"
+
       ],
+
       "outputs": [
+
         "positive"
+
       ]
+
     },
+
     {
+
       "inputs": [
-        "I fell asleep after 10 minutes\t"
+
+        "I fell asleep after 10 minutes"
+
       ],
+
       "outputs": [
+
         "negative"
+
       ]
+
     },
+
     {
+
       "inputs": [
-        "The movie was ok\t"
+
+        "The movie was ok"
+
       ],
+
       "outputs": [
+
         "neutral"
+
       ]
+
     }
+
   ],
+
   "testData": [
+
     {
+
       "inputs": [
+
         ""
+
       ]
+
     }
+
   ],
-  "model": "gemini-1.0-pro-001"
+
+  "model": "gemini-1.0-pro-001",
+
+  "note": "Structured prompt for sentiment classification"
+
 }
