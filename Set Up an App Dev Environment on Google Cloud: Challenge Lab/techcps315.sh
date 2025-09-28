@@ -1,29 +1,59 @@
+#GSP315
+
 
 
 gcloud auth list
 
-export REGION="${ZONE%-*}"
+export PROJECT_ID=$(gcloud config get-value project)
+
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
+
+gcloud config set compute/zone $ZONE
+
+gcloud config set compute/region $REGION
+
+export PROJECT_ID=$DEVSHELL_PROJECT_ID
 
 gcloud config set project $DEVSHELL_PROJECT_ID
+
+
+
+
 
 gcloud services enable artifactregistry.googleapis.com logging.googleapis.com pubsub.googleapis.com cloudfunctions.googleapis.com cloudbuild.googleapis.com eventarc.googleapis.com run.googleapis.com --project=$DEVSHELL_PROJECT_ID
 
 sleep 60
 
 
+PROJECT_NUMBER=$(gcloud projects describe $DEVSHELL_PROJECT_ID --format='value(projectNumber)')
+
+gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
+    --member=serviceAccount:$PROJECT_NUMBER-compute@developer.gserviceaccount.com \
+    --role=roles/eventarc.eventReceiver
+
+sleep 20
+
+SERVICE_ACCOUNT="$(gsutil kms serviceaccount -p $DEVSHELL_PROJECT_ID)"
+
+gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
+    --member="serviceAccount:${SERVICE_ACCOUNT}" \
+    --role='roles/pubsub.publisher'
+
+sleep 20
+
+gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
+    --member=serviceAccount:service-$PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com \
+    --role=roles/iam.serviceAccountTokenCreator
+
+sleep 20
+
 gsutil mb -l $REGION gs://$DEVSHELL_PROJECT_ID-bucket
 
 gcloud pubsub topics create $TOPIC_NAME
 
-PROJECT_NUMBER=$(gcloud projects list --filter="project_id:$DEVSHELL_PROJECT_ID" --format='value(project_number)')
-SERVICE_ACCOUNT=$(gsutil kms serviceaccount -p $PROJECT_NUMBER)
+mkdir techcps
+cd techcps
 
-gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
-  --member serviceAccount:$SERVICE_ACCOUNT \
-  --role roles/pubsub.publisher
-
-
-mkdir techcps && cd techcps
 
 cat > index.js <<'EOF_CP'
 const functions = require('@google-cloud/functions-framework');
@@ -33,7 +63,7 @@ const gcs = new Storage();
 const { PubSub } = require('@google-cloud/pubsub');
 const imagemagick = require("imagemagick-stream");
 
-functions.cloudEvent('memories-thumbnail-generator', cloudEvent => {
+functions.cloudEvent('$FUNCTION_NAME', cloudEvent => {
   const event = cloudEvent.data;
 
   console.log(`Event: ${event}`);
@@ -43,7 +73,7 @@ functions.cloudEvent('memories-thumbnail-generator', cloudEvent => {
   const bucketName = event.bucket;
   const size = "64x64"
   const bucket = gcs.bucket(bucketName);
-  const topicName = "topic-memories-290";
+  const topicName = "$TOPIC_NAME";
   const pubsub = new PubSub();
   if ( fileName.search("64x64_thumbnail") == -1 ){
     // doesn't have a thumbnail, get the filename extension
@@ -96,11 +126,9 @@ functions.cloudEvent('memories-thumbnail-generator', cloudEvent => {
 });
 EOF_CP
 
-
 sed -i "8c\functions.cloudEvent('$FUNCTION_NAME', cloudEvent => { " index.js
 
 sed -i "18c\  const topicName = '$TOPIC_NAME';" index.js
-
 
 cat > package.json <<EOF_CP
 {
@@ -125,7 +153,13 @@ cat > package.json <<EOF_CP
 EOF_CP
 
 
-#!/bin/bash
+PROJECT_ID=$(gcloud config get-value project)
+BUCKET_SERVICE_ACCOUNT="${PROJECT_ID}@${PROJECT_ID}.iam.gserviceaccount.com"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member=serviceAccount:$BUCKET_SERVICE_ACCOUNT \
+  --role=roles/pubsub.publisher
+
 
 deploy_function() {
     gcloud functions deploy $FUNCTION_NAME \
@@ -139,25 +173,28 @@ deploy_function() {
     --quiet
 }
 
-deploy_success=false
+SERVICE_NAME="$FUNCTION_NAME"
 
-while [ "$deploy_success" = false ]; do
-  if deploy_function; then
-    echo "Function deployed successfully (https://www.youtube.com/@techcps).."
-    deploy_success=true
+while true; do
+  deploy_function
+  if gcloud run services describe $SERVICE_NAME --region $REGION &> /dev/null; then
+    echo "Function deployed successfully https://www.youtube.com/@techcps"
+    break
   else
-    echo "please subscribe to techcps (https://www.youtube.com/@techcps)."
-    sleep 10
+    echo "please subscribe to techcps https://www.youtube.com/@techcps"
+    sleep 20
   fi
 done
 
 
-wget map.jpg https://storage.googleapis.com/cloud-training/gsp315/map.jpg
 
+curl -o map.jpg https://storage.googleapis.com/cloud-training/gsp315/map.jpg
 
 gsutil cp map.jpg gs://$DEVSHELL_PROJECT_ID-bucket/map.jpg
 
 gcloud projects remove-iam-policy-binding $DEVSHELL_PROJECT_ID \
 --member=user:$USER2 \
 --role=roles/viewer
+
+
 
